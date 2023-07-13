@@ -43,6 +43,6 @@ accelerate launch /home/wangran108/question-answering/run_seq2seq_qa_no_trainer.
     --ignore_pad_token_for_loss True \
     --output_dir ~/tmp/tst-summarization > log.log 2>&1 &
 
-
+    #  使用bf16代替fp16可防止溢出
     # --learning_rate 1e-5\ 初次实验未使用scale learning rate策略，正常运行，没有报错，但是使用了scale_lr之后，报错
     #    --per_device_train_batch_size 8\  batchsize 也影响loss scale
