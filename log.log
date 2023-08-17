@@ -1,0 +1,221 @@
+[2023-07-28 19:27:10,015] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `4`
+		More than one GPU was found, enabling multi-GPU training.
+		If this was unintended please pass in `--num_processes=1`.
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+[2023-07-28 19:27:43,792] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-07-28 19:27:43,873] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-07-28 19:27:44,095] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-07-28 19:27:44,095] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+07/28/2023 19:27:53 - INFO - __main__ - Distributed environment: MULTI_GPU  Backend: nccl
+Num processes: 4
+Process index: 2
+Local process index: 2
+Device: cuda:2
+
+Mixed precision type: no
+
+07/28/2023 19:27:53 - INFO - __main__ - Distributed environment: MULTI_GPU  Backend: nccl
+Num processes: 4
+Process index: 3
+Local process index: 3
+Device: cuda:3
+
+Mixed precision type: no
+
+07/28/2023 19:27:53 - INFO - __main__ - Distributed environment: MULTI_GPU  Backend: nccl
+Num processes: 4
+Process index: 0
+Local process index: 0
+Device: cuda:0
+
+Mixed precision type: no
+
+07/28/2023 19:27:53 - INFO - __main__ - Distributed environment: MULTI_GPU  Backend: nccl
+Num processes: 4
+Process index: 1
+Local process index: 1
+Device: cuda:1
+
+Mixed precision type: no
+
+07/28/2023 19:29:17 - WARNING - datasets.builder - Found cached dataset json (/home/wangran108/huggingface/datasets/json/default-b36a1a3b440b928c/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 81.95it/s]
+100%|██████████| 1/1 [00:00<00:00, 177.52it/s]
+100%|██████████| 1/1 [00:00<00:00, 216.59it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 213.34it/s]
+07/28/2023 19:30:37 - WARNING - datasets.builder - Found cached dataset json (/home/wangran108/huggingface/datasets/json/default-b36a1a3b440b928c/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+07/28/2023 19:31:58 - WARNING - datasets.builder - Found cached dataset json (/home/wangran108/huggingface/datasets/json/default-b36a1a3b440b928c/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Offline mode: forcing local_files_only=True
+loading configuration file /home/wangran108/baichuan/config.json
+Offline mode: forcing local_files_only=True
+Offline mode: forcing local_files_only=True
+loading configuration file /home/wangran108/baichuan/config.json
+Model config BaichuanConfig {
+  "_from_model_config": true,
+  "_name_or_path": "/home/wangran108/baichuan",
+  "architectures": [
+    "BaichuanForCausalLM"
+  ],
+  "auto_map": {
+    "AutoConfig": "configuration_baichuan.BaichuanConfig",
+    "AutoModelForCausalLM": "modeling_baichuan.BaichuanForCausalLM"
+  },
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "gradient_checkpointing": [
+    false
+  ],
+  "hidden_act": "silu",
+  "hidden_size": 5120,
+  "initializer_range": 0.02,
+  "intermediate_size": 13696,
+  "model_max_length": 4096,
+  "model_type": "baichuan",
+  "num_attention_heads": 40,
+  "num_hidden_layers": 40,
+  "pad_token_id": 0,
+  "rms_norm_eps": 1e-06,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.31.0",
+  "use_cache": true,
+  "vocab_size": 64000
+}
+
+Offline mode: forcing local_files_only=True
+Offline mode: forcing local_files_only=True
+Offline mode: forcing local_files_only=True
+loading file tokenizer.model
+loading file added_tokens.json
+loading file special_tokens_map.json
+loading file tokenizer_config.json
+Offline mode: forcing local_files_only=True
+The device_map was not initialized.Setting device_map to {'':torch.cuda.current_device()}.If you want to use the model for inference, please set device_map ='auto' 
+Offline mode: forcing local_files_only=True
+loading weights file /home/wangran108/baichuan/pytorch_model.bin.index.json
+Instantiating BaichuanForCausalLM model under default dtype torch.float16.
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.31.0"
+}
+
+Detected 8-bit loading: activating 8-bit loading for this model
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:33<01:06, 33.45s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:33<01:07, 33.71s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:33<01:07, 33.71s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:33<01:07, 33.72s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:03<00:31, 31.58s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:04<00:31, 31.75s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:04<00:31, 31.71s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:04<00:31, 31.75s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:24<00:00, 26.36s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:24<00:00, 28.01s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [01:24<00:00, 26.48s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:24<00:00, 28.09s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [01:24<00:00, 26.51s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:24<00:00, 28.09s/it]
+All model checkpoint weights were used when initializing BaichuanForCausalLM.
+
+All the weights of BaichuanForCausalLM were initialized from the model checkpoint at /home/wangran108/baichuan.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BaichuanForCausalLM for predictions without further training.
+loading configuration file /home/wangran108/baichuan/generation_config.json
+Generate config GenerationConfig {
+  "assistant_token_id": 196,
+  "bos_token_id": 1,
+  "do_sample": true,
+  "eos_token_id": 2,
+  "max_new_tokens": 2048,
+  "pad_token_id": 0,
+  "repetition_penalty": 1.1,
+  "temperature": 0.3,
+  "top_k": 5,
+  "top_p": 0.85,
+  "transformers_version": "4.31.0",
+  "user_token_id": 195
+}
+
+Loading checkpoint shards: 100%|██████████| 3/3 [01:24<00:00, 26.52s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:24<00:00, 28.10s/it]
+Running tokenizer on dataset (num_proc=12):   0%|          | 0/6905 [00:00<?, ? examples/s]Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Running tokenizer on dataset (num_proc=12):   0%|          | 0/6905 [00:00<?, ? examples/s]Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+Using sep_token, but it is not set yet.
+                                                                                           multiprocess.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/multiprocess/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/utils/py_utils.py", line 1328, in _write_generator_to_queue
+    for i, result in enumerate(func(**kwargs)):
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3441, in _map_single
+    example = apply_function_on_filtered_inputs(example, i, offset=offset)
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3344, in apply_function_on_filtered_inputs
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "/home/wangran108/question-answering/run_clm_no_trainer.py", line 419, in generate_and_tokenize_prompt
+    input_text = "下面对话中" + instruction +'对话如下:'+ input_text + tokenizer.sep_token+ "回答:"
+TypeError: can only concatenate str (not "NoneType") to str
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/wangran108/question-answering/run_clm_no_trainer.py", line 673, in <module>
+    main()
+  File "/home/wangran108/question-answering/run_clm_no_trainer.py", line 441, in main
+    tokenized_datasets = raw_datasets.map(
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/dataset_dict.py", line 851, in map
+    {
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/dataset_dict.py", line 852, in <dictcomp>
+    k: dataset.map(
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 580, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 545, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3180, in map
+    for rank, done, content in iflatmap_unordered(
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/utils/py_utils.py", line 1354, in iflatmap_unordered
+    [async_result.get(timeout=0.05) for async_result in async_results]
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/datasets/utils/py_utils.py", line 1354, in <listcomp>
+    [async_result.get(timeout=0.05) for async_result in async_results]
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/multiprocess/pool.py", line 771, in get
+    raise self._value
+TypeError: can only concatenate str (not "NoneType") to str
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 7610 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 7611 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 7612 closing signal SIGTERM
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 7609) of binary: /opt/conda/bin/python3.8
+Traceback (most recent call last):
+  File "/media/cfs/wangran108/.pylib/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/accelerate/commands/accelerate_cli.py", line 45, in main
+    args.func(args)
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/accelerate/commands/launch.py", line 970, in launch_command
+    multi_gpu_launcher(args)
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/accelerate/commands/launch.py", line 646, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/torch/distributed/run.py", line 753, in run
+    elastic_launch(
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 246, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangran108/question-answering/run_clm_no_trainer.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-07-28_19:33:27
+  host      : nb-wangran108-gpu.ea-app-headless-service.jdl-sjcp-aiyf.svc.cluster.local
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 7609)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

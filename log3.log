@@ -1,0 +1,1343 @@
+[2023-07-20 17:41:02,353] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-07-20 17:41:44,085] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-07-20 17:41:44,086] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-07-20 17:41:44,087] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-07-20 17:41:44,088] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-07-20 17:42:01,873] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-07-20 17:42:01,873] [INFO] [comm.py:594:init_distributed] cdb=None
+[2023-07-20 17:42:01,874] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-07-20 17:42:01,874] [INFO] [comm.py:594:init_distributed] cdb=None
+[2023-07-20 17:42:01,874] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-07-20 17:42:01,875] [INFO] [comm.py:594:init_distributed] cdb=None
+[2023-07-20 17:42:01,875] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-07-20 17:42:01,875] [INFO] [comm.py:594:init_distributed] cdb=None
+[2023-07-20 17:42:01,875] [INFO] [comm.py:625:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+07/20/2023 17:42:01 - INFO - __main__ - Distributed environment: DEEPSPEED  Backend: nccl
+Num processes: 4
+Process index: 0
+Local process index: 0
+Device: cuda:0
+
+Mixed precision type: bf16
+ds_config: {'train_batch_size': 'auto', 'train_micro_batch_size_per_gpu': 'auto', 'gradient_accumulation_steps': 1, 'zero_optimization': {'stage': 2, 'offload_optimizer': {'device': 'cpu', 'nvme_path': None}, 'offload_param': {'device': 'cpu', 'nvme_path': None}, 'stage3_gather_16bit_weights_on_model_save': False}, 'steps_per_print': inf, 'bf16': {'enabled': True}, 'fp16': {'enabled': False}}
+
+07/20/2023 17:42:01 - INFO - __main__ - Distributed environment: DEEPSPEED  Backend: nccl
+Num processes: 4
+Process index: 3
+Local process index: 3
+Device: cuda:3
+
+Mixed precision type: bf16
+ds_config: {'train_batch_size': 'auto', 'train_micro_batch_size_per_gpu': 'auto', 'gradient_accumulation_steps': 1, 'zero_optimization': {'stage': 2, 'offload_optimizer': {'device': 'cpu', 'nvme_path': None}, 'offload_param': {'device': 'cpu', 'nvme_path': None}, 'stage3_gather_16bit_weights_on_model_save': False}, 'steps_per_print': inf, 'bf16': {'enabled': True}, 'fp16': {'enabled': False}}
+
+07/20/2023 17:42:01 - INFO - __main__ - Distributed environment: DEEPSPEED  Backend: nccl
+Num processes: 4
+Process index: 1
+Local process index: 1
+Device: cuda:1
+
+Mixed precision type: bf16
+ds_config: {'train_batch_size': 'auto', 'train_micro_batch_size_per_gpu': 'auto', 'gradient_accumulation_steps': 1, 'zero_optimization': {'stage': 2, 'offload_optimizer': {'device': 'cpu', 'nvme_path': None}, 'offload_param': {'device': 'cpu', 'nvme_path': None}, 'stage3_gather_16bit_weights_on_model_save': False}, 'steps_per_print': inf, 'bf16': {'enabled': True}, 'fp16': {'enabled': False}}
+
+07/20/2023 17:42:01 - INFO - __main__ - Distributed environment: DEEPSPEED  Backend: nccl
+Num processes: 4
+Process index: 2
+Local process index: 2
+Device: cuda:2
+
+Mixed precision type: bf16
+ds_config: {'train_batch_size': 'auto', 'train_micro_batch_size_per_gpu': 'auto', 'gradient_accumulation_steps': 1, 'zero_optimization': {'stage': 2, 'offload_optimizer': {'device': 'cpu', 'nvme_path': None}, 'offload_param': {'device': 'cpu', 'nvme_path': None}, 'stage3_gather_16bit_weights_on_model_save': False}, 'steps_per_print': inf, 'bf16': {'enabled': True}, 'fp16': {'enabled': False}}
+
+07/20/2023 17:43:25 - WARNING - datasets.builder - Found cached dataset json (/media/cfs/wangran108/question-answering/huggingface/datasets/json/default-53829690f5b5842e/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 149.50it/s]
+07/20/2023 17:43:25 - INFO - __main__ - load dataset done.........
+100%|██████████| 2/2 [00:00<00:00, 168.87it/s]
+Offline mode: forcing local_files_only=True
+loading configuration file /home/wangran108/code/model_file/randengt5/config.json
+Model config MT5Config {
+  "_name_or_path": "/home/wangran108/code/model_file/randengt5",
+  "architectures": [
+    "MT5ForConditionalGeneration"
+  ],
+  "d_ff": 2816,
+  "d_kv": 64,
+  "d_model": 1024,
+  "decoder_start_token_id": 0,
+  "dense_act_fn": "gelu_new",
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "gated-gelu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "is_gated_act": true,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "mt5",
+  "num_decoder_layers": 24,
+  "num_heads": 16,
+  "num_layers": 24,
+  "output_past": true,
+  "pad_token_id": 0,
+  "relative_attention_max_distance": 128,
+  "relative_attention_num_buckets": 32,
+  "tie_word_embeddings": false,
+  "tokenizer_class": "T5Tokenizer",
+  "torch_dtype": "float16",
+  "transformers_version": "4.31.0",
+  "use_cache": true,
+  "vocab_size": 32601
+}
+
+Offline mode: forcing local_files_only=True
+Offline mode: forcing local_files_only=True
+loading file spiece.model
+loading file tokenizer.json
+loading file added_tokens.json
+loading file special_tokens_map.json
+loading file tokenizer_config.json
+You are using the legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This means that tokens that come after special tokens will not be properly handled. We recommend you to read the related pull request available at https://github.com/huggingface/transformers/pull/24565
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 236.33it/s]
+100%|██████████| 2/2 [00:00<00:00, 276.84it/s]
+Adding [CTSTART] to the vocabulary
+Adding [CTEND] to the vocabulary
+Adding [SEP] to the vocabulary
+Adding [KNSTART] to the vocabulary
+Adding [KNEND] to the vocabulary
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/transformers/convert_slow_tokenizer.py:470: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/transformers/convert_slow_tokenizer.py:470: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/transformers/convert_slow_tokenizer.py:470: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/transformers/convert_slow_tokenizer.py:470: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+07/20/2023 17:43:25 - INFO - __main__ - load model begin.........
+Offline mode: forcing local_files_only=True
+loading configuration file /home/wangran108/code/model_file/randengt5/config.json
+Model config MT5Config {
+  "_name_or_path": "/home/wangran108/code/model_file/randengt5",
+  "architectures": [
+    "MT5ForConditionalGeneration"
+  ],
+  "d_ff": 2816,
+  "d_kv": 64,
+  "d_model": 1024,
+  "decoder_start_token_id": 0,
+  "dense_act_fn": "gelu_new",
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "gated-gelu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "is_gated_act": true,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "mt5",
+  "num_decoder_layers": 24,
+  "num_heads": 16,
+  "num_layers": 24,
+  "output_past": true,
+  "pad_token_id": 0,
+  "relative_attention_max_distance": 128,
+  "relative_attention_num_buckets": 32,
+  "tie_word_embeddings": false,
+  "tokenizer_class": "T5Tokenizer",
+  "torch_dtype": "float16",
+  "transformers_version": "4.31.0",
+  "use_cache": true,
+  "vocab_size": 32601
+}
+
+Offline mode: forcing local_files_only=True
+loading weights file /home/wangran108/code/model_file/randengt5/pytorch_model.bin
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "decoder_start_token_id": 0,
+  "eos_token_id": 1,
+  "pad_token_id": 0,
+  "transformers_version": "4.31.0"
+}
+
+All model checkpoint weights were used when initializing MT5ForConditionalGeneration.
+
+All the weights of MT5ForConditionalGeneration were initialized from the model checkpoint at /home/wangran108/code/model_file/randengt5.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use MT5ForConditionalGeneration for predictions without further training.
+Generation config file not found, using a generation config created from the model config.
+07/20/2023 17:43:35 - INFO - __main__ - load model done.........
+07/20/2023 17:43:35 - INFO - __main__ - False
+07/20/2023 17:43:35 - INFO - __main__ - start preprocess_function .........
+07/20/2023 17:43:36 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /media/cfs/wangran108/question-answering/huggingface/datasets/json/default-53829690f5b5842e/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96/cache-b92f377435fbfcf5_*_of_00012.arrow
+07/20/2023 17:43:36 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /media/cfs/wangran108/question-answering/huggingface/datasets/json/default-53829690f5b5842e/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96/cache-2018a525f93f4128_*_of_00012.arrow
+07/20/2023 17:43:37 - INFO - __main__ - Sample 3692 of the training set: {'input_ids': [259, 12877, 267, 259, 25601, 408, 27146, 10279, 20043, 259, 7153, 267, 259, 8338, 267, 26896, 261, 26896, 261, 26896, 261, 26896, 261, 26896, 261, 2907, 19167, 1708, 4450, 4233, 13259, 8653, 11378, 766, 26856, 3948, 12359, 5898, 286, 25601, 267, 26896, 261, 2777, 13054, 4376, 3463, 408, 13054, 22446, 3086, 20509, 261, 3948, 408, 7222, 297, 8338, 267, 26896, 4376, 3463, 1539, 297, 26896, 261, 26896, 26896, 261, 19167, 1708, 4450, 5214, 2777, 13054, 30674, 13259, 8653, 408, 19424, 18232, 794, 28077, 5898, 261, 1480, 2664, 14155, 25255, 6973, 1835, 286, 25601, 267, 26896, 261, 785, 8318, 1852, 261, 2777, 297, 2907, 9188, 24932, 634, 1978, 5214, 3321, 286, 8338, 267, 17513, 297, 17513, 17513, 261, 29027, 30674, 261, 30674, 25384, 25384, 25255, 6973, 1835, 286, 25601, 267, 17513, 261, 2907, 11399, 21889, 2777, 1970, 19643, 16813, 3321, 297, 8338, 267, 26896, 1970, 19643, 297, 25601, 267, 709, 3726, 11378, 261, 22834, 1216, 16813, 9938, 885, 16813, 297, 8338, 267, 26896, 297, 17513, 1318, 261, 19167, 1837, 27146, 1539, 408, 7099, 4747, 18232, 1895, 14516, 5898, 286, 25601, 267, 3948, 3948, 7099, 4747, 297, 25330, 1773, 1182, 17705, 691, 297, 1], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 'labels': [259, 22834, 1216, 16813, 9938, 885, 16813, 1]}.
+/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/accelerate/accelerator.py:510: FutureWarning: The `use_fp16` property is deprecated and will be removed in version 1.0 of Accelerate use `Accelerator.mixed_precision == 'fp16'` instead.
+  warnings.warn(
+07/20/2023 17:43:37 - INFO - accelerate.accelerator - Since you passed both train and evaluation dataloader, `is_train_batch_min` (here True will decide the `train_batch_size` (4).
+/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/accelerate/accelerator.py:510: FutureWarning: The `use_fp16` property is deprecated and will be removed in version 1.0 of Accelerate use `Accelerator.mixed_precision == 'fp16'` instead.
+  warnings.warn(
+/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/accelerate/accelerator.py:510: FutureWarning: The `use_fp16` property is deprecated and will be removed in version 1.0 of Accelerate use `Accelerator.mixed_precision == 'fp16'` instead.
+  warnings.warn(
+/media/cfs/wangran108/.pylib/lib/python3.8/site-packages/accelerate/accelerator.py:510: FutureWarning: The `use_fp16` property is deprecated and will be removed in version 1.0 of Accelerate use `Accelerator.mixed_precision == 'fp16'` instead.
+  warnings.warn(
+Installed CUDA version 11.1 does not match the version torch was compiled with 11.7 but since the APIs are compatible, accepting this combination
+Installed CUDA version 11.1 does not match the version torch was compiled with 11.7 but since the APIs are compatible, accepting this combination
+Installed CUDA version 11.1 does not match the version torch was compiled with 11.7 but since the APIs are compatible, accepting this combination
+Installed CUDA version 11.1 does not match the version torch was compiled with 11.7 but since the APIs are compatible, accepting this combination
+Installed CUDA version 11.1 does not match the version torch was compiled with 11.7 but since the APIs are compatible, accepting this combination
+Using /media/cfs/wangran108/question-answering/torch_extensions/py38_cu117 as PyTorch extensions root...
+Installed CUDA version 11.1 does not match the version torch was compiled with 11.7 but since the APIs are compatible, accepting this combination
+Using /media/cfs/wangran108/question-answering/torch_extensions/py38_cu117 as PyTorch extensions root...
+Installed CUDA version 11.1 does not match the version torch was compiled with 11.7 but since the APIs are compatible, accepting this combination
+Using /media/cfs/wangran108/question-answering/torch_extensions/py38_cu117 as PyTorch extensions root...
+Installed CUDA version 11.1 does not match the version torch was compiled with 11.7 but since the APIs are compatible, accepting this combination
+Using /media/cfs/wangran108/question-answering/torch_extensions/py38_cu117 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /media/cfs/wangran108/question-answering/torch_extensions/py38_cu117/cpu_adam/build.ninja...
+Building extension module cpu_adam...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module cpu_adam...
+Time to load cpu_adam op: 4.429723262786865 seconds
+Loading extension module cpu_adam...
+Loading extension module cpu_adam...
+Time to load cpu_adam op: 4.478642702102661 seconds
+Time to load cpu_adam op: 4.4967427253723145 seconds
+Loading extension module cpu_adam...
+Time to load cpu_adam op: 4.488002300262451 seconds
+Adam Optimizer #0 is created with AVX2 arithmetic capability.
+Config: alpha=0.000050, betas=(0.900000, 0.999000), weight_decay=0.010000, adam_w=1
+Adam Optimizer #0 is created with AVX2 arithmetic capability.
+Config: alpha=0.000050, betas=(0.900000, 0.999000), weight_decay=0.010000, adam_w=1
+[2023-07-20 17:44:07,486] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.9.5, git-hash=unknown, git-branch=unknown
+Adam Optimizer #0 is created with AVX2 arithmetic capability.
+Config: alpha=0.000050, betas=(0.900000, 0.999000), weight_decay=0.010000, adam_w=1
+Adam Optimizer #0 is created with AVX2 arithmetic capability.
+Config: alpha=0.000050, betas=(0.900000, 0.999000), weight_decay=0.010000, adam_w=1
+07/20/2023 17:44:09 - INFO - torch.distributed.distributed_c10d - Added key: store_based_barrier_key:2 to store for rank: 1
+07/20/2023 17:44:09 - INFO - torch.distributed.distributed_c10d - Added key: store_based_barrier_key:2 to store for rank: 2
+07/20/2023 17:44:10 - INFO - torch.distributed.distributed_c10d - Added key: store_based_barrier_key:2 to store for rank: 3
+07/20/2023 17:44:10 - INFO - torch.distributed.distributed_c10d - Added key: store_based_barrier_key:2 to store for rank: 0
+07/20/2023 17:44:10 - INFO - torch.distributed.distributed_c10d - Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 4 nodes.
+07/20/2023 17:44:10 - INFO - torch.distributed.distributed_c10d - Rank 1: Completed store-based barrier for key:store_based_barrier_key:2 with 4 nodes.
+07/20/2023 17:44:10 - INFO - torch.distributed.distributed_c10d - Rank 2: Completed store-based barrier for key:store_based_barrier_key:2 with 4 nodes.
+07/20/2023 17:44:10 - INFO - torch.distributed.distributed_c10d - Rank 3: Completed store-based barrier for key:store_based_barrier_key:2 with 4 nodes.
+[2023-07-20 17:44:10,847] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2023-07-20 17:44:10,850] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the client Optimizer
+[2023-07-20 17:44:10,850] [INFO] [logging.py:96:log_dist] [Rank 0] Using client Optimizer as basic optimizer
+[2023-07-20 17:44:10,890] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = DeepSpeedCPUAdam
+[2023-07-20 17:44:10,890] [INFO] [utils.py:54:is_zero_supported_optimizer] Checking ZeRO support for optimizer=DeepSpeedCPUAdam type=<class 'deepspeed.ops.adam.cpu_adam.DeepSpeedCPUAdam'>
+[2023-07-20 17:44:10,890] [INFO] [logging.py:96:log_dist] [Rank 0] Creating torch.bfloat16 ZeRO stage 2 optimizer
+[2023-07-20 17:44:10,891] [INFO] [stage_1_and_2.py:133:__init__] Reduce bucket size 500,000,000
+[2023-07-20 17:44:10,891] [INFO] [stage_1_and_2.py:134:__init__] Allgather bucket size 500,000,000
+[2023-07-20 17:44:10,891] [INFO] [stage_1_and_2.py:135:__init__] CPU Offload: True
+[2023-07-20 17:44:10,891] [INFO] [stage_1_and_2.py:136:__init__] Round robin gradient partitioning: False
+Rank: 2 partition count [4, 4] and sizes[(195998208, False), (31488, False)] 
+Rank: 1 partition count [4, 4] and sizes[(195998208, False), (31488, False)] 
+Rank: 0 partition count [4, 4] and sizes[(195998208, False), (31488, False)] 
+Rank: 3 partition count [4, 4] and sizes[(195998208, False), (31488, False)] 
+[2023-07-20 17:44:15,342] [INFO] [utils.py:785:see_memory_usage] Before initializing optimizer states
+[2023-07-20 17:44:15,343] [INFO] [utils.py:786:see_memory_usage] MA 1.52 GB         Max_MA 1.52 GB         CA 1.53 GB         Max_CA 2 GB 
+[2023-07-20 17:44:15,343] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 46.52 GB, percent = 18.5%
+[2023-07-20 17:44:18,511] [INFO] [utils.py:785:see_memory_usage] After initializing optimizer states
+[2023-07-20 17:44:18,512] [INFO] [utils.py:786:see_memory_usage] MA 1.52 GB         Max_MA 1.52 GB         CA 1.53 GB         Max_CA 2 GB 
+[2023-07-20 17:44:18,512] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 54.44 GB, percent = 21.6%
+[2023-07-20 17:44:18,512] [INFO] [stage_1_and_2.py:488:__init__] optimizer state initialized
+[2023-07-20 17:44:18,658] [INFO] [utils.py:785:see_memory_usage] After initializing ZeRO optimizer
+[2023-07-20 17:44:18,659] [INFO] [utils.py:786:see_memory_usage] MA 1.52 GB         Max_MA 1.52 GB         CA 1.53 GB         Max_CA 2 GB 
+[2023-07-20 17:44:18,659] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 54.44 GB, percent = 21.6%
+[2023-07-20 17:44:18,666] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = DeepSpeedCPUAdam
+[2023-07-20 17:44:18,666] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+[2023-07-20 17:44:18,666] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = None
+[2023-07-20 17:44:18,666] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[5e-05, 5e-05], mom=[(0.9, 0.999), (0.9, 0.999)]
+[2023-07-20 17:44:18,668] [INFO] [config.py:960:print] DeepSpeedEngine configuration:
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   amp_enabled .................. False
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   amp_params ................... False
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   bfloat16_enabled ............. True
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   checkpoint_parallel_write_pipeline  False
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   checkpoint_tag_validation_enabled  True
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   checkpoint_tag_validation_fail  False
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7fca7c118e50>
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   communication_data_type ...... None
+[2023-07-20 17:44:18,669] [INFO] [config.py:964:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   curriculum_enabled_legacy .... False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   curriculum_params_legacy ..... False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   data_efficiency_enabled ...... False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   dataloader_drop_last ......... False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   disable_allgather ............ False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   dump_state ................... False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   dynamic_loss_scale_args ...... None
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   eigenvalue_enabled ........... False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   eigenvalue_gas_boundary_resolution  1
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   eigenvalue_layer_num ......... 0
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   eigenvalue_max_iter .......... 100
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   eigenvalue_stability ......... 1e-06
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   eigenvalue_tol ............... 0.01
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   eigenvalue_verbose ........... False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   elasticity_enabled ........... False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   fp16_auto_cast ............... None
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   fp16_enabled ................. False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   fp16_master_weights_and_gradients  False
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   global_rank .................. 0
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   grad_accum_dtype ............. None
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   gradient_accumulation_steps .. 1
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   gradient_clipping ............ 0.0
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   gradient_predivide_factor .... 1.0
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2023-07-20 17:44:18,670] [INFO] [config.py:964:print]   initial_dynamic_scale ........ 1
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   load_universal_checkpoint .... False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   loss_scale ................... 1.0
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   memory_breakdown ............. False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   mics_hierarchial_params_gather  False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   mics_shard_size .............. -1
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   optimizer_legacy_fusion ...... False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   optimizer_name ............... None
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   optimizer_params ............. None
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0}
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   pld_enabled .................. False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   pld_params ................... False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   prescale_gradients ........... False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   scheduler_name ............... None
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   scheduler_params ............. None
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   sparse_attention ............. None
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   sparse_gradients_enabled ..... False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   steps_per_print .............. inf
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   train_batch_size ............. 16
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   train_micro_batch_size_per_gpu  4
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   use_node_local_storage ....... False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   wall_clock_breakdown ......... False
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   world_size ................... 4
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   zero_allow_untested_optimizer  True
+[2023-07-20 17:44:18,671] [INFO] [config.py:964:print]   zero_config .................. stage=2 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500,000,000 allgather_partitions=True allgather_bucket_size=500,000,000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=DeepSpeedZeroOffloadParamConfig(device='cpu', nvme_path=None, buffer_count=5, buffer_size=100,000,000, max_in_cpu=1,000,000,000, pin_memory=False) offload_optimizer=DeepSpeedZeroOffloadOptimizerConfig(device='cpu', nvme_path=None, buffer_count=4, pin_memory=False, pipeline=False, pipeline_read=False, pipeline_write=False, fast_init=False) sub_group_size=1,000,000,000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50,000,000 param_persistence_threshold=100,000 model_persistence_threshold=sys.maxsize max_live_parameters=1,000,000,000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True
+[2023-07-20 17:44:18,672] [INFO] [config.py:964:print]   zero_enabled ................. True
+[2023-07-20 17:44:18,672] [INFO] [config.py:964:print]   zero_force_ds_cpu_optimizer .. True
+[2023-07-20 17:44:18,672] [INFO] [config.py:964:print]   zero_optimization_stage ...... 2
+[2023-07-20 17:44:18,672] [INFO] [config.py:950:print_user_config]   json = {
+    "train_batch_size": 16, 
+    "train_micro_batch_size_per_gpu": 4, 
+    "gradient_accumulation_steps": 1, 
+    "zero_optimization": {
+        "stage": 2, 
+        "offload_optimizer": {
+            "device": "cpu", 
+            "nvme_path": null
+        }, 
+        "offload_param": {
+            "device": "cpu", 
+            "nvme_path": null
+        }, 
+        "stage3_gather_16bit_weights_on_model_save": false
+    }, 
+    "steps_per_print": inf, 
+    "bf16": {
+        "enabled": true
+    }, 
+    "fp16": {
+        "enabled": false
+    }, 
+    "zero_allow_untested_optimizer": true
+}
+07/20/2023 17:44:19 - INFO - __main__ - get metric done.........
+07/20/2023 17:44:19 - INFO - __main__ - ***** Running training *****
+07/20/2023 17:44:19 - INFO - __main__ -   Num examples = 7268
+07/20/2023 17:44:19 - INFO - __main__ -   Num Epochs = 2
+07/20/2023 17:44:19 - INFO - __main__ -   Instantaneous batch size per device = 4
+07/20/2023 17:44:19 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 16
+07/20/2023 17:44:19 - INFO - __main__ -   Gradient Accumulation steps = 1
+07/20/2023 17:44:19 - INFO - __main__ -   Total optimization steps = 910
+  0%|          | 0/910 [00:00<?, ?it/s]You're using a T5TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  0%|          | 1/910 [00:03<54:56,  3.63s/it]07/20/2023 17:44:22 - INFO - __main__ - {'epoch': 0, 'step': 1, 'train_loss': 18.5}
+  0%|          | 2/910 [00:07<54:30,  3.60s/it]07/20/2023 17:44:26 - INFO - __main__ - {'epoch': 0, 'step': 2, 'train_loss': 18.4375}
+  0%|          | 3/910 [00:10<51:56,  3.44s/it]07/20/2023 17:44:29 - INFO - __main__ - {'epoch': 0, 'step': 3, 'train_loss': 16.479166666666668}
+  0%|          | 4/910 [00:13<50:22,  3.34s/it]07/20/2023 17:44:32 - INFO - __main__ - {'epoch': 0, 'step': 4, 'train_loss': 19.296875}
+  1%|          | 5/910 [00:16<46:13,  3.07s/it]07/20/2023 17:44:35 - INFO - __main__ - {'epoch': 0, 'step': 5, 'train_loss': 20.4375}
+  1%|          | 6/910 [00:18<44:39,  2.96s/it]07/20/2023 17:44:38 - INFO - __main__ - {'epoch': 0, 'step': 6, 'train_loss': 20.572916666666668}
+  1%|          | 7/910 [00:21<44:06,  2.93s/it]07/20/2023 17:44:40 - INFO - __main__ - {'epoch': 0, 'step': 7, 'train_loss': 19.598214285714285}
+  1%|          | 8/910 [00:25<47:42,  3.17s/it]07/20/2023 17:44:44 - INFO - __main__ - {'epoch': 0, 'step': 8, 'train_loss': 19.125}
+  1%|          | 9/910 [00:28<46:10,  3.08s/it]07/20/2023 17:44:47 - INFO - __main__ - {'epoch': 0, 'step': 9, 'train_loss': 19.13888888888889}
+  1%|          | 10/910 [00:31<43:56,  2.93s/it]07/20/2023 17:44:50 - INFO - __main__ - {'epoch': 0, 'step': 10, 'train_loss': 19.4}
+  1%|          | 11/910 [00:33<43:25,  2.90s/it]07/20/2023 17:44:52 - INFO - __main__ - {'epoch': 0, 'step': 11, 'train_loss': 18.97159090909091}
+  1%|▏         | 12/910 [00:36<41:51,  2.80s/it]07/20/2023 17:44:55 - INFO - __main__ - {'epoch': 0, 'step': 12, 'train_loss': 18.057291666666668}
+  1%|▏         | 13/910 [00:39<41:34,  2.78s/it]07/20/2023 17:44:58 - INFO - __main__ - {'epoch': 0, 'step': 13, 'train_loss': 17.504807692307693}
+  2%|▏         | 14/910 [00:42<42:27,  2.84s/it]07/20/2023 17:45:01 - INFO - __main__ - {'epoch': 0, 'step': 14, 'train_loss': 17.09375}
+  2%|▏         | 15/910 [00:44<41:03,  2.75s/it]07/20/2023 17:45:03 - INFO - __main__ - {'epoch': 0, 'step': 15, 'train_loss': 16.7875}
+  2%|▏         | 16/910 [00:47<40:32,  2.72s/it]07/20/2023 17:45:06 - INFO - __main__ - {'epoch': 0, 'step': 16, 'train_loss': 16.546875}
+  2%|▏         | 17/910 [00:50<42:00,  2.82s/it]07/20/2023 17:45:09 - INFO - __main__ - {'epoch': 0, 'step': 17, 'train_loss': 16.511029411764707}
+  2%|▏         | 18/910 [00:53<41:11,  2.77s/it]07/20/2023 17:45:12 - INFO - __main__ - {'epoch': 0, 'step': 18, 'train_loss': 16.21875}
+  2%|▏         | 19/910 [00:55<40:23,  2.72s/it]07/20/2023 17:45:14 - INFO - __main__ - {'epoch': 0, 'step': 19, 'train_loss': 16.4375}
+  2%|▏         | 20/910 [00:58<40:33,  2.73s/it]07/20/2023 17:45:17 - INFO - __main__ - {'epoch': 0, 'step': 20, 'train_loss': 16.28125}
+  2%|▏         | 21/910 [01:00<39:02,  2.63s/it]07/20/2023 17:45:19 - INFO - __main__ - {'epoch': 0, 'step': 21, 'train_loss': 15.9375}
+  2%|▏         | 22/910 [01:03<38:56,  2.63s/it]07/20/2023 17:45:22 - INFO - __main__ - {'epoch': 0, 'step': 22, 'train_loss': 15.801136363636363}
+  3%|▎         | 23/910 [01:06<39:00,  2.64s/it]07/20/2023 17:45:25 - INFO - __main__ - {'epoch': 0, 'step': 23, 'train_loss': 15.733695652173912}
+  3%|▎         | 24/910 [01:08<39:09,  2.65s/it]07/20/2023 17:45:27 - INFO - __main__ - {'epoch': 0, 'step': 24, 'train_loss': 15.638020833333334}
+  3%|▎         | 25/910 [01:11<39:14,  2.66s/it]07/20/2023 17:45:30 - INFO - __main__ - {'epoch': 0, 'step': 25, 'train_loss': 15.535}
+  3%|▎         | 26/910 [01:14<38:49,  2.64s/it]07/20/2023 17:45:33 - INFO - __main__ - {'epoch': 0, 'step': 26, 'train_loss': 15.548076923076923}
+  3%|▎         | 27/910 [01:16<38:30,  2.62s/it]07/20/2023 17:45:35 - INFO - __main__ - {'epoch': 0, 'step': 27, 'train_loss': 15.430555555555555}
+  3%|▎         | 28/910 [01:19<39:09,  2.66s/it]07/20/2023 17:45:38 - INFO - __main__ - {'epoch': 0, 'step': 28, 'train_loss': 15.174107142857142}
+  3%|▎         | 29/910 [01:22<39:01,  2.66s/it]07/20/2023 17:45:41 - INFO - __main__ - {'epoch': 0, 'step': 29, 'train_loss': 15.079741379310345}
+  3%|▎         | 30/910 [01:25<41:11,  2.81s/it]07/20/2023 17:45:44 - INFO - __main__ - {'epoch': 0, 'step': 30, 'train_loss': 14.947916666666666}
+  3%|▎         | 31/910 [01:28<42:07,  2.88s/it]07/20/2023 17:45:47 - INFO - __main__ - {'epoch': 0, 'step': 31, 'train_loss': 14.816532258064516}
+  4%|▎         | 32/910 [01:31<42:09,  2.88s/it]07/20/2023 17:45:50 - INFO - __main__ - {'epoch': 0, 'step': 32, 'train_loss': 14.755859375}
+  4%|▎         | 33/910 [01:33<41:03,  2.81s/it]07/20/2023 17:45:52 - INFO - __main__ - {'epoch': 0, 'step': 33, 'train_loss': 14.590909090909092}
+  4%|▎         | 34/910 [01:36<41:25,  2.84s/it]07/20/2023 17:45:55 - INFO - __main__ - {'epoch': 0, 'step': 34, 'train_loss': 14.53125}
+  4%|▍         | 35/910 [01:39<42:39,  2.93s/it]07/20/2023 17:45:58 - INFO - __main__ - {'epoch': 0, 'step': 35, 'train_loss': 14.4}
+  4%|▍         | 36/910 [01:42<41:49,  2.87s/it]07/20/2023 17:46:01 - INFO - __main__ - {'epoch': 0, 'step': 36, 'train_loss': 14.37326388888889}
+  4%|▍         | 37/910 [01:45<41:07,  2.83s/it]07/20/2023 17:46:04 - INFO - __main__ - {'epoch': 0, 'step': 37, 'train_loss': 14.33277027027027}
+  4%|▍         | 38/910 [01:48<42:13,  2.91s/it]07/20/2023 17:46:07 - INFO - __main__ - {'epoch': 0, 'step': 38, 'train_loss': 14.269736842105264}
+  4%|▍         | 39/910 [01:51<41:38,  2.87s/it]07/20/2023 17:46:10 - INFO - __main__ - {'epoch': 0, 'step': 39, 'train_loss': 14.267628205128204}
+  4%|▍         | 40/910 [01:53<41:14,  2.84s/it]07/20/2023 17:46:12 - INFO - __main__ - {'epoch': 0, 'step': 40, 'train_loss': 14.2578125}
+  5%|▍         | 41/910 [01:56<40:45,  2.81s/it]07/20/2023 17:46:15 - INFO - __main__ - {'epoch': 0, 'step': 41, 'train_loss': 14.207317073170731}
+  5%|▍         | 42/910 [01:59<39:27,  2.73s/it]07/20/2023 17:46:18 - INFO - __main__ - {'epoch': 0, 'step': 42, 'train_loss': 14.113095238095237}
+  5%|▍         | 43/910 [02:02<40:08,  2.78s/it]07/20/2023 17:46:21 - INFO - __main__ - {'epoch': 0, 'step': 43, 'train_loss': 13.956395348837209}
+  5%|▍         | 44/910 [02:04<39:55,  2.77s/it]07/20/2023 17:46:23 - INFO - __main__ - {'epoch': 0, 'step': 44, 'train_loss': 13.958806818181818}
+  5%|▍         | 45/910 [02:07<38:47,  2.69s/it]07/20/2023 17:46:26 - INFO - __main__ - {'epoch': 0, 'step': 45, 'train_loss': 13.829166666666667}
+  5%|▌         | 46/910 [02:10<39:42,  2.76s/it]07/20/2023 17:46:29 - INFO - __main__ - {'epoch': 0, 'step': 46, 'train_loss': 13.69633152173913}
+  5%|▌         | 47/910 [02:13<40:27,  2.81s/it]07/20/2023 17:46:32 - INFO - __main__ - {'epoch': 0, 'step': 47, 'train_loss': 13.580452127659575}
+  5%|▌         | 48/910 [02:15<38:45,  2.70s/it]07/20/2023 17:46:34 - INFO - __main__ - {'epoch': 0, 'step': 48, 'train_loss': 13.505859375}
+  5%|▌         | 49/910 [02:18<39:40,  2.76s/it]07/20/2023 17:46:37 - INFO - __main__ - {'epoch': 0, 'step': 49, 'train_loss': 13.38201530612245}
+  5%|▌         | 50/910 [02:21<40:34,  2.83s/it]07/20/2023 17:46:40 - INFO - __main__ - {'epoch': 0, 'step': 50, 'train_loss': 13.285625}
+  6%|▌         | 51/910 [02:24<40:11,  2.81s/it]07/20/2023 17:46:43 - INFO - __main__ - {'epoch': 0, 'step': 51, 'train_loss': 13.137254901960784}
+  6%|▌         | 52/910 [02:26<39:10,  2.74s/it]07/20/2023 17:46:45 - INFO - __main__ - {'epoch': 0, 'step': 52, 'train_loss': 13.022836538461538}
+  6%|▌         | 53/910 [02:29<40:51,  2.86s/it]07/20/2023 17:46:49 - INFO - __main__ - {'epoch': 0, 'step': 53, 'train_loss': 12.875}
+  6%|▌         | 54/910 [02:32<39:17,  2.75s/it]07/20/2023 17:46:51 - INFO - __main__ - {'epoch': 0, 'step': 54, 'train_loss': 12.747106481481481}
+  6%|▌         | 55/910 [02:35<38:36,  2.71s/it]07/20/2023 17:46:54 - INFO - __main__ - {'epoch': 0, 'step': 55, 'train_loss': 12.615340909090909}
+  6%|▌         | 56/910 [02:37<37:47,  2.66s/it]07/20/2023 17:46:56 - INFO - __main__ - {'epoch': 0, 'step': 56, 'train_loss': 12.477120535714286}
+  6%|▋         | 57/910 [02:40<37:34,  2.64s/it]07/20/2023 17:46:59 - INFO - __main__ - {'epoch': 0, 'step': 57, 'train_loss': 12.322916666666666}
+  6%|▋         | 58/910 [02:42<36:51,  2.60s/it]07/20/2023 17:47:01 - INFO - __main__ - {'epoch': 0, 'step': 58, 'train_loss': 12.171875}
+  6%|▋         | 59/910 [02:45<36:33,  2.58s/it]07/20/2023 17:47:04 - INFO - __main__ - {'epoch': 0, 'step': 59, 'train_loss': 12.029131355932204}
+  7%|▋         | 60/910 [02:48<37:35,  2.65s/it]07/20/2023 17:47:07 - INFO - __main__ - {'epoch': 0, 'step': 60, 'train_loss': 11.89453125}
+  7%|▋         | 61/910 [02:50<37:12,  2.63s/it]07/20/2023 17:47:09 - INFO - __main__ - {'epoch': 0, 'step': 61, 'train_loss': 11.72092725409836}
+  7%|▋         | 62/910 [02:53<36:52,  2.61s/it]07/20/2023 17:47:12 - INFO - __main__ - {'epoch': 0, 'step': 62, 'train_loss': 11.56350806451613}
+  7%|▋         | 63/910 [02:56<37:35,  2.66s/it]07/20/2023 17:47:15 - INFO - __main__ - {'epoch': 0, 'step': 63, 'train_loss': 11.42733134920635}
+  7%|▋         | 64/910 [02:58<37:48,  2.68s/it]07/20/2023 17:47:17 - INFO - __main__ - {'epoch': 0, 'step': 64, 'train_loss': 11.2724609375}
+  7%|▋         | 65/910 [03:02<42:38,  3.03s/it]07/20/2023 17:47:21 - INFO - __main__ - {'epoch': 0, 'step': 65, 'train_loss': 11.154086538461538}
+  7%|▋         | 66/910 [03:05<42:26,  3.02s/it]07/20/2023 17:47:24 - INFO - __main__ - {'epoch': 0, 'step': 66, 'train_loss': 11.02935606060606}
+  7%|▋         | 67/910 [03:08<40:48,  2.90s/it]07/20/2023 17:47:27 - INFO - __main__ - {'epoch': 0, 'step': 67, 'train_loss': 10.886893656716419}
+  7%|▋         | 68/910 [03:11<41:00,  2.92s/it]07/20/2023 17:47:30 - INFO - __main__ - {'epoch': 0, 'step': 68, 'train_loss': 10.762178308823529}
+  8%|▊         | 69/910 [03:13<39:40,  2.83s/it]07/20/2023 17:47:32 - INFO - __main__ - {'epoch': 0, 'step': 69, 'train_loss': 10.62986865942029}
+  8%|▊         | 70/910 [03:16<39:16,  2.81s/it]07/20/2023 17:47:35 - INFO - __main__ - {'epoch': 0, 'step': 70, 'train_loss': 10.508147321428572}
+  8%|▊         | 71/910 [03:19<38:41,  2.77s/it]07/20/2023 17:47:38 - INFO - __main__ - {'epoch': 0, 'step': 71, 'train_loss': 10.396016725352112}
+  8%|▊         | 72/910 [03:22<39:43,  2.84s/it]07/20/2023 17:47:41 - INFO - __main__ - {'epoch': 0, 'step': 72, 'train_loss': 10.294596354166666}
+  8%|▊         | 73/910 [03:24<38:52,  2.79s/it]07/20/2023 17:47:43 - INFO - __main__ - {'epoch': 0, 'step': 73, 'train_loss': 10.161119434931507}
+  8%|▊         | 74/910 [03:27<37:08,  2.67s/it]07/20/2023 17:47:46 - INFO - __main__ - {'epoch': 0, 'step': 74, 'train_loss': 10.05906883445946}
+  8%|▊         | 75/910 [03:29<36:30,  2.62s/it]07/20/2023 17:47:48 - INFO - __main__ - {'epoch': 0, 'step': 75, 'train_loss': 9.943802083333333}
+  8%|▊         | 76/910 [03:32<35:33,  2.56s/it]07/20/2023 17:47:51 - INFO - __main__ - {'epoch': 0, 'step': 76, 'train_loss': 9.833110608552632}
+  8%|▊         | 77/910 [03:34<35:45,  2.58s/it]07/20/2023 17:47:53 - INFO - __main__ - {'epoch': 0, 'step': 77, 'train_loss': 9.729657061688311}
+  9%|▊         | 78/910 [03:37<37:41,  2.72s/it]07/20/2023 17:47:56 - INFO - __main__ - {'epoch': 0, 'step': 78, 'train_loss': 9.61678685897436}
+  9%|▊         | 79/910 [03:41<39:41,  2.87s/it]07/20/2023 17:48:00 - INFO - __main__ - {'epoch': 0, 'step': 79, 'train_loss': 9.498491890822784}
+  9%|▉         | 80/910 [03:43<38:02,  2.75s/it]07/20/2023 17:48:02 - INFO - __main__ - {'epoch': 0, 'step': 80, 'train_loss': 9.3952880859375}
+  9%|▉         | 81/910 [03:46<37:15,  2.70s/it]07/20/2023 17:48:05 - INFO - __main__ - {'epoch': 0, 'step': 81, 'train_loss': 9.289038387345679}
+  9%|▉         | 82/910 [03:48<36:12,  2.62s/it]07/20/2023 17:48:07 - INFO - __main__ - {'epoch': 0, 'step': 82, 'train_loss': 9.186475800304878}
+  9%|▉         | 83/910 [03:51<37:06,  2.69s/it]07/20/2023 17:48:10 - INFO - __main__ - {'epoch': 0, 'step': 83, 'train_loss': 9.07894860692771}
+  9%|▉         | 84/910 [03:55<41:40,  3.03s/it]07/20/2023 17:48:14 - INFO - __main__ - {'epoch': 0, 'step': 84, 'train_loss': 8.987234933035714}
+  9%|▉         | 85/910 [03:57<39:20,  2.86s/it]07/20/2023 17:48:16 - INFO - __main__ - {'epoch': 0, 'step': 85, 'train_loss': 8.890372242647059}
+  9%|▉         | 86/910 [04:00<37:13,  2.71s/it]07/20/2023 17:48:19 - INFO - __main__ - {'epoch': 0, 'step': 86, 'train_loss': 8.792991460755815}
+ 10%|▉         | 87/910 [04:02<36:59,  2.70s/it]07/20/2023 17:48:21 - INFO - __main__ - {'epoch': 0, 'step': 87, 'train_loss': 8.698477909482758}
+ 10%|▉         | 88/910 [04:05<37:42,  2.75s/it]07/20/2023 17:48:24 - INFO - __main__ - {'epoch': 0, 'step': 88, 'train_loss': 8.605801669034092}
+ 10%|▉         | 89/910 [04:08<36:40,  2.68s/it]07/20/2023 17:48:27 - INFO - __main__ - {'epoch': 0, 'step': 89, 'train_loss': 8.514944698033707}
+ 10%|▉         | 90/910 [04:10<35:01,  2.56s/it]07/20/2023 17:48:29 - INFO - __main__ - {'epoch': 0, 'step': 90, 'train_loss': 8.423220486111111}
+ 10%|█         | 91/910 [04:14<39:08,  2.87s/it]07/20/2023 17:48:33 - INFO - __main__ - {'epoch': 0, 'step': 91, 'train_loss': 8.344393887362637}
+ 10%|█         | 92/910 [04:16<37:43,  2.77s/it]07/20/2023 17:48:35 - INFO - __main__ - {'epoch': 0, 'step': 92, 'train_loss': 8.257239300271738}
+ 10%|█         | 93/910 [04:18<36:23,  2.67s/it]07/20/2023 17:48:38 - INFO - __main__ - {'epoch': 0, 'step': 93, 'train_loss': 8.182396673387096}
+ 10%|█         | 94/910 [04:21<35:07,  2.58s/it]07/20/2023 17:48:40 - INFO - __main__ - {'epoch': 0, 'step': 94, 'train_loss': 8.101915724734043}
+ 10%|█         | 95/910 [04:23<34:39,  2.55s/it]07/20/2023 17:48:42 - INFO - __main__ - {'epoch': 0, 'step': 95, 'train_loss': 8.029872532894737}
+ 11%|█         | 96/910 [04:26<35:14,  2.60s/it]07/20/2023 17:48:45 - INFO - __main__ - {'epoch': 0, 'step': 96, 'train_loss': 7.95343017578125}
+ 11%|█         | 97/910 [04:29<34:40,  2.56s/it]07/20/2023 17:48:48 - INFO - __main__ - {'epoch': 0, 'step': 97, 'train_loss': 7.875221488402062}
+ 11%|█         | 98/910 [04:31<34:05,  2.52s/it]07/20/2023 17:48:50 - INFO - __main__ - {'epoch': 0, 'step': 98, 'train_loss': 7.806421396683674}
+ 11%|█         | 99/910 [04:34<35:30,  2.63s/it]07/20/2023 17:48:53 - INFO - __main__ - {'epoch': 0, 'step': 99, 'train_loss': 7.732974273989899}
+ 11%|█         | 100/910 [04:37<35:48,  2.65s/it]07/20/2023 17:48:56 - INFO - __main__ - {'epoch': 0, 'step': 100, 'train_loss': 7.6594921875}
+ 11%|█         | 101/910 [04:39<35:10,  2.61s/it]07/20/2023 17:48:58 - INFO - __main__ - {'epoch': 0, 'step': 101, 'train_loss': 7.587387840346534}
+ 11%|█         | 102/910 [04:42<37:04,  2.75s/it]07/20/2023 17:49:01 - INFO - __main__ - {'epoch': 0, 'step': 102, 'train_loss': 7.529239430147059}
+ 11%|█▏        | 103/910 [04:45<36:10,  2.69s/it]07/20/2023 17:49:04 - INFO - __main__ - {'epoch': 0, 'step': 103, 'train_loss': 7.457372572815534}
+ 11%|█▏        | 104/910 [04:47<35:49,  2.67s/it]07/20/2023 17:49:06 - INFO - __main__ - {'epoch': 0, 'step': 104, 'train_loss': 7.3872821514423075}
+ 12%|█▏        | 105/910 [04:50<35:27,  2.64s/it]07/20/2023 17:49:09 - INFO - __main__ - {'epoch': 0, 'step': 105, 'train_loss': 7.319921875}
+ 12%|█▏        | 106/910 [04:53<35:39,  2.66s/it]07/20/2023 17:49:12 - INFO - __main__ - {'epoch': 0, 'step': 106, 'train_loss': 7.25501179245283}
+ 12%|█▏        | 107/910 [04:55<35:11,  2.63s/it]07/20/2023 17:49:14 - INFO - __main__ - {'epoch': 0, 'step': 107, 'train_loss': 7.197429906542056}
+ 12%|█▏        | 108/910 [04:58<34:40,  2.59s/it]07/20/2023 17:49:17 - INFO - __main__ - {'epoch': 0, 'step': 108, 'train_loss': 7.132921006944445}
+ 12%|█▏        | 109/910 [05:00<34:46,  2.61s/it]07/20/2023 17:49:19 - INFO - __main__ - {'epoch': 0, 'step': 109, 'train_loss': 7.06889693233945}
+ 12%|█▏        | 110/910 [05:03<33:15,  2.49s/it]07/20/2023 17:49:22 - INFO - __main__ - {'epoch': 0, 'step': 110, 'train_loss': 7.007084517045454}
+ 12%|█▏        | 111/910 [05:05<34:30,  2.59s/it]07/20/2023 17:49:24 - INFO - __main__ - {'epoch': 0, 'step': 111, 'train_loss': 6.948356559684685}
+ 12%|█▏        | 112/910 [05:08<35:14,  2.65s/it]07/20/2023 17:49:27 - INFO - __main__ - {'epoch': 0, 'step': 112, 'train_loss': 6.891305106026786}
+ 12%|█▏        | 113/910 [05:11<34:30,  2.60s/it]07/20/2023 17:49:30 - INFO - __main__ - {'epoch': 0, 'step': 113, 'train_loss': 6.835574529867257}
+ 13%|█▎        | 114/910 [05:13<35:16,  2.66s/it]07/20/2023 17:49:32 - INFO - __main__ - {'epoch': 0, 'step': 114, 'train_loss': 6.779262609649122}
+ 13%|█▎        | 115/910 [05:16<34:57,  2.64s/it]07/20/2023 17:49:35 - INFO - __main__ - {'epoch': 0, 'step': 115, 'train_loss': 6.729891304347826}
+ 13%|█▎        | 116/910 [05:18<34:18,  2.59s/it]07/20/2023 17:49:38 - INFO - __main__ - {'epoch': 0, 'step': 116, 'train_loss': 6.675158270474138}
+ 13%|█▎        | 117/910 [05:22<36:07,  2.73s/it]07/20/2023 17:49:41 - INFO - __main__ - {'epoch': 0, 'step': 117, 'train_loss': 6.621127136752137}
+ 13%|█▎        | 118/910 [05:24<34:44,  2.63s/it]07/20/2023 17:49:43 - INFO - __main__ - {'epoch': 0, 'step': 118, 'train_loss': 6.572927701271187}
+ 13%|█▎        | 119/910 [05:26<34:24,  2.61s/it]07/20/2023 17:49:46 - INFO - __main__ - {'epoch': 0, 'step': 119, 'train_loss': 6.532201943277311}
+ 13%|█▎        | 120/910 [05:29<34:24,  2.61s/it]07/20/2023 17:49:48 - INFO - __main__ - {'epoch': 0, 'step': 120, 'train_loss': 6.480712890625}
+ 13%|█▎        | 121/910 [05:32<34:12,  2.60s/it]07/20/2023 17:49:51 - INFO - __main__ - {'epoch': 0, 'step': 121, 'train_loss': 6.4353208935950414}
+ 13%|█▎        | 122/910 [05:34<33:52,  2.58s/it]07/20/2023 17:49:53 - INFO - __main__ - {'epoch': 0, 'step': 122, 'train_loss': 6.38628650102459}
+ 14%|█▎        | 123/910 [05:37<34:10,  2.61s/it]07/20/2023 17:49:56 - INFO - __main__ - {'epoch': 0, 'step': 123, 'train_loss': 6.341479293699187}
+ 14%|█▎        | 124/910 [05:39<33:38,  2.57s/it]07/20/2023 17:49:58 - INFO - __main__ - {'epoch': 0, 'step': 124, 'train_loss': 6.303632182459677}
+ 14%|█▎        | 125/910 [05:42<33:41,  2.58s/it]07/20/2023 17:50:01 - INFO - __main__ - {'epoch': 0, 'step': 125, 'train_loss': 6.264453125}
+ 14%|█▍        | 126/910 [05:45<33:36,  2.57s/it]07/20/2023 17:50:04 - INFO - __main__ - {'epoch': 0, 'step': 126, 'train_loss': 6.226950024801587}
+ 14%|█▍        | 127/910 [05:47<35:03,  2.69s/it]07/20/2023 17:50:07 - INFO - __main__ - {'epoch': 0, 'step': 127, 'train_loss': 6.185085506889764}
+ 14%|█▍        | 128/910 [05:50<36:07,  2.77s/it]07/20/2023 17:50:09 - INFO - __main__ - {'epoch': 0, 'step': 128, 'train_loss': 6.1392974853515625}
+ 14%|█▍        | 129/910 [05:53<35:13,  2.71s/it]07/20/2023 17:50:12 - INFO - __main__ - {'epoch': 0, 'step': 129, 'train_loss': 6.095733406007752}
+ 14%|█▍        | 130/910 [05:56<34:58,  2.69s/it]07/20/2023 17:50:15 - INFO - __main__ - {'epoch': 0, 'step': 130, 'train_loss': 6.0520432692307695}
+ 14%|█▍        | 131/910 [05:58<34:38,  2.67s/it]07/20/2023 17:50:17 - INFO - __main__ - {'epoch': 0, 'step': 131, 'train_loss': 6.016161736641221}
+ 15%|█▍        | 132/910 [06:01<34:14,  2.64s/it]07/20/2023 17:50:20 - INFO - __main__ - {'epoch': 0, 'step': 132, 'train_loss': 5.972552675189394}
+ 15%|█▍        | 133/910 [06:03<34:10,  2.64s/it]07/20/2023 17:50:23 - INFO - __main__ - {'epoch': 0, 'step': 133, 'train_loss': 5.928303424577067}
+ 15%|█▍        | 134/910 [06:06<33:35,  2.60s/it]07/20/2023 17:50:25 - INFO - __main__ - {'epoch': 0, 'step': 134, 'train_loss': 5.8862195370802235}
+ 15%|█▍        | 135/910 [06:08<33:00,  2.56s/it]07/20/2023 17:50:28 - INFO - __main__ - {'epoch': 0, 'step': 135, 'train_loss': 5.843529369212963}
+ 15%|█▍        | 136/910 [06:11<32:49,  2.55s/it]07/20/2023 17:50:30 - INFO - __main__ - {'epoch': 0, 'step': 136, 'train_loss': 5.803219065946691}
+ 15%|█▌        | 137/910 [06:14<33:53,  2.63s/it]07/20/2023 17:50:33 - INFO - __main__ - {'epoch': 0, 'step': 137, 'train_loss': 5.76622020415146}
+ 15%|█▌        | 138/910 [06:17<36:25,  2.83s/it]07/20/2023 17:50:36 - INFO - __main__ - {'epoch': 0, 'step': 138, 'train_loss': 5.726714645606884}
+ 15%|█▌        | 139/910 [06:21<39:07,  3.04s/it]07/20/2023 17:50:40 - INFO - __main__ - {'epoch': 0, 'step': 139, 'train_loss': 5.689758739883094}
+ 15%|█▌        | 140/910 [06:23<37:40,  2.94s/it]07/20/2023 17:50:42 - INFO - __main__ - {'epoch': 0, 'step': 140, 'train_loss': 5.653916713169643}
+ 15%|█▌        | 141/910 [06:26<36:21,  2.84s/it]07/20/2023 17:50:45 - INFO - __main__ - {'epoch': 0, 'step': 141, 'train_loss': 5.621408881870567}
+ 16%|█▌        | 142/910 [06:29<36:26,  2.85s/it]07/20/2023 17:50:48 - INFO - __main__ - {'epoch': 0, 'step': 142, 'train_loss': 5.582818689480634}
+ 16%|█▌        | 143/910 [06:31<35:20,  2.76s/it]07/20/2023 17:50:50 - INFO - __main__ - {'epoch': 0, 'step': 143, 'train_loss': 5.545594542176573}
+ 16%|█▌        | 144/910 [06:34<34:01,  2.66s/it]07/20/2023 17:50:53 - INFO - __main__ - {'epoch': 0, 'step': 144, 'train_loss': 5.508792453342014}
+ 16%|█▌        | 145/910 [06:37<34:27,  2.70s/it]07/20/2023 17:50:56 - INFO - __main__ - {'epoch': 0, 'step': 145, 'train_loss': 5.475676858836207}
+ 16%|█▌        | 146/910 [06:39<33:50,  2.66s/it]07/20/2023 17:50:58 - INFO - __main__ - {'epoch': 0, 'step': 146, 'train_loss': 5.444352659460616}
+ 16%|█▌        | 147/910 [06:42<34:00,  2.67s/it]07/20/2023 17:51:01 - INFO - __main__ - {'epoch': 0, 'step': 147, 'train_loss': 5.41037215667517}
+ 16%|█▋        | 148/910 [06:44<32:32,  2.56s/it]07/20/2023 17:51:03 - INFO - __main__ - {'epoch': 0, 'step': 148, 'train_loss': 5.375808303420608}
+ 16%|█▋        | 149/910 [06:47<33:00,  2.60s/it]07/20/2023 17:51:06 - INFO - __main__ - {'epoch': 0, 'step': 149, 'train_loss': 5.341852584941275}
+ 16%|█▋        | 150/910 [06:49<32:28,  2.56s/it]07/20/2023 17:51:08 - INFO - __main__ - {'epoch': 0, 'step': 150, 'train_loss': 5.310068359375}
+ 17%|█▋        | 151/910 [06:52<32:49,  2.60s/it]07/20/2023 17:51:11 - INFO - __main__ - {'epoch': 0, 'step': 151, 'train_loss': 5.283956565604305}
+ 17%|█▋        | 152/910 [06:55<32:33,  2.58s/it]07/20/2023 17:51:14 - INFO - __main__ - {'epoch': 0, 'step': 152, 'train_loss': 5.253793816817434}
+ 17%|█▋        | 153/910 [06:57<33:32,  2.66s/it]07/20/2023 17:51:16 - INFO - __main__ - {'epoch': 0, 'step': 153, 'train_loss': 5.220821206086601}
+ 17%|█▋        | 154/910 [07:00<32:25,  2.57s/it]07/20/2023 17:51:19 - INFO - __main__ - {'epoch': 0, 'step': 154, 'train_loss': 5.1883148589691555}
+ 17%|█▋        | 155/910 [07:03<33:30,  2.66s/it]07/20/2023 17:51:22 - INFO - __main__ - {'epoch': 0, 'step': 155, 'train_loss': 5.155465599798387}
+ 17%|█▋        | 156/910 [07:05<33:28,  2.66s/it]07/20/2023 17:51:24 - INFO - __main__ - {'epoch': 0, 'step': 156, 'train_loss': 5.125998472556089}
+ 17%|█▋        | 157/910 [07:08<32:53,  2.62s/it]07/20/2023 17:51:27 - INFO - __main__ - {'epoch': 0, 'step': 157, 'train_loss': 5.097951706807325}
+ 17%|█▋        | 158/910 [07:10<32:17,  2.58s/it]07/20/2023 17:51:29 - INFO - __main__ - {'epoch': 0, 'step': 158, 'train_loss': 5.066409340387659}
+ 17%|█▋        | 159/910 [07:13<32:03,  2.56s/it]07/20/2023 17:51:32 - INFO - __main__ - {'epoch': 0, 'step': 159, 'train_loss': 5.036461404284591}
+ 18%|█▊        | 160/910 [07:15<31:31,  2.52s/it]07/20/2023 17:51:34 - INFO - __main__ - {'epoch': 0, 'step': 160, 'train_loss': 5.012014770507813}
+ 18%|█▊        | 161/910 [07:18<32:31,  2.61s/it]07/20/2023 17:51:37 - INFO - __main__ - {'epoch': 0, 'step': 161, 'train_loss': 4.982849500194099}
+ 18%|█▊        | 162/910 [07:21<32:51,  2.64s/it]07/20/2023 17:51:40 - INFO - __main__ - {'epoch': 0, 'step': 162, 'train_loss': 4.95410457658179}
+ 18%|█▊        | 163/910 [07:23<32:31,  2.61s/it]07/20/2023 17:51:42 - INFO - __main__ - {'epoch': 0, 'step': 163, 'train_loss': 4.9273299702837425}
+ 18%|█▊        | 164/910 [07:26<32:17,  2.60s/it]07/20/2023 17:51:45 - INFO - __main__ - {'epoch': 0, 'step': 164, 'train_loss': 4.8992860375381095}
+ 18%|█▊        | 165/910 [07:28<31:50,  2.56s/it]07/20/2023 17:51:47 - INFO - __main__ - {'epoch': 0, 'step': 165, 'train_loss': 4.87099609375}
+ 18%|█▊        | 166/910 [07:31<31:51,  2.57s/it]07/20/2023 17:51:50 - INFO - __main__ - {'epoch': 0, 'step': 166, 'train_loss': 4.847370929028615}
+ 18%|█▊        | 167/910 [07:34<33:54,  2.74s/it]07/20/2023 17:51:53 - INFO - __main__ - {'epoch': 0, 'step': 167, 'train_loss': 4.820216013285928}
+ 18%|█▊        | 168/910 [07:36<32:42,  2.64s/it]07/20/2023 17:51:56 - INFO - __main__ - {'epoch': 0, 'step': 168, 'train_loss': 4.793826148623512}
+ 19%|█▊        | 169/910 [07:39<32:08,  2.60s/it]07/20/2023 17:51:58 - INFO - __main__ - {'epoch': 0, 'step': 169, 'train_loss': 4.766448432877219}
+ 19%|█▊        | 170/910 [07:42<32:10,  2.61s/it]07/20/2023 17:52:01 - INFO - __main__ - {'epoch': 0, 'step': 170, 'train_loss': 4.7405014935661764}
+ 19%|█▉        | 171/910 [07:45<33:38,  2.73s/it]07/20/2023 17:52:04 - INFO - __main__ - {'epoch': 0, 'step': 171, 'train_loss': 4.713721559758772}
+ 19%|█▉        | 172/910 [07:47<33:17,  2.71s/it]07/20/2023 17:52:06 - INFO - __main__ - {'epoch': 0, 'step': 172, 'train_loss': 4.6949462890625}
+ 19%|█▉        | 173/910 [07:50<32:27,  2.64s/it]07/20/2023 17:52:09 - INFO - __main__ - {'epoch': 0, 'step': 173, 'train_loss': 4.670325483200867}
+ 19%|█▉        | 174/910 [07:53<33:07,  2.70s/it]07/20/2023 17:52:12 - INFO - __main__ - {'epoch': 0, 'step': 174, 'train_loss': 4.653676701688219}
+ 19%|█▉        | 175/910 [07:55<33:09,  2.71s/it]07/20/2023 17:52:14 - INFO - __main__ - {'epoch': 0, 'step': 175, 'train_loss': 4.628657924107143}
+ 19%|█▉        | 176/910 [07:58<34:34,  2.83s/it]07/20/2023 17:52:17 - INFO - __main__ - {'epoch': 0, 'step': 176, 'train_loss': 4.604700261896307}
+ 19%|█▉        | 177/910 [08:01<33:30,  2.74s/it]07/20/2023 17:52:20 - INFO - __main__ - {'epoch': 0, 'step': 177, 'train_loss': 4.581498830331921}
+ 20%|█▉        | 178/910 [08:03<31:48,  2.61s/it]07/20/2023 17:52:22 - INFO - __main__ - {'epoch': 0, 'step': 178, 'train_loss': 4.559885775105337}
+ 20%|█▉        | 179/910 [08:06<31:29,  2.58s/it]07/20/2023 17:52:25 - INFO - __main__ - {'epoch': 0, 'step': 179, 'train_loss': 4.538448738652234}
+ 20%|█▉        | 180/910 [08:08<31:14,  2.57s/it]07/20/2023 17:52:27 - INFO - __main__ - {'epoch': 0, 'step': 180, 'train_loss': 4.516598849826389}
+ 20%|█▉        | 181/910 [08:11<32:00,  2.63s/it]07/20/2023 17:52:30 - INFO - __main__ - {'epoch': 0, 'step': 181, 'train_loss': 4.496414774689226}
+ 20%|██        | 182/910 [08:14<31:24,  2.59s/it]07/20/2023 17:52:33 - INFO - __main__ - {'epoch': 0, 'step': 182, 'train_loss': 4.477332481971154}
+ 20%|██        | 183/910 [08:16<32:15,  2.66s/it]07/20/2023 17:52:35 - INFO - __main__ - {'epoch': 0, 'step': 183, 'train_loss': 4.458586812670765}
+ 20%|██        | 184/910 [08:19<31:27,  2.60s/it]07/20/2023 17:52:38 - INFO - __main__ - {'epoch': 0, 'step': 184, 'train_loss': 4.435820206351902}
+ 20%|██        | 185/910 [08:22<32:20,  2.68s/it]07/20/2023 17:52:41 - INFO - __main__ - {'epoch': 0, 'step': 185, 'train_loss': 4.413479201858108}
+ 20%|██        | 186/910 [08:24<32:27,  2.69s/it]07/20/2023 17:52:44 - INFO - __main__ - {'epoch': 0, 'step': 186, 'train_loss': 4.394518124159946}
+ 21%|██        | 187/910 [08:27<32:09,  2.67s/it]07/20/2023 17:52:46 - INFO - __main__ - {'epoch': 0, 'step': 187, 'train_loss': 4.371322223846925}
+ 21%|██        | 188/910 [08:31<35:51,  2.98s/it]07/20/2023 17:52:50 - INFO - __main__ - {'epoch': 0, 'step': 188, 'train_loss': 4.349254851645612}
+ 21%|██        | 189/910 [08:33<34:05,  2.84s/it]07/20/2023 17:52:52 - INFO - __main__ - {'epoch': 0, 'step': 189, 'train_loss': 4.326919797867063}
+ 21%|██        | 190/910 [08:36<34:41,  2.89s/it]07/20/2023 17:52:55 - INFO - __main__ - {'epoch': 0, 'step': 190, 'train_loss': 4.307374331825658}
+ 21%|██        | 191/910 [08:39<34:38,  2.89s/it]07/20/2023 17:52:58 - INFO - __main__ - {'epoch': 0, 'step': 191, 'train_loss': 4.286428082051701}
+ 21%|██        | 192/910 [08:42<33:49,  2.83s/it]07/20/2023 17:53:01 - INFO - __main__ - {'epoch': 0, 'step': 192, 'train_loss': 4.264947255452474}
+ 21%|██        | 193/910 [08:45<34:01,  2.85s/it]07/20/2023 17:53:04 - INFO - __main__ - {'epoch': 0, 'step': 193, 'train_loss': 4.2521997955796635}
+ 21%|██▏       | 194/910 [08:47<33:27,  2.80s/it]07/20/2023 17:53:07 - INFO - __main__ - {'epoch': 0, 'step': 194, 'train_loss': 4.230875231556056}
+ 21%|██▏       | 195/910 [08:51<37:10,  3.12s/it]07/20/2023 17:53:10 - INFO - __main__ - {'epoch': 0, 'step': 195, 'train_loss': 4.215468499599359}
+ 22%|██▏       | 196/910 [08:54<36:12,  3.04s/it]07/20/2023 17:53:13 - INFO - __main__ - {'epoch': 0, 'step': 196, 'train_loss': 4.195415886080995}
+ 22%|██▏       | 197/910 [08:57<35:06,  2.96s/it]07/20/2023 17:53:16 - INFO - __main__ - {'epoch': 0, 'step': 197, 'train_loss': 4.175527195034898}
+ 22%|██▏       | 198/910 [09:00<34:34,  2.91s/it]07/20/2023 17:53:19 - INFO - __main__ - {'epoch': 0, 'step': 198, 'train_loss': 4.155518811158459}
+ 22%|██▏       | 199/910 [09:02<33:27,  2.82s/it]07/20/2023 17:53:21 - INFO - __main__ - {'epoch': 0, 'step': 199, 'train_loss': 4.136599746780779}
+ 22%|██▏       | 200/910 [09:05<34:16,  2.90s/it]07/20/2023 17:53:24 - INFO - __main__ - {'epoch': 0, 'step': 200, 'train_loss': 4.116741943359375}
+ 22%|██▏       | 201/910 [09:08<32:42,  2.77s/it]07/20/2023 17:53:27 - INFO - __main__ - {'epoch': 0, 'step': 201, 'train_loss': 4.09898141130286}
+ 22%|██▏       | 202/910 [09:10<31:42,  2.69s/it]07/20/2023 17:53:29 - INFO - __main__ - {'epoch': 0, 'step': 202, 'train_loss': 4.082170240949877}
+ 22%|██▏       | 203/910 [09:13<31:00,  2.63s/it]07/20/2023 17:53:32 - INFO - __main__ - {'epoch': 0, 'step': 203, 'train_loss': 4.066159704048645}
+ 22%|██▏       | 204/910 [09:16<32:32,  2.77s/it]07/20/2023 17:53:35 - INFO - __main__ - {'epoch': 0, 'step': 204, 'train_loss': 4.046529134114583}
+ 23%|██▎       | 205/910 [09:19<33:25,  2.84s/it]07/20/2023 17:53:38 - INFO - __main__ - {'epoch': 0, 'step': 205, 'train_loss': 4.030524723704269}
+ 23%|██▎       | 206/910 [09:22<34:18,  2.92s/it]07/20/2023 17:53:41 - INFO - __main__ - {'epoch': 0, 'step': 206, 'train_loss': 4.012760495676578}
+ 23%|██▎       | 207/910 [09:25<33:25,  2.85s/it]07/20/2023 17:53:44 - INFO - __main__ - {'epoch': 0, 'step': 207, 'train_loss': 3.994549884888285}
+ 23%|██▎       | 208/910 [09:27<32:14,  2.76s/it]07/20/2023 17:53:46 - INFO - __main__ - {'epoch': 0, 'step': 208, 'train_loss': 3.979552048903245}
+ 23%|██▎       | 209/910 [09:30<31:29,  2.70s/it]07/20/2023 17:53:49 - INFO - __main__ - {'epoch': 0, 'step': 209, 'train_loss': 3.9612540651166266}
+ 23%|██▎       | 210/910 [09:33<32:15,  2.76s/it]07/20/2023 17:53:52 - INFO - __main__ - {'epoch': 0, 'step': 210, 'train_loss': 3.9436744326636903}
+ 23%|██▎       | 211/910 [09:36<32:40,  2.80s/it]07/20/2023 17:53:55 - INFO - __main__ - {'epoch': 0, 'step': 211, 'train_loss': 3.9255556224081753}
+ 23%|██▎       | 212/910 [09:39<33:18,  2.86s/it]07/20/2023 17:53:58 - INFO - __main__ - {'epoch': 0, 'step': 212, 'train_loss': 3.90777587890625}
+ 23%|██▎       | 213/910 [09:42<33:58,  2.92s/it]07/20/2023 17:54:01 - INFO - __main__ - {'epoch': 0, 'step': 213, 'train_loss': 3.893647529709507}
+ 24%|██▎       | 214/910 [09:45<33:30,  2.89s/it]07/20/2023 17:54:04 - INFO - __main__ - {'epoch': 0, 'step': 214, 'train_loss': 3.876288012923481}
+ 24%|██▎       | 215/910 [09:47<32:28,  2.80s/it]07/20/2023 17:54:06 - INFO - __main__ - {'epoch': 0, 'step': 215, 'train_loss': 3.859089980014535}
+ 24%|██▎       | 216/910 [09:50<31:01,  2.68s/it]07/20/2023 17:54:09 - INFO - __main__ - {'epoch': 0, 'step': 216, 'train_loss': 3.8439726652922452}
+ 24%|██▍       | 217/910 [09:53<31:47,  2.75s/it]07/20/2023 17:54:12 - INFO - __main__ - {'epoch': 0, 'step': 217, 'train_loss': 3.828076621903802}
+ 24%|██▍       | 218/910 [09:55<31:41,  2.75s/it]07/20/2023 17:54:14 - INFO - __main__ - {'epoch': 0, 'step': 218, 'train_loss': 3.811134828340023}
+ 24%|██▍       | 219/910 [09:58<31:39,  2.75s/it]07/20/2023 17:54:17 - INFO - __main__ - {'epoch': 0, 'step': 219, 'train_loss': 3.7957568582334473}
+ 24%|██▍       | 220/910 [10:01<32:33,  2.83s/it]07/20/2023 17:54:20 - INFO - __main__ - {'epoch': 0, 'step': 220, 'train_loss': 3.7797285600142048}
+ 24%|██▍       | 221/910 [10:04<31:58,  2.78s/it]07/20/2023 17:54:23 - INFO - __main__ - {'epoch': 0, 'step': 221, 'train_loss': 3.7663198617788463}
+ 24%|██▍       | 222/910 [10:06<31:11,  2.72s/it]07/20/2023 17:54:25 - INFO - __main__ - {'epoch': 0, 'step': 222, 'train_loss': 3.7516419006897523}
+ 25%|██▍       | 223/910 [10:09<30:06,  2.63s/it]07/20/2023 17:54:28 - INFO - __main__ - {'epoch': 0, 'step': 223, 'train_loss': 3.736929170753924}
+ 25%|██▍       | 224/910 [10:11<29:28,  2.58s/it]07/20/2023 17:54:30 - INFO - __main__ - {'epoch': 0, 'step': 224, 'train_loss': 3.7207739693777904}
+ 25%|██▍       | 225/910 [10:14<28:57,  2.54s/it]07/20/2023 17:54:33 - INFO - __main__ - {'epoch': 0, 'step': 225, 'train_loss': 3.705634765625}
+ 25%|██▍       | 226/910 [10:16<29:04,  2.55s/it]07/20/2023 17:54:35 - INFO - __main__ - {'epoch': 0, 'step': 226, 'train_loss': 3.689825817547013}
+ 25%|██▍       | 227/910 [10:19<30:26,  2.67s/it]07/20/2023 17:54:38 - INFO - __main__ - {'epoch': 0, 'step': 227, 'train_loss': 3.6754811828882157}
+ 25%|██▌       | 228/910 [10:22<29:33,  2.60s/it]07/20/2023 17:54:41 - INFO - __main__ - {'epoch': 0, 'step': 228, 'train_loss': 3.6610396535773027}
+ 25%|██▌       | 229/910 [10:24<29:37,  2.61s/it]07/20/2023 17:54:43 - INFO - __main__ - {'epoch': 0, 'step': 229, 'train_loss': 3.6459097383324237}
+ 25%|██▌       | 230/910 [10:27<29:36,  2.61s/it]07/20/2023 17:54:46 - INFO - __main__ - {'epoch': 0, 'step': 230, 'train_loss': 3.633743418817935}
+ 25%|██▌       | 231/910 [10:29<29:35,  2.61s/it]07/20/2023 17:54:48 - INFO - __main__ - {'epoch': 0, 'step': 231, 'train_loss': 3.6194249272862553}
+ 25%|██▌       | 232/910 [10:32<29:25,  2.60s/it]07/20/2023 17:54:51 - INFO - __main__ - {'epoch': 0, 'step': 232, 'train_loss': 3.6061980148841597}
+ 26%|██▌       | 233/910 [10:35<31:21,  2.78s/it]07/20/2023 17:54:54 - INFO - __main__ - {'epoch': 0, 'step': 233, 'train_loss': 3.5916596113868025}
+ 26%|██▌       | 234/910 [10:38<30:18,  2.69s/it]07/20/2023 17:54:57 - INFO - __main__ - {'epoch': 0, 'step': 234, 'train_loss': 3.5782888037526708}
+ 26%|██▌       | 235/910 [10:40<29:35,  2.63s/it]07/20/2023 17:54:59 - INFO - __main__ - {'epoch': 0, 'step': 235, 'train_loss': 3.564566364694149}
+ 26%|██▌       | 236/910 [10:43<30:22,  2.70s/it]07/20/2023 17:55:02 - INFO - __main__ - {'epoch': 0, 'step': 236, 'train_loss': 3.550678835076801}
+ 26%|██▌       | 237/910 [10:46<31:00,  2.77s/it]07/20/2023 17:55:05 - INFO - __main__ - {'epoch': 0, 'step': 237, 'train_loss': 3.5373123104562234}
+ 26%|██▌       | 238/910 [10:49<31:20,  2.80s/it]07/20/2023 17:55:08 - INFO - __main__ - {'epoch': 0, 'step': 238, 'train_loss': 3.523155404740021}
+ 26%|██▋       | 239/910 [10:51<30:13,  2.70s/it]07/20/2023 17:55:10 - INFO - __main__ - {'epoch': 0, 'step': 239, 'train_loss': 3.5103672937369246}
+ 26%|██▋       | 240/910 [10:54<30:52,  2.76s/it]07/20/2023 17:55:13 - INFO - __main__ - {'epoch': 0, 'step': 240, 'train_loss': 3.496546427408854}
+ 26%|██▋       | 241/910 [10:57<29:54,  2.68s/it]07/20/2023 17:55:16 - INFO - __main__ - {'epoch': 0, 'step': 241, 'train_loss': 3.48459887999222}
+ 27%|██▋       | 242/910 [11:00<30:55,  2.78s/it]07/20/2023 17:55:19 - INFO - __main__ - {'epoch': 0, 'step': 242, 'train_loss': 3.4712085566244837}
+ 27%|██▋       | 243/910 [11:02<30:41,  2.76s/it]07/20/2023 17:55:21 - INFO - __main__ - {'epoch': 0, 'step': 243, 'train_loss': 3.4577998408564814}
+ 27%|██▋       | 244/910 [11:05<30:27,  2.74s/it]07/20/2023 17:55:24 - INFO - __main__ - {'epoch': 0, 'step': 244, 'train_loss': 3.4440187548027663}
+ 27%|██▋       | 245/910 [11:08<30:46,  2.78s/it]07/20/2023 17:55:27 - INFO - __main__ - {'epoch': 0, 'step': 245, 'train_loss': 3.431117466517857}
+ 27%|██▋       | 246/910 [11:11<31:00,  2.80s/it]07/20/2023 17:55:30 - INFO - __main__ - {'epoch': 0, 'step': 246, 'train_loss': 3.4191308990726625}
+ 27%|██▋       | 247/910 [11:14<32:31,  2.94s/it]07/20/2023 17:55:33 - INFO - __main__ - {'epoch': 0, 'step': 247, 'train_loss': 3.407233481465081}
+ 27%|██▋       | 248/910 [11:17<31:09,  2.82s/it]07/20/2023 17:55:36 - INFO - __main__ - {'epoch': 0, 'step': 248, 'train_loss': 3.3935655163180445}
+ 27%|██▋       | 249/910 [11:19<30:28,  2.77s/it]07/20/2023 17:55:38 - INFO - __main__ - {'epoch': 0, 'step': 249, 'train_loss': 3.3817565182605422}
+ 27%|██▋       | 250/910 [11:22<30:36,  2.78s/it]07/20/2023 17:55:41 - INFO - __main__ - {'epoch': 0, 'step': 250, 'train_loss': 3.3700888671875}
+ 28%|██▊       | 251/910 [11:26<32:35,  2.97s/it]07/20/2023 17:55:45 - INFO - __main__ - {'epoch': 0, 'step': 251, 'train_loss': 3.357146608876992}
+ 28%|██▊       | 252/910 [11:28<31:43,  2.89s/it]07/20/2023 17:55:47 - INFO - __main__ - {'epoch': 0, 'step': 252, 'train_loss': 3.3447081550719244}
+ 28%|██▊       | 253/910 [11:32<33:39,  3.07s/it]07/20/2023 17:55:51 - INFO - __main__ - {'epoch': 0, 'step': 253, 'train_loss': 3.332993337759387}
+ 28%|██▊       | 254/910 [11:34<32:22,  2.96s/it]07/20/2023 17:55:53 - INFO - __main__ - {'epoch': 0, 'step': 254, 'train_loss': 3.3210939422367125}
+ 28%|██▊       | 255/910 [11:38<32:41,  2.99s/it]07/20/2023 17:55:57 - INFO - __main__ - {'epoch': 0, 'step': 255, 'train_loss': 3.3143813189338234}
+ 28%|██▊       | 256/910 [11:40<31:06,  2.85s/it]07/20/2023 17:55:59 - INFO - __main__ - {'epoch': 0, 'step': 256, 'train_loss': 3.303380012512207}
+ 28%|██▊       | 257/910 [11:43<31:06,  2.86s/it]07/20/2023 17:56:02 - INFO - __main__ - {'epoch': 0, 'step': 257, 'train_loss': 3.290934878100681}
+ 28%|██▊       | 258/910 [11:45<29:55,  2.75s/it]07/20/2023 17:56:04 - INFO - __main__ - {'epoch': 0, 'step': 258, 'train_loss': 3.278781151586725}
+ 28%|██▊       | 259/910 [11:48<30:11,  2.78s/it]07/20/2023 17:56:07 - INFO - __main__ - {'epoch': 0, 'step': 259, 'train_loss': 3.267479149070946}
+ 29%|██▊       | 260/910 [11:51<30:45,  2.84s/it]07/20/2023 17:56:10 - INFO - __main__ - {'epoch': 0, 'step': 260, 'train_loss': 3.257435960036058}
+ 29%|██▊       | 261/910 [11:54<30:07,  2.79s/it]07/20/2023 17:56:13 - INFO - __main__ - {'epoch': 0, 'step': 261, 'train_loss': 3.246466976472701}
+ 29%|██▉       | 262/910 [11:57<29:32,  2.73s/it]07/20/2023 17:56:16 - INFO - __main__ - {'epoch': 0, 'step': 262, 'train_loss': 3.23489589545563}
+ 29%|██▉       | 263/910 [12:00<32:48,  3.04s/it]07/20/2023 17:56:19 - INFO - __main__ - {'epoch': 0, 'step': 263, 'train_loss': 3.2229950763426807}
+ 29%|██▉       | 264/910 [12:03<31:50,  2.96s/it]07/20/2023 17:56:22 - INFO - __main__ - {'epoch': 0, 'step': 264, 'train_loss': 3.2115672718394888}
+ 29%|██▉       | 265/910 [12:05<29:59,  2.79s/it]07/20/2023 17:56:24 - INFO - __main__ - {'epoch': 0, 'step': 265, 'train_loss': 3.2003252137382074}
+ 29%|██▉       | 266/910 [12:08<29:19,  2.73s/it]07/20/2023 17:56:27 - INFO - __main__ - {'epoch': 0, 'step': 266, 'train_loss': 3.1904673181978382}
+ 29%|██▉       | 267/910 [12:11<29:21,  2.74s/it]07/20/2023 17:56:30 - INFO - __main__ - {'epoch': 0, 'step': 267, 'train_loss': 3.1795347978113297}
+ 29%|██▉       | 268/910 [12:14<30:27,  2.85s/it]07/20/2023 17:56:33 - INFO - __main__ - {'epoch': 0, 'step': 268, 'train_loss': 3.1689097845732275}
+ 30%|██▉       | 269/910 [12:17<31:32,  2.95s/it]07/20/2023 17:56:36 - INFO - __main__ - {'epoch': 0, 'step': 269, 'train_loss': 3.1600918113963754}
+ 30%|██▉       | 270/910 [12:20<30:14,  2.84s/it]07/20/2023 17:56:39 - INFO - __main__ - {'epoch': 0, 'step': 270, 'train_loss': 3.14942943431713}
+ 30%|██▉       | 271/910 [12:23<31:01,  2.91s/it]07/20/2023 17:56:42 - INFO - __main__ - {'epoch': 0, 'step': 271, 'train_loss': 3.1385502551314577}
+ 30%|██▉       | 272/910 [12:26<31:36,  2.97s/it]07/20/2023 17:56:45 - INFO - __main__ - {'epoch': 0, 'step': 272, 'train_loss': 3.1288784251493564}
+ 30%|███       | 273/910 [12:28<29:59,  2.82s/it]07/20/2023 17:56:47 - INFO - __main__ - {'epoch': 0, 'step': 273, 'train_loss': 3.118107722355769}
+ 30%|███       | 274/910 [12:31<28:43,  2.71s/it]07/20/2023 17:56:50 - INFO - __main__ - {'epoch': 0, 'step': 274, 'train_loss': 3.1096645828581204}
+ 30%|███       | 275/910 [12:34<30:44,  2.91s/it]07/20/2023 17:56:53 - INFO - __main__ - {'epoch': 0, 'step': 275, 'train_loss': 3.0991770241477274}
+ 30%|███       | 276/910 [12:37<29:38,  2.80s/it]07/20/2023 17:56:56 - INFO - __main__ - {'epoch': 0, 'step': 276, 'train_loss': 3.088560242583786}
+ 30%|███       | 277/910 [12:39<29:12,  2.77s/it]07/20/2023 17:56:58 - INFO - __main__ - {'epoch': 0, 'step': 277, 'train_loss': 3.077783908224278}
+ 31%|███       | 278/910 [12:42<29:19,  2.78s/it]07/20/2023 17:57:01 - INFO - __main__ - {'epoch': 0, 'step': 278, 'train_loss': 3.067991407655126}
+ 31%|███       | 279/910 [12:45<29:17,  2.79s/it]07/20/2023 17:57:04 - INFO - __main__ - {'epoch': 0, 'step': 279, 'train_loss': 3.057236538138441}
+ 31%|███       | 280/910 [12:49<33:02,  3.15s/it]07/20/2023 17:57:08 - INFO - __main__ - {'epoch': 0, 'step': 280, 'train_loss': 3.0480965750558036}
+ 31%|███       | 281/910 [12:52<32:18,  3.08s/it]07/20/2023 17:57:11 - INFO - __main__ - {'epoch': 0, 'step': 281, 'train_loss': 3.0386393808385233}
+ 31%|███       | 282/910 [12:55<31:22,  3.00s/it]07/20/2023 17:57:14 - INFO - __main__ - {'epoch': 0, 'step': 282, 'train_loss': 3.0283696600731385}
+ 31%|███       | 283/910 [12:58<31:21,  3.00s/it]07/20/2023 17:57:17 - INFO - __main__ - {'epoch': 0, 'step': 283, 'train_loss': 3.018952386539311}
+ 31%|███       | 284/910 [13:02<34:00,  3.26s/it]07/20/2023 17:57:21 - INFO - __main__ - {'epoch': 0, 'step': 284, 'train_loss': 3.0092300629951585}
+ 31%|███▏      | 285/910 [13:04<31:39,  3.04s/it]07/20/2023 17:57:23 - INFO - __main__ - {'epoch': 0, 'step': 285, 'train_loss': 2.9998569421600876}
+ 31%|███▏      | 286/910 [13:07<31:40,  3.05s/it]07/20/2023 17:57:26 - INFO - __main__ - {'epoch': 0, 'step': 286, 'train_loss': 2.9901532793378496}
+ 32%|███▏      | 287/910 [13:10<30:27,  2.93s/it]07/20/2023 17:57:29 - INFO - __main__ - {'epoch': 0, 'step': 287, 'train_loss': 2.982225371570122}
+ 32%|███▏      | 288/910 [13:13<30:34,  2.95s/it]07/20/2023 17:57:32 - INFO - __main__ - {'epoch': 0, 'step': 288, 'train_loss': 2.972731696234809}
+ 32%|███▏      | 289/910 [13:15<29:05,  2.81s/it]07/20/2023 17:57:34 - INFO - __main__ - {'epoch': 0, 'step': 289, 'train_loss': 2.963067183445069}
+ 32%|███▏      | 290/910 [13:18<28:31,  2.76s/it]07/20/2023 17:57:37 - INFO - __main__ - {'epoch': 0, 'step': 290, 'train_loss': 2.9541899582435347}
+ 32%|███▏      | 291/910 [13:21<27:50,  2.70s/it]07/20/2023 17:57:40 - INFO - __main__ - {'epoch': 0, 'step': 291, 'train_loss': 2.944200024162371}
+ 32%|███▏      | 292/910 [13:23<26:56,  2.62s/it]07/20/2023 17:57:42 - INFO - __main__ - {'epoch': 0, 'step': 292, 'train_loss': 2.9358829864083904}
+ 32%|███▏      | 293/910 [13:25<26:09,  2.54s/it]07/20/2023 17:57:44 - INFO - __main__ - {'epoch': 0, 'step': 293, 'train_loss': 2.9297558260452217}
+ 32%|███▏      | 294/910 [13:28<27:24,  2.67s/it]07/20/2023 17:57:47 - INFO - __main__ - {'epoch': 0, 'step': 294, 'train_loss': 2.920124495110544}
+ 32%|███▏      | 295/910 [13:31<26:59,  2.63s/it]07/20/2023 17:57:50 - INFO - __main__ - {'epoch': 0, 'step': 295, 'train_loss': 2.9121325476694917}
+ 33%|███▎      | 296/910 [13:33<26:12,  2.56s/it]07/20/2023 17:57:52 - INFO - __main__ - {'epoch': 0, 'step': 296, 'train_loss': 2.9035941459037162}
+ 33%|███▎      | 297/910 [13:36<26:21,  2.58s/it]07/20/2023 17:57:55 - INFO - __main__ - {'epoch': 0, 'step': 297, 'train_loss': 2.8943438289141414}
+ 33%|███▎      | 298/910 [13:38<26:16,  2.58s/it]07/20/2023 17:57:57 - INFO - __main__ - {'epoch': 0, 'step': 298, 'train_loss': 2.8852375209731544}
+ 33%|███▎      | 299/910 [13:41<26:13,  2.58s/it]07/20/2023 17:58:00 - INFO - __main__ - {'epoch': 0, 'step': 299, 'train_loss': 2.87731239548495}
+ 33%|███▎      | 300/910 [13:43<25:27,  2.50s/it]07/20/2023 17:58:02 - INFO - __main__ - {'epoch': 0, 'step': 300, 'train_loss': 2.868544921875}
+ 33%|███▎      | 301/910 [13:46<25:48,  2.54s/it]07/20/2023 17:58:05 - INFO - __main__ - {'epoch': 0, 'step': 301, 'train_loss': 2.859217646906146}
+ 33%|███▎      | 302/910 [13:49<26:05,  2.57s/it]07/20/2023 17:58:08 - INFO - __main__ - {'epoch': 0, 'step': 302, 'train_loss': 2.8499359737168874}
+ 33%|███▎      | 303/910 [13:51<26:51,  2.66s/it]07/20/2023 17:58:10 - INFO - __main__ - {'epoch': 0, 'step': 303, 'train_loss': 2.8417356384075907}
+ 33%|███▎      | 304/910 [13:54<27:13,  2.70s/it]07/20/2023 17:58:13 - INFO - __main__ - {'epoch': 0, 'step': 304, 'train_loss': 2.832815069901316}
+ 34%|███▎      | 305/910 [13:57<26:07,  2.59s/it]07/20/2023 17:58:16 - INFO - __main__ - {'epoch': 0, 'step': 305, 'train_loss': 2.823629610655738}
+ 34%|███▎      | 306/910 [13:59<26:35,  2.64s/it]07/20/2023 17:58:18 - INFO - __main__ - {'epoch': 0, 'step': 306, 'train_loss': 2.8152765012254903}
+ 34%|███▎      | 307/910 [14:02<26:12,  2.61s/it]07/20/2023 17:58:21 - INFO - __main__ - {'epoch': 0, 'step': 307, 'train_loss': 2.806841027076547}
+ 34%|███▍      | 308/910 [14:05<26:43,  2.66s/it]07/20/2023 17:58:24 - INFO - __main__ - {'epoch': 0, 'step': 308, 'train_loss': 2.7987298346185066}
+ 34%|███▍      | 309/910 [14:07<26:25,  2.64s/it]07/20/2023 17:58:26 - INFO - __main__ - {'epoch': 0, 'step': 309, 'train_loss': 2.7903171773867315}
+ 34%|███▍      | 310/910 [14:10<27:00,  2.70s/it]07/20/2023 17:58:29 - INFO - __main__ - {'epoch': 0, 'step': 310, 'train_loss': 2.782683341733871}
+ 34%|███▍      | 311/910 [14:13<26:17,  2.63s/it]07/20/2023 17:58:32 - INFO - __main__ - {'epoch': 0, 'step': 311, 'train_loss': 2.773896735580788}
+ 34%|███▍      | 312/910 [14:15<26:52,  2.70s/it]07/20/2023 17:58:34 - INFO - __main__ - {'epoch': 0, 'step': 312, 'train_loss': 2.766583564953926}
+ 34%|███▍      | 313/910 [14:18<26:56,  2.71s/it]07/20/2023 17:58:37 - INFO - __main__ - {'epoch': 0, 'step': 313, 'train_loss': 2.7593233638678116}
+ 35%|███▍      | 314/910 [14:21<26:30,  2.67s/it]07/20/2023 17:58:40 - INFO - __main__ - {'epoch': 0, 'step': 314, 'train_loss': 2.752762521148487}
+ 35%|███▍      | 315/910 [14:24<27:40,  2.79s/it]07/20/2023 17:58:43 - INFO - __main__ - {'epoch': 0, 'step': 315, 'train_loss': 2.744618830605159}
+ 35%|███▍      | 316/910 [14:26<26:36,  2.69s/it]07/20/2023 17:58:45 - INFO - __main__ - {'epoch': 0, 'step': 316, 'train_loss': 2.7376021373121042}
+ 35%|███▍      | 317/910 [14:29<26:16,  2.66s/it]07/20/2023 17:58:48 - INFO - __main__ - {'epoch': 0, 'step': 317, 'train_loss': 2.7304448750492902}
+ 35%|███▍      | 318/910 [14:32<26:27,  2.68s/it]07/20/2023 17:58:51 - INFO - __main__ - {'epoch': 0, 'step': 318, 'train_loss': 2.7224113416371853}
+ 35%|███▌      | 319/910 [14:34<26:53,  2.73s/it]07/20/2023 17:58:53 - INFO - __main__ - {'epoch': 0, 'step': 319, 'train_loss': 2.714480217721395}
+ 35%|███▌      | 320/910 [14:37<26:29,  2.69s/it]07/20/2023 17:58:56 - INFO - __main__ - {'epoch': 0, 'step': 320, 'train_loss': 2.706249237060547}
+ 35%|███▌      | 321/910 [14:40<27:19,  2.78s/it]07/20/2023 17:58:59 - INFO - __main__ - {'epoch': 0, 'step': 321, 'train_loss': 2.6982201311818534}
+ 35%|███▌      | 322/910 [14:42<26:07,  2.67s/it]07/20/2023 17:59:01 - INFO - __main__ - {'epoch': 0, 'step': 322, 'train_loss': 2.691478279066382}
+ 35%|███▌      | 323/910 [14:45<27:11,  2.78s/it]07/20/2023 17:59:04 - INFO - __main__ - {'epoch': 0, 'step': 323, 'train_loss': 2.6841372085429565}
+ 36%|███▌      | 324/910 [14:48<26:09,  2.68s/it]07/20/2023 17:59:07 - INFO - __main__ - {'epoch': 0, 'step': 324, 'train_loss': 2.6774201569733798}
+ 36%|███▌      | 325/910 [14:51<26:36,  2.73s/it]07/20/2023 17:59:10 - INFO - __main__ - {'epoch': 0, 'step': 325, 'train_loss': 2.6695966045673076}
+ 36%|███▌      | 326/910 [14:53<26:25,  2.71s/it]07/20/2023 17:59:12 - INFO - __main__ - {'epoch': 0, 'step': 326, 'train_loss': 2.6621565555502302}
+ 36%|███▌      | 327/910 [14:56<25:47,  2.65s/it]07/20/2023 17:59:15 - INFO - __main__ - {'epoch': 0, 'step': 327, 'train_loss': 2.6567031907014527}
+ 36%|███▌      | 328/910 [14:58<25:19,  2.61s/it]07/20/2023 17:59:17 - INFO - __main__ - {'epoch': 0, 'step': 328, 'train_loss': 2.6500564203029726}
+ 36%|███▌      | 329/910 [15:01<25:48,  2.67s/it]07/20/2023 17:59:20 - INFO - __main__ - {'epoch': 0, 'step': 329, 'train_loss': 2.6423161747245443}
+ 36%|███▋      | 330/910 [15:04<25:26,  2.63s/it]07/20/2023 17:59:23 - INFO - __main__ - {'epoch': 0, 'step': 330, 'train_loss': 2.6350341796875}
+ 36%|███▋      | 331/910 [15:06<25:16,  2.62s/it]07/20/2023 17:59:25 - INFO - __main__ - {'epoch': 0, 'step': 331, 'train_loss': 2.6284128056552114}
+ 36%|███▋      | 332/910 [15:09<24:51,  2.58s/it]07/20/2023 17:59:28 - INFO - __main__ - {'epoch': 0, 'step': 332, 'train_loss': 2.6214430475809487}
+ 37%|███▋      | 333/910 [15:11<24:53,  2.59s/it]07/20/2023 17:59:31 - INFO - __main__ - {'epoch': 0, 'step': 333, 'train_loss': 2.6138582430086337}
+ 37%|███▋      | 334/910 [15:14<24:36,  2.56s/it]07/20/2023 17:59:33 - INFO - __main__ - {'epoch': 0, 'step': 334, 'train_loss': 2.6060674062032185}
+ 37%|███▋      | 335/910 [15:17<24:35,  2.57s/it]07/20/2023 17:59:36 - INFO - __main__ - {'epoch': 0, 'step': 335, 'train_loss': 2.5986510319496268}
+ 37%|███▋      | 336/910 [15:19<24:28,  2.56s/it]07/20/2023 17:59:38 - INFO - __main__ - {'epoch': 0, 'step': 336, 'train_loss': 2.591649373372396}
+ 37%|███▋      | 337/910 [15:22<24:00,  2.51s/it]07/20/2023 17:59:41 - INFO - __main__ - {'epoch': 0, 'step': 337, 'train_loss': 2.5846400048683233}
+ 37%|███▋      | 338/910 [15:24<24:34,  2.58s/it]07/20/2023 17:59:43 - INFO - __main__ - {'epoch': 0, 'step': 338, 'train_loss': 2.5773542957193047}
+ 37%|███▋      | 339/910 [15:27<24:18,  2.55s/it]07/20/2023 17:59:46 - INFO - __main__ - {'epoch': 0, 'step': 339, 'train_loss': 2.571986915790929}
+ 37%|███▋      | 340/910 [15:29<24:34,  2.59s/it]07/20/2023 17:59:48 - INFO - __main__ - {'epoch': 0, 'step': 340, 'train_loss': 2.564959357766544}
+ 37%|███▋      | 341/910 [15:33<27:10,  2.87s/it]07/20/2023 17:59:52 - INFO - __main__ - {'epoch': 0, 'step': 341, 'train_loss': 2.5577797092650294}
+ 38%|███▊      | 342/910 [15:35<26:08,  2.76s/it]07/20/2023 17:59:54 - INFO - __main__ - {'epoch': 0, 'step': 342, 'train_loss': 2.550642047012061}
+ 38%|███▊      | 343/910 [15:38<25:33,  2.70s/it]07/20/2023 17:59:57 - INFO - __main__ - {'epoch': 0, 'step': 343, 'train_loss': 2.543735337326895}
+ 38%|███▊      | 344/910 [15:41<25:29,  2.70s/it]07/20/2023 18:00:00 - INFO - __main__ - {'epoch': 0, 'step': 344, 'train_loss': 2.5370533078215844}
+ 38%|███▊      | 345/910 [15:44<26:21,  2.80s/it]07/20/2023 18:00:03 - INFO - __main__ - {'epoch': 0, 'step': 345, 'train_loss': 2.5307808254076085}
+ 38%|███▊      | 346/910 [15:46<26:05,  2.78s/it]07/20/2023 18:00:05 - INFO - __main__ - {'epoch': 0, 'step': 346, 'train_loss': 2.52372750519328}
+ 38%|███▊      | 347/910 [15:49<25:36,  2.73s/it]07/20/2023 18:00:08 - INFO - __main__ - {'epoch': 0, 'step': 347, 'train_loss': 2.519144987166787}
+ 38%|███▊      | 348/910 [15:53<27:33,  2.94s/it]07/20/2023 18:00:12 - INFO - __main__ - {'epoch': 0, 'step': 348, 'train_loss': 2.5121445929867097}
+ 38%|███▊      | 349/910 [15:55<26:22,  2.82s/it]07/20/2023 18:00:14 - INFO - __main__ - {'epoch': 0, 'step': 349, 'train_loss': 2.5073529000268624}
+ 38%|███▊      | 350/910 [15:58<25:38,  2.75s/it]07/20/2023 18:00:17 - INFO - __main__ - {'epoch': 0, 'step': 350, 'train_loss': 2.503046177455357}
+ 39%|███▊      | 351/910 [16:01<26:39,  2.86s/it]07/20/2023 18:00:20 - INFO - __main__ - {'epoch': 0, 'step': 351, 'train_loss': 2.496655064770299}
+ 39%|███▊      | 352/910 [16:04<26:50,  2.89s/it]07/20/2023 18:00:23 - INFO - __main__ - {'epoch': 0, 'step': 352, 'train_loss': 2.489931279962713}
+ 39%|███▉      | 353/910 [16:06<25:18,  2.73s/it]07/20/2023 18:00:25 - INFO - __main__ - {'epoch': 0, 'step': 353, 'train_loss': 2.4843936736455383}
+ 39%|███▉      | 354/910 [16:09<24:54,  2.69s/it]07/20/2023 18:00:28 - INFO - __main__ - {'epoch': 0, 'step': 354, 'train_loss': 2.477861135019421}
+ 39%|███▉      | 355/910 [16:11<24:48,  2.68s/it]07/20/2023 18:00:30 - INFO - __main__ - {'epoch': 0, 'step': 355, 'train_loss': 2.471108192121479}
+ 39%|███▉      | 356/910 [16:14<24:12,  2.62s/it]07/20/2023 18:00:33 - INFO - __main__ - {'epoch': 0, 'step': 356, 'train_loss': 2.4666576599806884}
+ 39%|███▉      | 357/910 [16:16<24:15,  2.63s/it]07/20/2023 18:00:35 - INFO - __main__ - {'epoch': 0, 'step': 357, 'train_loss': 2.46032270330007}
+ 39%|███▉      | 358/910 [16:19<24:39,  2.68s/it]07/20/2023 18:00:38 - INFO - __main__ - {'epoch': 0, 'step': 358, 'train_loss': 2.454868764184707}
+ 39%|███▉      | 359/910 [16:22<24:01,  2.62s/it]07/20/2023 18:00:41 - INFO - __main__ - {'epoch': 0, 'step': 359, 'train_loss': 2.448317673877089}
+ 40%|███▉      | 360/910 [16:24<23:46,  2.59s/it]07/20/2023 18:00:43 - INFO - __main__ - {'epoch': 0, 'step': 360, 'train_loss': 2.4436652289496528}
+ 40%|███▉      | 361/910 [16:27<23:55,  2.62s/it]07/20/2023 18:00:46 - INFO - __main__ - {'epoch': 0, 'step': 361, 'train_loss': 2.43737759154259}
+ 40%|███▉      | 362/910 [16:29<23:40,  2.59s/it]07/20/2023 18:00:48 - INFO - __main__ - {'epoch': 0, 'step': 362, 'train_loss': 2.4330940035825277}
+ 40%|███▉      | 363/910 [16:33<25:34,  2.80s/it]07/20/2023 18:00:52 - INFO - __main__ - {'epoch': 0, 'step': 363, 'train_loss': 2.4282206385588845}
+ 40%|████      | 364/910 [16:35<24:37,  2.71s/it]07/20/2023 18:00:54 - INFO - __main__ - {'epoch': 0, 'step': 364, 'train_loss': 2.421819330571772}
+ 40%|████      | 365/910 [16:38<25:33,  2.81s/it]07/20/2023 18:00:57 - INFO - __main__ - {'epoch': 0, 'step': 365, 'train_loss': 2.416259765625}
+ 40%|████      | 366/910 [16:41<24:36,  2.71s/it]07/20/2023 18:01:00 - INFO - __main__ - {'epoch': 0, 'step': 366, 'train_loss': 2.4117925258282105}
+ 40%|████      | 367/910 [16:43<24:19,  2.69s/it]07/20/2023 18:01:02 - INFO - __main__ - {'epoch': 0, 'step': 367, 'train_loss': 2.405896761112057}
+ 40%|████      | 368/910 [16:46<23:41,  2.62s/it]07/20/2023 18:01:05 - INFO - __main__ - {'epoch': 0, 'step': 368, 'train_loss': 2.4007283086362095}
+ 41%|████      | 369/910 [16:49<23:48,  2.64s/it]07/20/2023 18:01:08 - INFO - __main__ - {'epoch': 0, 'step': 369, 'train_loss': 2.3946430650829944}
+ 41%|████      | 370/910 [16:51<23:12,  2.58s/it]07/20/2023 18:01:10 - INFO - __main__ - {'epoch': 0, 'step': 370, 'train_loss': 2.389290144636824}
+ 41%|████      | 371/910 [16:54<23:01,  2.56s/it]07/20/2023 18:01:13 - INFO - __main__ - {'epoch': 0, 'step': 371, 'train_loss': 2.3834369998736524}
+ 41%|████      | 372/910 [16:56<23:37,  2.63s/it]07/20/2023 18:01:15 - INFO - __main__ - {'epoch': 0, 'step': 372, 'train_loss': 2.3790670415406585}
+ 41%|████      | 373/910 [16:59<23:06,  2.58s/it]07/20/2023 18:01:18 - INFO - __main__ - {'epoch': 0, 'step': 373, 'train_loss': 2.372890441730898}
+ 41%|████      | 374/910 [17:01<22:28,  2.52s/it]07/20/2023 18:01:20 - INFO - __main__ - {'epoch': 0, 'step': 374, 'train_loss': 2.3675275996407086}
+ 41%|████      | 375/910 [17:04<22:06,  2.48s/it]07/20/2023 18:01:23 - INFO - __main__ - {'epoch': 0, 'step': 375, 'train_loss': 2.3613450520833332}
+ 41%|████▏     | 376/910 [17:06<22:02,  2.48s/it]07/20/2023 18:01:25 - INFO - __main__ - {'epoch': 0, 'step': 376, 'train_loss': 2.355566146525931}
+ 41%|████▏     | 377/910 [17:08<21:37,  2.43s/it]07/20/2023 18:01:27 - INFO - __main__ - {'epoch': 0, 'step': 377, 'train_loss': 2.3497894044263927}
+ 42%|████▏     | 378/910 [17:11<21:56,  2.47s/it]07/20/2023 18:01:30 - INFO - __main__ - {'epoch': 0, 'step': 378, 'train_loss': 2.346166863012566}
+ 42%|████▏     | 379/910 [17:14<22:40,  2.56s/it]07/20/2023 18:01:33 - INFO - __main__ - {'epoch': 0, 'step': 379, 'train_loss': 2.3409607416721636}
+ 42%|████▏     | 380/910 [17:16<22:28,  2.54s/it]07/20/2023 18:01:35 - INFO - __main__ - {'epoch': 0, 'step': 380, 'train_loss': 2.335838558799342}
+ 42%|████▏     | 381/910 [17:19<24:29,  2.78s/it]07/20/2023 18:01:39 - INFO - __main__ - {'epoch': 0, 'step': 381, 'train_loss': 2.3319428211122046}
+ 42%|████▏     | 382/910 [17:22<23:58,  2.72s/it]07/20/2023 18:01:41 - INFO - __main__ - {'epoch': 0, 'step': 382, 'train_loss': 2.3263060884325917}
+ 42%|████▏     | 383/910 [17:25<25:35,  2.91s/it]07/20/2023 18:01:44 - INFO - __main__ - {'epoch': 0, 'step': 383, 'train_loss': 2.3208900232539165}
+ 42%|████▏     | 384/910 [17:28<23:59,  2.74s/it]07/20/2023 18:01:47 - INFO - __main__ - {'epoch': 0, 'step': 384, 'train_loss': 2.316412607828776}
+ 42%|████▏     | 385/910 [17:30<23:27,  2.68s/it]07/20/2023 18:01:49 - INFO - __main__ - {'epoch': 0, 'step': 385, 'train_loss': 2.3109971083603895}
+ 42%|████▏     | 386/910 [17:33<23:07,  2.65s/it]07/20/2023 18:01:52 - INFO - __main__ - {'epoch': 0, 'step': 386, 'train_loss': 2.3058044749838085}
+ 43%|████▎     | 387/910 [17:36<23:25,  2.69s/it]07/20/2023 18:01:55 - INFO - __main__ - {'epoch': 0, 'step': 387, 'train_loss': 2.301774214712532}
+ 43%|████▎     | 388/910 [17:38<23:19,  2.68s/it]07/20/2023 18:01:57 - INFO - __main__ - {'epoch': 0, 'step': 388, 'train_loss': 2.296079655283505}
+ 43%|████▎     | 389/910 [17:41<23:08,  2.67s/it]07/20/2023 18:02:00 - INFO - __main__ - {'epoch': 0, 'step': 389, 'train_loss': 2.290390524582262}
+ 43%|████▎     | 390/910 [17:44<24:10,  2.79s/it]07/20/2023 18:02:03 - INFO - __main__ - {'epoch': 0, 'step': 390, 'train_loss': 2.284636668669872}
+ 43%|████▎     | 391/910 [17:47<23:41,  2.74s/it]07/20/2023 18:02:06 - INFO - __main__ - {'epoch': 0, 'step': 391, 'train_loss': 2.2795528792359336}
+ 43%|████▎     | 392/910 [17:49<22:46,  2.64s/it]07/20/2023 18:02:08 - INFO - __main__ - {'epoch': 0, 'step': 392, 'train_loss': 2.2739432198660716}
+ 43%|████▎     | 393/910 [17:52<23:10,  2.69s/it]07/20/2023 18:02:11 - INFO - __main__ - {'epoch': 0, 'step': 393, 'train_loss': 2.270264293097964}
+ 43%|████▎     | 394/910 [17:56<25:52,  3.01s/it]07/20/2023 18:02:15 - INFO - __main__ - {'epoch': 0, 'step': 394, 'train_loss': 2.265989351998731}
+ 43%|████▎     | 395/910 [17:58<24:43,  2.88s/it]07/20/2023 18:02:17 - INFO - __main__ - {'epoch': 0, 'step': 395, 'train_loss': 2.261473991297468}
+ 44%|████▎     | 396/910 [18:01<25:18,  2.95s/it]07/20/2023 18:02:20 - INFO - __main__ - {'epoch': 0, 'step': 396, 'train_loss': 2.257943201546717}
+ 44%|████▎     | 397/910 [18:04<23:43,  2.78s/it]07/20/2023 18:02:23 - INFO - __main__ - {'epoch': 0, 'step': 397, 'train_loss': 2.253077278809824}
+ 44%|████▎     | 398/910 [18:07<24:05,  2.82s/it]07/20/2023 18:02:26 - INFO - __main__ - {'epoch': 0, 'step': 398, 'train_loss': 2.248540063599246}
+ 44%|████▍     | 399/910 [18:09<23:08,  2.72s/it]07/20/2023 18:02:28 - INFO - __main__ - {'epoch': 0, 'step': 399, 'train_loss': 2.2436095120614037}
+ 44%|████▍     | 400/910 [18:12<22:27,  2.64s/it]07/20/2023 18:02:31 - INFO - __main__ - {'epoch': 0, 'step': 400, 'train_loss': 2.238306884765625}
+ 44%|████▍     | 401/910 [18:14<22:14,  2.62s/it]07/20/2023 18:02:33 - INFO - __main__ - {'epoch': 0, 'step': 401, 'train_loss': 2.233825835801122}
+ 44%|████▍     | 402/910 [18:17<22:16,  2.63s/it]07/20/2023 18:02:36 - INFO - __main__ - {'epoch': 0, 'step': 402, 'train_loss': 2.228973540500622}
+ 44%|████▍     | 403/910 [18:19<21:38,  2.56s/it]07/20/2023 18:02:38 - INFO - __main__ - {'epoch': 0, 'step': 403, 'train_loss': 2.2239175422611663}
+ 44%|████▍     | 404/910 [18:22<21:39,  2.57s/it]07/20/2023 18:02:41 - INFO - __main__ - {'epoch': 0, 'step': 404, 'train_loss': 2.218470809483292}
+ 45%|████▍     | 405/910 [18:25<22:33,  2.68s/it]07/20/2023 18:02:44 - INFO - __main__ - {'epoch': 0, 'step': 405, 'train_loss': 2.213644145447531}
+ 45%|████▍     | 406/910 [18:28<22:56,  2.73s/it]07/20/2023 18:02:47 - INFO - __main__ - {'epoch': 0, 'step': 406, 'train_loss': 2.2089086072198274}
+ 45%|████▍     | 407/910 [18:30<22:14,  2.65s/it]07/20/2023 18:02:49 - INFO - __main__ - {'epoch': 0, 'step': 407, 'train_loss': 2.2035616937960687}
+ 45%|████▍     | 408/910 [18:33<22:47,  2.72s/it]07/20/2023 18:02:52 - INFO - __main__ - {'epoch': 0, 'step': 408, 'train_loss': 2.2002671185661766}
+ 45%|████▍     | 409/910 [18:36<22:42,  2.72s/it]07/20/2023 18:02:55 - INFO - __main__ - {'epoch': 0, 'step': 409, 'train_loss': 2.195257583282396}
+ 45%|████▌     | 410/910 [18:39<23:15,  2.79s/it]07/20/2023 18:02:58 - INFO - __main__ - {'epoch': 0, 'step': 410, 'train_loss': 2.1913228849085367}
+ 45%|████▌     | 411/910 [18:41<22:59,  2.76s/it]07/20/2023 18:03:00 - INFO - __main__ - {'epoch': 0, 'step': 411, 'train_loss': 2.1863238480839415}
+ 45%|████▌     | 412/910 [18:44<22:25,  2.70s/it]07/20/2023 18:03:03 - INFO - __main__ - {'epoch': 0, 'step': 412, 'train_loss': 2.181661957675971}
+ 45%|████▌     | 413/910 [18:47<22:27,  2.71s/it]07/20/2023 18:03:06 - INFO - __main__ - {'epoch': 0, 'step': 413, 'train_loss': 2.1765461845490313}
+ 45%|████▌     | 414/910 [18:49<22:10,  2.68s/it]07/20/2023 18:03:08 - INFO - __main__ - {'epoch': 0, 'step': 414, 'train_loss': 2.172303130661232}
+ 46%|████▌     | 415/910 [18:52<21:25,  2.60s/it]07/20/2023 18:03:11 - INFO - __main__ - {'epoch': 0, 'step': 415, 'train_loss': 2.167511059864458}
+ 46%|████▌     | 416/910 [18:54<21:19,  2.59s/it]07/20/2023 18:03:13 - INFO - __main__ - {'epoch': 0, 'step': 416, 'train_loss': 2.163934560922476}
+ 46%|████▌     | 417/910 [18:57<21:03,  2.56s/it]07/20/2023 18:03:16 - INFO - __main__ - {'epoch': 0, 'step': 417, 'train_loss': 2.159136362784772}
+ 46%|████▌     | 418/910 [19:00<21:42,  2.65s/it]07/20/2023 18:03:19 - INFO - __main__ - {'epoch': 0, 'step': 418, 'train_loss': 2.154300379410885}
+ 46%|████▌     | 419/910 [19:02<21:05,  2.58s/it]07/20/2023 18:03:21 - INFO - __main__ - {'epoch': 0, 'step': 419, 'train_loss': 2.1510327323239857}
+ 46%|████▌     | 420/910 [19:05<21:29,  2.63s/it]07/20/2023 18:03:24 - INFO - __main__ - {'epoch': 0, 'step': 420, 'train_loss': 2.1468505859375}
+ 46%|████▋     | 421/910 [19:07<20:57,  2.57s/it]07/20/2023 18:03:26 - INFO - __main__ - {'epoch': 0, 'step': 421, 'train_loss': 2.1418387442473277}
+ 46%|████▋     | 422/910 [19:10<21:24,  2.63s/it]07/20/2023 18:03:29 - INFO - __main__ - {'epoch': 0, 'step': 422, 'train_loss': 2.1381425179576423}
+ 46%|████▋     | 423/910 [19:12<21:09,  2.61s/it]07/20/2023 18:03:31 - INFO - __main__ - {'epoch': 0, 'step': 423, 'train_loss': 2.1331596645057624}
+ 47%|████▋     | 424/910 [19:15<20:52,  2.58s/it]07/20/2023 18:03:34 - INFO - __main__ - {'epoch': 0, 'step': 424, 'train_loss': 2.128568541328862}
+ 47%|████▋     | 425/910 [19:17<20:26,  2.53s/it]07/20/2023 18:03:36 - INFO - __main__ - {'epoch': 0, 'step': 425, 'train_loss': 2.1241943359375}
+ 47%|████▋     | 426/910 [19:20<20:24,  2.53s/it]07/20/2023 18:03:39 - INFO - __main__ - {'epoch': 0, 'step': 426, 'train_loss': 2.119586210295628}
+ 47%|████▋     | 427/910 [19:23<21:36,  2.68s/it]07/20/2023 18:03:42 - INFO - __main__ - {'epoch': 0, 'step': 427, 'train_loss': 2.114746379628952}
+ 47%|████▋     | 428/910 [19:26<22:43,  2.83s/it]07/20/2023 18:03:45 - INFO - __main__ - {'epoch': 0, 'step': 428, 'train_loss': 2.1114847058447723}
+ 47%|████▋     | 429/910 [19:29<22:21,  2.79s/it]07/20/2023 18:03:48 - INFO - __main__ - {'epoch': 0, 'step': 429, 'train_loss': 2.1083566092111012}
+ 47%|████▋     | 430/910 [19:32<22:09,  2.77s/it]07/20/2023 18:03:51 - INFO - __main__ - {'epoch': 0, 'step': 430, 'train_loss': 2.1038168263989827}
+ 47%|████▋     | 431/910 [19:34<22:13,  2.78s/it]07/20/2023 18:03:53 - INFO - __main__ - {'epoch': 0, 'step': 431, 'train_loss': 2.099052836336282}
+ 47%|████▋     | 432/910 [19:37<21:48,  2.74s/it]07/20/2023 18:03:56 - INFO - __main__ - {'epoch': 0, 'step': 432, 'train_loss': 2.096671492965133}
+ 48%|████▊     | 433/910 [19:40<21:29,  2.70s/it]07/20/2023 18:03:59 - INFO - __main__ - {'epoch': 0, 'step': 433, 'train_loss': 2.0922623209259528}
+ 48%|████▊     | 434/910 [19:42<20:27,  2.58s/it]07/20/2023 18:04:01 - INFO - __main__ - {'epoch': 0, 'step': 434, 'train_loss': 2.0890345419606855}
+ 48%|████▊     | 435/910 [19:44<19:57,  2.52s/it]07/20/2023 18:04:03 - INFO - __main__ - {'epoch': 0, 'step': 435, 'train_loss': 2.084391556663075}
+ 48%|████▊     | 436/910 [19:47<20:30,  2.60s/it]07/20/2023 18:04:06 - INFO - __main__ - {'epoch': 0, 'step': 436, 'train_loss': 2.08051125062715}
+ 48%|████▊     | 437/910 [19:50<20:48,  2.64s/it]07/20/2023 18:04:09 - INFO - __main__ - {'epoch': 0, 'step': 437, 'train_loss': 2.0761324884689647}
+ 48%|████▊     | 438/910 [19:52<20:31,  2.61s/it]07/20/2023 18:04:11 - INFO - __main__ - {'epoch': 0, 'step': 438, 'train_loss': 2.073158298997574}
+ 48%|████▊     | 439/910 [19:55<20:44,  2.64s/it]07/20/2023 18:04:14 - INFO - __main__ - {'epoch': 0, 'step': 439, 'train_loss': 2.069009767849516}
+ 48%|████▊     | 440/910 [19:58<20:21,  2.60s/it]07/20/2023 18:04:17 - INFO - __main__ - {'epoch': 0, 'step': 440, 'train_loss': 2.06582558371804}
+ 48%|████▊     | 441/910 [20:00<19:57,  2.55s/it]07/20/2023 18:04:19 - INFO - __main__ - {'epoch': 0, 'step': 441, 'train_loss': 2.0612236593856292}
+ 49%|████▊     | 442/910 [20:03<19:55,  2.55s/it]07/20/2023 18:04:22 - INFO - __main__ - {'epoch': 0, 'step': 442, 'train_loss': 2.057687060325933}
+ 49%|████▊     | 443/910 [20:06<21:20,  2.74s/it]07/20/2023 18:04:25 - INFO - __main__ - {'epoch': 0, 'step': 443, 'train_loss': 2.054303102514814}
+ 49%|████▉     | 444/910 [20:09<22:17,  2.87s/it]07/20/2023 18:04:28 - INFO - __main__ - {'epoch': 0, 'step': 444, 'train_loss': 2.049917135152731}
+ 49%|████▉     | 445/910 [20:12<22:09,  2.86s/it]07/20/2023 18:04:31 - INFO - __main__ - {'epoch': 0, 'step': 445, 'train_loss': 2.0457429007198034}
+ 49%|████▉     | 446/910 [20:14<21:05,  2.73s/it]07/20/2023 18:04:33 - INFO - __main__ - {'epoch': 0, 'step': 446, 'train_loss': 2.041274819138873}
+ 49%|████▉     | 447/910 [20:17<20:29,  2.66s/it]07/20/2023 18:04:36 - INFO - __main__ - {'epoch': 0, 'step': 447, 'train_loss': 2.0371735506676454}
+ 49%|████▉     | 448/910 [20:19<20:44,  2.69s/it]07/20/2023 18:04:38 - INFO - __main__ - {'epoch': 0, 'step': 448, 'train_loss': 2.0336856842041016}
+ 49%|████▉     | 449/910 [20:23<23:04,  3.00s/it]07/20/2023 18:04:42 - INFO - __main__ - {'epoch': 0, 'step': 449, 'train_loss': 2.0304961002749167}
+ 49%|████▉     | 450/910 [20:26<21:57,  2.86s/it]07/20/2023 18:04:45 - INFO - __main__ - {'epoch': 0, 'step': 450, 'train_loss': 2.0261574978298613}
+ 50%|████▉     | 451/910 [20:29<22:25,  2.93s/it]07/20/2023 18:04:48 - INFO - __main__ - {'epoch': 0, 'step': 451, 'train_loss': 2.023284573777023}
+ 50%|████▉     | 452/910 [20:31<21:45,  2.85s/it]07/20/2023 18:04:50 - INFO - __main__ - {'epoch': 0, 'step': 452, 'train_loss': 2.0203120138792867}
+ 50%|████▉     | 453/910 [20:34<21:40,  2.85s/it]07/20/2023 18:04:53 - INFO - __main__ - {'epoch': 0, 'step': 453, 'train_loss': 2.016169061723924}
+ 50%|████▉     | 454/910 [20:37<20:53,  2.75s/it]07/20/2023 18:04:56 - INFO - __main__ - {'epoch': 0, 'step': 454, 'train_loss': 2.01243369484788}
+ 50%|█████     | 455/910 [20:39<20:10,  2.66s/it]07/20/2023 18:04:58 - INFO - __main__ - {'epoch': 0, 'step': 455, 'train_loss': 2.008444314474588}
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "decoder_start_token_id": 0,
+  "eos_token_id": 1,
+  "pad_token_id": 0,
+  "transformers_version": "4.31.0"
+}
+
+07/20/2023 18:04:59 - INFO - absl - Using default tokenizer.
+07/20/2023 18:04:59 - INFO - __main__ - {'rouge1': 10.5263, 'rouge2': 10.5263, 'rougeL': 10.5263, 'rougeLsum': 10.5263}
+07/20/2023 18:05:00 - INFO - absl - Using default tokenizer.
+07/20/2023 18:05:00 - INFO - absl - Using default tokenizer.
+07/20/2023 18:05:00 - INFO - absl - Using default tokenizer.
+ 50%|█████     | 456/910 [20:44<25:10,  3.33s/it]07/20/2023 18:05:03 - INFO - __main__ - {'epoch': 1, 'step': 456, 'train_loss': 0.0007838199013157895}
+ 50%|█████     | 457/910 [20:47<23:09,  3.07s/it]07/20/2023 18:05:06 - INFO - __main__ - {'epoch': 1, 'step': 457, 'train_loss': 0.001713792396061269}
+ 50%|█████     | 458/910 [20:50<23:02,  3.06s/it]07/20/2023 18:05:09 - INFO - __main__ - {'epoch': 1, 'step': 458, 'train_loss': 0.0019147448144104804}
+ 50%|█████     | 459/910 [20:52<22:00,  2.93s/it]07/20/2023 18:05:11 - INFO - __main__ - {'epoch': 1, 'step': 459, 'train_loss': 0.0022212009803921568}
+ 51%|█████     | 460/910 [20:55<20:43,  2.76s/it]07/20/2023 18:05:14 - INFO - __main__ - {'epoch': 1, 'step': 460, 'train_loss': 0.002921195652173913}
+ 51%|█████     | 461/910 [20:57<20:54,  2.79s/it]07/20/2023 18:05:17 - INFO - __main__ - {'epoch': 1, 'step': 461, 'train_loss': 0.0030652623373101954}
+ 51%|█████     | 462/910 [21:00<20:04,  2.69s/it]07/20/2023 18:05:19 - INFO - __main__ - {'epoch': 1, 'step': 462, 'train_loss': 0.0032530945616883115}
+ 51%|█████     | 463/910 [21:02<19:31,  2.62s/it]07/20/2023 18:05:21 - INFO - __main__ - {'epoch': 1, 'step': 463, 'train_loss': 0.003958980156587473}
+ 51%|█████     | 464/910 [21:05<19:01,  2.56s/it]07/20/2023 18:05:24 - INFO - __main__ - {'epoch': 1, 'step': 464, 'train_loss': 0.0042745655980603444}
+ 51%|█████     | 465/910 [21:07<18:54,  2.55s/it]07/20/2023 18:05:26 - INFO - __main__ - {'epoch': 1, 'step': 465, 'train_loss': 0.005055023521505377}
+ 51%|█████     | 466/910 [21:10<18:45,  2.53s/it]07/20/2023 18:05:29 - INFO - __main__ - {'epoch': 1, 'step': 466, 'train_loss': 0.005568082752145923}
+ 51%|█████▏    | 467/910 [21:12<18:37,  2.52s/it]07/20/2023 18:05:31 - INFO - __main__ - {'epoch': 1, 'step': 467, 'train_loss': 0.005733906584582441}
+ 51%|█████▏    | 468/910 [21:15<18:43,  2.54s/it]07/20/2023 18:05:34 - INFO - __main__ - {'epoch': 1, 'step': 468, 'train_loss': 0.007182325053418803}
+ 52%|█████▏    | 469/910 [21:17<18:42,  2.55s/it]07/20/2023 18:05:37 - INFO - __main__ - {'epoch': 1, 'step': 469, 'train_loss': 0.007267998734008529}
+ 52%|█████▏    | 470/910 [21:20<18:57,  2.58s/it]07/20/2023 18:05:39 - INFO - __main__ - {'epoch': 1, 'step': 470, 'train_loss': 0.007632770944148936}
+ 52%|█████▏    | 471/910 [21:23<19:12,  2.62s/it]07/20/2023 18:05:42 - INFO - __main__ - {'epoch': 1, 'step': 471, 'train_loss': 0.008387863256369426}
+ 52%|█████▏    | 472/910 [21:25<19:02,  2.61s/it]07/20/2023 18:05:44 - INFO - __main__ - {'epoch': 1, 'step': 472, 'train_loss': 0.009594933461334746}
+ 52%|█████▏    | 473/910 [21:28<19:16,  2.65s/it]07/20/2023 18:05:47 - INFO - __main__ - {'epoch': 1, 'step': 473, 'train_loss': 0.009793497291226215}
+ 52%|█████▏    | 474/910 [21:31<19:41,  2.71s/it]07/20/2023 18:05:50 - INFO - __main__ - {'epoch': 1, 'step': 474, 'train_loss': 0.010265237671413503}
+ 52%|█████▏    | 475/910 [21:34<21:07,  2.91s/it]07/20/2023 18:05:53 - INFO - __main__ - {'epoch': 1, 'step': 475, 'train_loss': 0.011267475328947368}
+ 52%|█████▏    | 476/910 [21:37<20:15,  2.80s/it]07/20/2023 18:05:56 - INFO - __main__ - {'epoch': 1, 'step': 476, 'train_loss': 0.011342281053046218}
+ 52%|█████▏    | 477/910 [21:39<19:37,  2.72s/it]07/20/2023 18:05:59 - INFO - __main__ - {'epoch': 1, 'step': 477, 'train_loss': 0.011390158215408805}
+ 53%|█████▎    | 478/910 [21:42<19:00,  2.64s/it]07/20/2023 18:06:01 - INFO - __main__ - {'epoch': 1, 'step': 478, 'train_loss': 0.011619663637552301}
+ 53%|█████▎    | 479/910 [21:44<18:18,  2.55s/it]07/20/2023 18:06:03 - INFO - __main__ - {'epoch': 1, 'step': 479, 'train_loss': 0.011958303431628393}
+ 53%|█████▎    | 480/910 [21:47<18:17,  2.55s/it]07/20/2023 18:06:06 - INFO - __main__ - {'epoch': 1, 'step': 480, 'train_loss': 0.012080891927083334}
+ 53%|█████▎    | 481/910 [21:49<17:55,  2.51s/it]07/20/2023 18:06:08 - INFO - __main__ - {'epoch': 1, 'step': 481, 'train_loss': 0.012904430873180873}
+ 53%|█████▎    | 482/910 [21:52<18:41,  2.62s/it]07/20/2023 18:06:11 - INFO - __main__ - {'epoch': 1, 'step': 482, 'train_loss': 0.013327444242738589}
+ 53%|█████▎    | 483/910 [21:54<18:06,  2.54s/it]07/20/2023 18:06:14 - INFO - __main__ - {'epoch': 1, 'step': 483, 'train_loss': 0.013456546001552796}
+ 53%|█████▎    | 484/910 [21:57<17:36,  2.48s/it]07/20/2023 18:06:16 - INFO - __main__ - {'epoch': 1, 'step': 484, 'train_loss': 0.014340739604855372}
+ 53%|█████▎    | 485/910 [22:00<18:02,  2.55s/it]07/20/2023 18:06:19 - INFO - __main__ - {'epoch': 1, 'step': 485, 'train_loss': 0.014883013853092783}
+ 53%|█████▎    | 486/910 [22:02<18:32,  2.62s/it]07/20/2023 18:06:21 - INFO - __main__ - {'epoch': 1, 'step': 486, 'train_loss': 0.015272352430555556}
+ 54%|█████▎    | 487/910 [22:05<18:20,  2.60s/it]07/20/2023 18:06:24 - INFO - __main__ - {'epoch': 1, 'step': 487, 'train_loss': 0.015581886871149897}
+ 54%|█████▎    | 488/910 [22:08<18:21,  2.61s/it]07/20/2023 18:06:27 - INFO - __main__ - {'epoch': 1, 'step': 488, 'train_loss': 0.016098272605020492}
+ 54%|█████▎    | 489/910 [22:11<21:10,  3.02s/it]07/20/2023 18:06:31 - INFO - __main__ - {'epoch': 1, 'step': 489, 'train_loss': 0.016287025498466258}
+ 54%|█████▍    | 490/910 [22:15<21:09,  3.02s/it]07/20/2023 18:06:34 - INFO - __main__ - {'epoch': 1, 'step': 490, 'train_loss': 0.016431162308673468}
+ 54%|█████▍    | 491/910 [22:17<19:57,  2.86s/it]07/20/2023 18:06:36 - INFO - __main__ - {'epoch': 1, 'step': 491, 'train_loss': 0.016729848205193482}
+ 54%|█████▍    | 492/910 [22:20<19:57,  2.87s/it]07/20/2023 18:06:39 - INFO - __main__ - {'epoch': 1, 'step': 492, 'train_loss': 0.017620799987296747}
+ 54%|█████▍    | 493/910 [22:23<19:47,  2.85s/it]07/20/2023 18:06:42 - INFO - __main__ - {'epoch': 1, 'step': 493, 'train_loss': 0.017888129120182557}
+ 54%|█████▍    | 494/910 [22:25<19:12,  2.77s/it]07/20/2023 18:06:44 - INFO - __main__ - {'epoch': 1, 'step': 494, 'train_loss': 0.01815635279605263}
+ 54%|█████▍    | 495/910 [22:28<18:31,  2.68s/it]07/20/2023 18:06:47 - INFO - __main__ - {'epoch': 1, 'step': 495, 'train_loss': 0.018500434027777776}
+ 55%|█████▍    | 496/910 [22:30<18:19,  2.66s/it]07/20/2023 18:06:49 - INFO - __main__ - {'epoch': 1, 'step': 496, 'train_loss': 0.019317626953125}
+ 55%|█████▍    | 497/910 [22:33<18:27,  2.68s/it]07/20/2023 18:06:52 - INFO - __main__ - {'epoch': 1, 'step': 497, 'train_loss': 0.019876092492454728}
+ 55%|█████▍    | 498/910 [22:36<18:27,  2.69s/it]07/20/2023 18:06:55 - INFO - __main__ - {'epoch': 1, 'step': 498, 'train_loss': 0.019952858308232933}
+ 55%|█████▍    | 499/910 [22:38<18:01,  2.63s/it]07/20/2023 18:06:57 - INFO - __main__ - {'epoch': 1, 'step': 499, 'train_loss': 0.019957884519038075}
+ 55%|█████▍    | 500/910 [22:41<18:50,  2.76s/it]07/20/2023 18:07:00 - INFO - __main__ - {'epoch': 1, 'step': 500, 'train_loss': 0.0199442138671875}
+ 55%|█████▌    | 501/910 [22:44<18:20,  2.69s/it]07/20/2023 18:07:03 - INFO - __main__ - {'epoch': 1, 'step': 501, 'train_loss': 0.021791256354478542}
+ 55%|█████▌    | 502/910 [22:46<18:01,  2.65s/it]07/20/2023 18:07:05 - INFO - __main__ - {'epoch': 1, 'step': 502, 'train_loss': 0.021945299855266436}
+ 55%|█████▌    | 503/910 [22:49<17:49,  2.63s/it]07/20/2023 18:07:08 - INFO - __main__ - {'epoch': 1, 'step': 503, 'train_loss': 0.02265496377205517}
+ 55%|█████▌    | 504/910 [22:52<18:31,  2.74s/it]07/20/2023 18:07:11 - INFO - __main__ - {'epoch': 1, 'step': 504, 'train_loss': 0.02282315208798363}
+ 55%|█████▌    | 505/910 [22:55<18:05,  2.68s/it]07/20/2023 18:07:14 - INFO - __main__ - {'epoch': 1, 'step': 505, 'train_loss': 0.02326527208384901}
+ 56%|█████▌    | 506/910 [22:57<17:36,  2.62s/it]07/20/2023 18:07:16 - INFO - __main__ - {'epoch': 1, 'step': 506, 'train_loss': 0.024157256476963932}
+ 56%|█████▌    | 507/910 [23:00<17:21,  2.58s/it]07/20/2023 18:07:19 - INFO - __main__ - {'epoch': 1, 'step': 507, 'train_loss': 0.02605888171073718}
+ 56%|█████▌    | 508/910 [23:02<16:46,  2.50s/it]07/20/2023 18:07:21 - INFO - __main__ - {'epoch': 1, 'step': 508, 'train_loss': 0.026145033949003443}
+ 56%|█████▌    | 509/910 [23:05<17:05,  2.56s/it]07/20/2023 18:07:24 - INFO - __main__ - {'epoch': 1, 'step': 509, 'train_loss': 0.026454363450085953}
+ 56%|█████▌    | 510/910 [23:07<17:18,  2.60s/it]07/20/2023 18:07:26 - INFO - __main__ - {'epoch': 1, 'step': 510, 'train_loss': 0.026908006855085785}
+ 56%|█████▌    | 511/910 [23:10<17:18,  2.60s/it]07/20/2023 18:07:29 - INFO - __main__ - {'epoch': 1, 'step': 511, 'train_loss': 0.027619781792747065}
+ 56%|█████▋    | 512/910 [23:12<17:13,  2.60s/it]07/20/2023 18:07:31 - INFO - __main__ - {'epoch': 1, 'step': 512, 'train_loss': 0.027861475944519043}
+ 56%|█████▋    | 513/910 [23:16<19:26,  2.94s/it]07/20/2023 18:07:35 - INFO - __main__ - {'epoch': 1, 'step': 513, 'train_loss': 0.02806225157620614}
+ 56%|█████▋    | 514/910 [23:19<19:07,  2.90s/it]07/20/2023 18:07:38 - INFO - __main__ - {'epoch': 1, 'step': 514, 'train_loss': 0.0282926448124392}
+ 57%|█████▋    | 515/910 [23:22<19:10,  2.91s/it]07/20/2023 18:07:41 - INFO - __main__ - {'epoch': 1, 'step': 515, 'train_loss': 0.028603681545813105}
+ 57%|█████▋    | 516/910 [23:24<18:10,  2.77s/it]07/20/2023 18:07:43 - INFO - __main__ - {'epoch': 1, 'step': 516, 'train_loss': 0.028832132502119672}
+ 57%|█████▋    | 517/910 [23:27<18:40,  2.85s/it]07/20/2023 18:07:46 - INFO - __main__ - {'epoch': 1, 'step': 517, 'train_loss': 0.029894594528227757}
+ 57%|█████▋    | 518/910 [23:31<19:12,  2.94s/it]07/20/2023 18:07:50 - INFO - __main__ - {'epoch': 1, 'step': 518, 'train_loss': 0.029899567710847008}
+ 57%|█████▋    | 519/910 [23:33<18:40,  2.87s/it]07/20/2023 18:07:52 - INFO - __main__ - {'epoch': 1, 'step': 519, 'train_loss': 0.030549448119881986}
+ 57%|█████▋    | 520/910 [23:36<17:40,  2.72s/it]07/20/2023 18:07:55 - INFO - __main__ - {'epoch': 1, 'step': 520, 'train_loss': 0.030948932354266826}
+ 57%|█████▋    | 521/910 [23:39<18:11,  2.81s/it]07/20/2023 18:07:58 - INFO - __main__ - {'epoch': 1, 'step': 521, 'train_loss': 0.03111914343660029}
+ 57%|█████▋    | 522/910 [23:41<17:25,  2.69s/it]07/20/2023 18:08:00 - INFO - __main__ - {'epoch': 1, 'step': 522, 'train_loss': 0.03173301959859914}
+ 57%|█████▋    | 523/910 [23:44<16:58,  2.63s/it]07/20/2023 18:08:03 - INFO - __main__ - {'epoch': 1, 'step': 523, 'train_loss': 0.03212234759649857}
+ 58%|█████▊    | 524/910 [23:46<17:05,  2.66s/it]07/20/2023 18:08:05 - INFO - __main__ - {'epoch': 1, 'step': 524, 'train_loss': 0.032549326656428915}
+ 58%|█████▊    | 525/910 [23:49<17:26,  2.72s/it]07/20/2023 18:08:08 - INFO - __main__ - {'epoch': 1, 'step': 525, 'train_loss': 0.033715006510416666}
+ 58%|█████▊    | 526/910 [23:52<17:32,  2.74s/it]07/20/2023 18:08:11 - INFO - __main__ - {'epoch': 1, 'step': 526, 'train_loss': 0.03418931852275428}
+ 58%|█████▊    | 527/910 [23:55<17:25,  2.73s/it]07/20/2023 18:08:14 - INFO - __main__ - {'epoch': 1, 'step': 527, 'train_loss': 0.03484343034718928}
+ 58%|█████▊    | 528/910 [23:58<17:53,  2.81s/it]07/20/2023 18:08:17 - INFO - __main__ - {'epoch': 1, 'step': 528, 'train_loss': 0.03560233838630445}
+ 58%|█████▊    | 529/910 [24:00<17:09,  2.70s/it]07/20/2023 18:08:19 - INFO - __main__ - {'epoch': 1, 'step': 529, 'train_loss': 0.036842043323192346}
+ 58%|█████▊    | 530/910 [24:03<17:07,  2.70s/it]07/20/2023 18:08:22 - INFO - __main__ - {'epoch': 1, 'step': 530, 'train_loss': 0.0368370200103184}
+ 58%|█████▊    | 531/910 [24:06<18:08,  2.87s/it]07/20/2023 18:08:25 - INFO - __main__ - {'epoch': 1, 'step': 531, 'train_loss': 0.03746282717602401}
+ 58%|█████▊    | 532/910 [24:09<17:53,  2.84s/it]07/20/2023 18:08:28 - INFO - __main__ - {'epoch': 1, 'step': 532, 'train_loss': 0.03759249350182096}
+ 59%|█████▊    | 533/910 [24:11<17:09,  2.73s/it]07/20/2023 18:08:30 - INFO - __main__ - {'epoch': 1, 'step': 533, 'train_loss': 0.03794703385172373}
+ 59%|█████▊    | 534/910 [24:14<16:38,  2.66s/it]07/20/2023 18:08:33 - INFO - __main__ - {'epoch': 1, 'step': 534, 'train_loss': 0.038797671428780434}
+ 59%|█████▉    | 535/910 [24:16<16:38,  2.66s/it]07/20/2023 18:08:35 - INFO - __main__ - {'epoch': 1, 'step': 535, 'train_loss': 0.03886022835134346}
+ 59%|█████▉    | 536/910 [24:19<17:05,  2.74s/it]07/20/2023 18:08:38 - INFO - __main__ - {'epoch': 1, 'step': 536, 'train_loss': 0.039545657029792444}
+ 59%|█████▉    | 537/910 [24:22<16:34,  2.67s/it]07/20/2023 18:08:41 - INFO - __main__ - {'epoch': 1, 'step': 537, 'train_loss': 0.04001394374854516}
+ 59%|█████▉    | 538/910 [24:25<16:35,  2.68s/it]07/20/2023 18:08:44 - INFO - __main__ - {'epoch': 1, 'step': 538, 'train_loss': 0.040373394480425186}
+ 59%|█████▉    | 539/910 [24:27<16:41,  2.70s/it]07/20/2023 18:08:46 - INFO - __main__ - {'epoch': 1, 'step': 539, 'train_loss': 0.040535836582502316}
+ 59%|█████▉    | 540/910 [24:30<16:22,  2.65s/it]07/20/2023 18:08:49 - INFO - __main__ - {'epoch': 1, 'step': 540, 'train_loss': 0.040477272316261574}
+ 59%|█████▉    | 541/910 [24:33<16:23,  2.66s/it]07/20/2023 18:08:52 - INFO - __main__ - {'epoch': 1, 'step': 541, 'train_loss': 0.040619968266231515}
+ 60%|█████▉    | 542/910 [24:35<16:03,  2.62s/it]07/20/2023 18:08:54 - INFO - __main__ - {'epoch': 1, 'step': 542, 'train_loss': 0.040912585944707106}
+ 60%|█████▉    | 543/910 [24:37<15:34,  2.55s/it]07/20/2023 18:08:56 - INFO - __main__ - {'epoch': 1, 'step': 543, 'train_loss': 0.04110880758661372}
+ 60%|█████▉    | 544/910 [24:40<16:10,  2.65s/it]07/20/2023 18:08:59 - INFO - __main__ - {'epoch': 1, 'step': 544, 'train_loss': 0.042469361249138325}
+ 60%|█████▉    | 545/910 [24:43<15:53,  2.61s/it]07/20/2023 18:09:02 - INFO - __main__ - {'epoch': 1, 'step': 545, 'train_loss': 0.04298274888904816}
+ 60%|██████    | 546/910 [24:46<16:24,  2.70s/it]07/20/2023 18:09:05 - INFO - __main__ - {'epoch': 1, 'step': 546, 'train_loss': 0.042943821721897896}
+ 60%|██████    | 547/910 [24:49<16:58,  2.81s/it]07/20/2023 18:09:08 - INFO - __main__ - {'epoch': 1, 'step': 547, 'train_loss': 0.04322773098291819}
+ 60%|██████    | 548/910 [24:51<16:44,  2.77s/it]07/20/2023 18:09:11 - INFO - __main__ - {'epoch': 1, 'step': 548, 'train_loss': 0.04328161086479243}
+ 60%|██████    | 549/910 [24:54<16:27,  2.74s/it]07/20/2023 18:09:13 - INFO - __main__ - {'epoch': 1, 'step': 549, 'train_loss': 0.044255824688353824}
+ 60%|██████    | 550/910 [24:56<15:41,  2.62s/it]07/20/2023 18:09:16 - INFO - __main__ - {'epoch': 1, 'step': 550, 'train_loss': 0.044480757279829544}
+ 61%|██████    | 551/910 [24:59<15:42,  2.62s/it]07/20/2023 18:09:18 - INFO - __main__ - {'epoch': 1, 'step': 551, 'train_loss': 0.04611566062414928}
+ 61%|██████    | 552/910 [25:02<15:16,  2.56s/it]07/20/2023 18:09:21 - INFO - __main__ - {'epoch': 1, 'step': 552, 'train_loss': 0.046499169391134514}
+ 61%|██████    | 553/910 [25:04<14:58,  2.52s/it]07/20/2023 18:09:23 - INFO - __main__ - {'epoch': 1, 'step': 553, 'train_loss': 0.04670999537324819}
+ 61%|██████    | 554/910 [25:07<15:50,  2.67s/it]07/20/2023 18:09:26 - INFO - __main__ - {'epoch': 1, 'step': 554, 'train_loss': 0.04775384014694269}
+ 61%|██████    | 555/910 [25:10<16:25,  2.78s/it]07/20/2023 18:09:29 - INFO - __main__ - {'epoch': 1, 'step': 555, 'train_loss': 0.04798276059262387}
+ 61%|██████    | 556/910 [25:13<16:22,  2.78s/it]07/20/2023 18:09:32 - INFO - __main__ - {'epoch': 1, 'step': 556, 'train_loss': 0.048433921319975266}
+ 61%|██████    | 557/910 [25:16<16:17,  2.77s/it]07/20/2023 18:09:35 - INFO - __main__ - {'epoch': 1, 'step': 557, 'train_loss': 0.05021242864256059}
+ 61%|██████▏   | 558/910 [25:19<17:51,  3.04s/it]07/20/2023 18:09:38 - INFO - __main__ - {'epoch': 1, 'step': 558, 'train_loss': 0.05025632577984991}
+ 61%|██████▏   | 559/910 [25:22<17:33,  3.00s/it]07/20/2023 18:09:41 - INFO - __main__ - {'epoch': 1, 'step': 559, 'train_loss': 0.05064858861387522}
+ 62%|██████▏   | 560/910 [25:25<16:29,  2.83s/it]07/20/2023 18:09:44 - INFO - __main__ - {'epoch': 1, 'step': 560, 'train_loss': 0.05091563633510045}
+ 62%|██████▏   | 561/910 [25:27<15:42,  2.70s/it]07/20/2023 18:09:46 - INFO - __main__ - {'epoch': 1, 'step': 561, 'train_loss': 0.051674365147337344}
+ 62%|██████▏   | 562/910 [25:29<15:19,  2.64s/it]07/20/2023 18:09:48 - INFO - __main__ - {'epoch': 1, 'step': 562, 'train_loss': 0.05170231612127447}
+ 62%|██████▏   | 563/910 [25:32<15:33,  2.69s/it]07/20/2023 18:09:51 - INFO - __main__ - {'epoch': 1, 'step': 563, 'train_loss': 0.05208575450294183}
+ 62%|██████▏   | 564/910 [25:35<15:31,  2.69s/it]07/20/2023 18:09:54 - INFO - __main__ - {'epoch': 1, 'step': 564, 'train_loss': 0.05276911309424867}
+ 62%|██████▏   | 565/910 [25:37<15:14,  2.65s/it]07/20/2023 18:09:57 - INFO - __main__ - {'epoch': 1, 'step': 565, 'train_loss': 0.0529159680931969}
+ 62%|██████▏   | 566/910 [25:40<15:22,  2.68s/it]07/20/2023 18:09:59 - INFO - __main__ - {'epoch': 1, 'step': 566, 'train_loss': 0.05335389261953401}
+ 62%|██████▏   | 567/910 [25:43<14:56,  2.61s/it]07/20/2023 18:10:02 - INFO - __main__ - {'epoch': 1, 'step': 567, 'train_loss': 0.05347164093501984}
+ 62%|██████▏   | 568/910 [25:45<14:39,  2.57s/it]07/20/2023 18:10:04 - INFO - __main__ - {'epoch': 1, 'step': 568, 'train_loss': 0.0536835361534441}
+ 63%|██████▎   | 569/910 [25:48<14:54,  2.62s/it]07/20/2023 18:10:07 - INFO - __main__ - {'epoch': 1, 'step': 569, 'train_loss': 0.05379514241679482}
+ 63%|██████▎   | 570/910 [25:50<14:37,  2.58s/it]07/20/2023 18:10:09 - INFO - __main__ - {'epoch': 1, 'step': 570, 'train_loss': 0.05430383514939693}
+ 63%|██████▎   | 571/910 [25:53<14:09,  2.51s/it]07/20/2023 18:10:12 - INFO - __main__ - {'epoch': 1, 'step': 571, 'train_loss': 0.05452513151953809}
+ 63%|██████▎   | 572/910 [25:55<13:59,  2.48s/it]07/20/2023 18:10:14 - INFO - __main__ - {'epoch': 1, 'step': 572, 'train_loss': 0.055020525738909525}
+ 63%|██████▎   | 573/910 [25:57<13:38,  2.43s/it]07/20/2023 18:10:17 - INFO - __main__ - {'epoch': 1, 'step': 573, 'train_loss': 0.05504806545184337}
+ 63%|██████▎   | 574/910 [26:00<13:47,  2.46s/it]07/20/2023 18:10:19 - INFO - __main__ - {'epoch': 1, 'step': 574, 'train_loss': 0.05520395950157883}
+ 63%|██████▎   | 575/910 [26:03<14:09,  2.54s/it]07/20/2023 18:10:22 - INFO - __main__ - {'epoch': 1, 'step': 575, 'train_loss': 0.05544592815896739}
+ 63%|██████▎   | 576/910 [26:05<14:01,  2.52s/it]07/20/2023 18:10:24 - INFO - __main__ - {'epoch': 1, 'step': 576, 'train_loss': 0.05563958485921224}
+ 63%|██████▎   | 577/910 [26:08<13:57,  2.51s/it]07/20/2023 18:10:27 - INFO - __main__ - {'epoch': 1, 'step': 577, 'train_loss': 0.05558842968073007}
+ 64%|██████▎   | 578/910 [26:10<14:02,  2.54s/it]07/20/2023 18:10:29 - INFO - __main__ - {'epoch': 1, 'step': 578, 'train_loss': 0.05645192288197448}
+ 64%|██████▎   | 579/910 [26:13<13:45,  2.49s/it]07/20/2023 18:10:32 - INFO - __main__ - {'epoch': 1, 'step': 579, 'train_loss': 0.057197742099794904}
+ 64%|██████▎   | 580/910 [26:15<14:05,  2.56s/it]07/20/2023 18:10:34 - INFO - __main__ - {'epoch': 1, 'step': 580, 'train_loss': 0.05713301033809267}
+ 64%|██████▍   | 581/910 [26:19<14:56,  2.72s/it]07/20/2023 18:10:38 - INFO - __main__ - {'epoch': 1, 'step': 581, 'train_loss': 0.05779441006212349}
+ 64%|██████▍   | 582/910 [26:21<14:31,  2.66s/it]07/20/2023 18:10:40 - INFO - __main__ - {'epoch': 1, 'step': 582, 'train_loss': 0.05823204853280713}
+ 64%|██████▍   | 583/910 [26:24<14:13,  2.61s/it]07/20/2023 18:10:43 - INFO - __main__ - {'epoch': 1, 'step': 583, 'train_loss': 0.058478903402390654}
+ 64%|██████▍   | 584/910 [26:26<14:23,  2.65s/it]07/20/2023 18:10:45 - INFO - __main__ - {'epoch': 1, 'step': 584, 'train_loss': 0.058592809389715325}
+ 64%|██████▍   | 585/910 [26:29<13:53,  2.57s/it]07/20/2023 18:10:48 - INFO - __main__ - {'epoch': 1, 'step': 585, 'train_loss': 0.05854022686298077}
+ 64%|██████▍   | 586/910 [26:32<15:39,  2.90s/it]07/20/2023 18:10:51 - INFO - __main__ - {'epoch': 1, 'step': 586, 'train_loss': 0.058705300601269196}
+ 65%|██████▍   | 587/910 [26:35<14:59,  2.79s/it]07/20/2023 18:10:54 - INFO - __main__ - {'epoch': 1, 'step': 587, 'train_loss': 0.05913100494436754}
+ 65%|██████▍   | 588/910 [26:38<14:59,  2.79s/it]07/20/2023 18:10:57 - INFO - __main__ - {'epoch': 1, 'step': 588, 'train_loss': 0.060060150769292095}
+ 65%|██████▍   | 589/910 [26:40<14:28,  2.70s/it]07/20/2023 18:10:59 - INFO - __main__ - {'epoch': 1, 'step': 589, 'train_loss': 0.060082531137255944}
+ 65%|██████▍   | 590/910 [26:43<14:44,  2.76s/it]07/20/2023 18:11:02 - INFO - __main__ - {'epoch': 1, 'step': 590, 'train_loss': 0.06006593865863347}
+ 65%|██████▍   | 591/910 [26:46<14:39,  2.76s/it]07/20/2023 18:11:05 - INFO - __main__ - {'epoch': 1, 'step': 591, 'train_loss': 0.06010971456614848}
+ 65%|██████▌   | 592/910 [26:48<14:08,  2.67s/it]07/20/2023 18:11:07 - INFO - __main__ - {'epoch': 1, 'step': 592, 'train_loss': 0.06036779042836782}
+ 65%|██████▌   | 593/910 [26:51<13:36,  2.57s/it]07/20/2023 18:11:10 - INFO - __main__ - {'epoch': 1, 'step': 593, 'train_loss': 0.060328568817190134}
+ 65%|██████▌   | 594/910 [26:53<13:10,  2.50s/it]07/20/2023 18:11:12 - INFO - __main__ - {'epoch': 1, 'step': 594, 'train_loss': 0.060393876098221805}
+ 65%|██████▌   | 595/910 [26:55<13:04,  2.49s/it]07/20/2023 18:11:14 - INFO - __main__ - {'epoch': 1, 'step': 595, 'train_loss': 0.06103751559217437}
+ 65%|██████▌   | 596/910 [26:59<14:30,  2.77s/it]07/20/2023 18:11:18 - INFO - __main__ - {'epoch': 1, 'step': 596, 'train_loss': 0.06252119845191904}
+ 66%|██████▌   | 597/910 [27:01<14:12,  2.72s/it]07/20/2023 18:11:20 - INFO - __main__ - {'epoch': 1, 'step': 597, 'train_loss': 0.0627403578766227}
+ 66%|██████▌   | 598/910 [27:04<14:01,  2.70s/it]07/20/2023 18:11:23 - INFO - __main__ - {'epoch': 1, 'step': 598, 'train_loss': 0.06364793043870193}
+ 66%|██████▌   | 599/910 [27:07<13:39,  2.63s/it]07/20/2023 18:11:26 - INFO - __main__ - {'epoch': 1, 'step': 599, 'train_loss': 0.0637519849162667}
+ 66%|██████▌   | 600/910 [27:09<13:17,  2.57s/it]07/20/2023 18:11:28 - INFO - __main__ - {'epoch': 1, 'step': 600, 'train_loss': 0.06382802327473959}
+ 66%|██████▌   | 601/910 [27:11<13:04,  2.54s/it]07/20/2023 18:11:30 - INFO - __main__ - {'epoch': 1, 'step': 601, 'train_loss': 0.06418979029092138}
+ 66%|██████▌   | 602/910 [27:14<13:33,  2.64s/it]07/20/2023 18:11:33 - INFO - __main__ - {'epoch': 1, 'step': 602, 'train_loss': 0.06419266101925872}
+ 66%|██████▋   | 603/910 [27:18<14:43,  2.88s/it]07/20/2023 18:11:37 - INFO - __main__ - {'epoch': 1, 'step': 603, 'train_loss': 0.0645850135714656}
+ 66%|██████▋   | 604/910 [27:20<14:13,  2.79s/it]07/20/2023 18:11:39 - INFO - __main__ - {'epoch': 1, 'step': 604, 'train_loss': 0.06465351028947641}
+ 66%|██████▋   | 605/910 [27:23<14:06,  2.78s/it]07/20/2023 18:11:42 - INFO - __main__ - {'epoch': 1, 'step': 605, 'train_loss': 0.06475971316503099}
+ 67%|██████▋   | 606/910 [27:26<13:37,  2.69s/it]07/20/2023 18:11:45 - INFO - __main__ - {'epoch': 1, 'step': 606, 'train_loss': 0.06493002510700288}
+ 67%|██████▋   | 607/910 [27:28<13:28,  2.67s/it]07/20/2023 18:11:47 - INFO - __main__ - {'epoch': 1, 'step': 607, 'train_loss': 0.06546015480204902}
+ 67%|██████▋   | 608/910 [27:32<14:32,  2.89s/it]07/20/2023 18:11:51 - INFO - __main__ - {'epoch': 1, 'step': 608, 'train_loss': 0.06581185993395354}
+ 67%|██████▋   | 609/910 [27:35<14:52,  2.97s/it]07/20/2023 18:11:54 - INFO - __main__ - {'epoch': 1, 'step': 609, 'train_loss': 0.06588098685729679}
+ 67%|██████▋   | 610/910 [27:38<14:45,  2.95s/it]07/20/2023 18:11:57 - INFO - __main__ - {'epoch': 1, 'step': 610, 'train_loss': 0.06631729876408811}
+ 67%|██████▋   | 611/910 [27:40<14:04,  2.82s/it]07/20/2023 18:11:59 - INFO - __main__ - {'epoch': 1, 'step': 611, 'train_loss': 0.06670743002634001}
+ 67%|██████▋   | 612/910 [27:43<13:21,  2.69s/it]07/20/2023 18:12:02 - INFO - __main__ - {'epoch': 1, 'step': 612, 'train_loss': 0.0668585284862643}
+ 67%|██████▋   | 613/910 [27:45<13:16,  2.68s/it]07/20/2023 18:12:04 - INFO - __main__ - {'epoch': 1, 'step': 613, 'train_loss': 0.06684026671467169}
+ 67%|██████▋   | 614/910 [27:48<13:36,  2.76s/it]07/20/2023 18:12:07 - INFO - __main__ - {'epoch': 1, 'step': 614, 'train_loss': 0.06682325729718037}
+ 68%|██████▊   | 615/910 [27:51<13:31,  2.75s/it]07/20/2023 18:12:10 - INFO - __main__ - {'epoch': 1, 'step': 615, 'train_loss': 0.0673021270007622}
+ 68%|██████▊   | 616/910 [27:54<13:20,  2.72s/it]07/20/2023 18:12:13 - INFO - __main__ - {'epoch': 1, 'step': 616, 'train_loss': 0.06789992691634537}
+ 68%|██████▊   | 617/910 [27:56<13:04,  2.68s/it]07/20/2023 18:12:15 - INFO - __main__ - {'epoch': 1, 'step': 617, 'train_loss': 0.06833751313690235}
+ 68%|██████▊   | 618/910 [27:59<12:46,  2.62s/it]07/20/2023 18:12:18 - INFO - __main__ - {'epoch': 1, 'step': 618, 'train_loss': 0.06869151291337985}
+ 68%|██████▊   | 619/910 [28:02<13:27,  2.78s/it]07/20/2023 18:12:21 - INFO - __main__ - {'epoch': 1, 'step': 619, 'train_loss': 0.06929679217361671}
+ 68%|██████▊   | 620/910 [28:04<13:10,  2.73s/it]07/20/2023 18:12:23 - INFO - __main__ - {'epoch': 1, 'step': 620, 'train_loss': 0.0692291259765625}
+ 68%|██████▊   | 621/910 [28:07<13:11,  2.74s/it]07/20/2023 18:12:26 - INFO - __main__ - {'epoch': 1, 'step': 621, 'train_loss': 0.06935667569318639}
+ 68%|██████▊   | 622/910 [28:09<12:27,  2.60s/it]07/20/2023 18:12:28 - INFO - __main__ - {'epoch': 1, 'step': 622, 'train_loss': 0.0693896131116861}
+ 68%|██████▊   | 623/910 [28:12<12:18,  2.57s/it]07/20/2023 18:12:31 - INFO - __main__ - {'epoch': 1, 'step': 623, 'train_loss': 0.07080185891728531}
+ 69%|██████▊   | 624/910 [28:15<12:29,  2.62s/it]07/20/2023 18:12:34 - INFO - __main__ - {'epoch': 1, 'step': 624, 'train_loss': 0.07081828973232171}
+ 69%|██████▊   | 625/910 [28:17<12:14,  2.58s/it]07/20/2023 18:12:36 - INFO - __main__ - {'epoch': 1, 'step': 625, 'train_loss': 0.07072744140625}
+ 69%|██████▉   | 626/910 [28:20<12:45,  2.70s/it]07/20/2023 18:12:39 - INFO - __main__ - {'epoch': 1, 'step': 626, 'train_loss': 0.07113237959889178}
+ 69%|██████▉   | 627/910 [28:22<12:09,  2.58s/it]07/20/2023 18:12:41 - INFO - __main__ - {'epoch': 1, 'step': 627, 'train_loss': 0.07130707127815988}
+ 69%|██████▉   | 628/910 [28:25<12:25,  2.64s/it]07/20/2023 18:12:44 - INFO - __main__ - {'epoch': 1, 'step': 628, 'train_loss': 0.07133814331832206}
+ 69%|██████▉   | 629/910 [28:28<12:12,  2.61s/it]07/20/2023 18:12:47 - INFO - __main__ - {'epoch': 1, 'step': 629, 'train_loss': 0.07213763553880168}
+ 69%|██████▉   | 630/910 [28:30<11:56,  2.56s/it]07/20/2023 18:12:49 - INFO - __main__ - {'epoch': 1, 'step': 630, 'train_loss': 0.07208707294766865}
+ 69%|██████▉   | 631/910 [28:33<11:40,  2.51s/it]07/20/2023 18:12:52 - INFO - __main__ - {'epoch': 1, 'step': 631, 'train_loss': 0.07254545813317155}
+ 69%|██████▉   | 632/910 [28:35<11:42,  2.53s/it]07/20/2023 18:12:54 - INFO - __main__ - {'epoch': 1, 'step': 632, 'train_loss': 0.07323417180701147}
+ 70%|██████▉   | 633/910 [28:38<12:14,  2.65s/it]07/20/2023 18:12:57 - INFO - __main__ - {'epoch': 1, 'step': 633, 'train_loss': 0.07374175012959124}
+ 70%|██████▉   | 634/910 [28:41<12:25,  2.70s/it]07/20/2023 18:13:00 - INFO - __main__ - {'epoch': 1, 'step': 634, 'train_loss': 0.07383184102055403}
+ 70%|██████▉   | 635/910 [28:43<11:55,  2.60s/it]07/20/2023 18:13:02 - INFO - __main__ - {'epoch': 1, 'step': 635, 'train_loss': 0.07399854284571851}
+ 70%|██████▉   | 636/910 [28:46<11:44,  2.57s/it]07/20/2023 18:13:05 - INFO - __main__ - {'epoch': 1, 'step': 636, 'train_loss': 0.07427220374533215}
+ 70%|███████   | 637/910 [28:48<11:40,  2.57s/it]07/20/2023 18:13:07 - INFO - __main__ - {'epoch': 1, 'step': 637, 'train_loss': 0.07422229521315737}
+ 70%|███████   | 638/910 [28:51<11:39,  2.57s/it]07/20/2023 18:13:10 - INFO - __main__ - {'epoch': 1, 'step': 638, 'train_loss': 0.07459270991501764}
+ 70%|███████   | 639/910 [28:54<11:51,  2.62s/it]07/20/2023 18:13:13 - INFO - __main__ - {'epoch': 1, 'step': 639, 'train_loss': 0.07518203568197379}
+ 70%|███████   | 640/910 [28:56<11:36,  2.58s/it]07/20/2023 18:13:15 - INFO - __main__ - {'epoch': 1, 'step': 640, 'train_loss': 0.0756382942199707}
+ 70%|███████   | 641/910 [28:59<12:00,  2.68s/it]07/20/2023 18:13:18 - INFO - __main__ - {'epoch': 1, 'step': 641, 'train_loss': 0.07556809352452223}
+ 71%|███████   | 642/910 [29:02<11:53,  2.66s/it]07/20/2023 18:13:21 - INFO - __main__ - {'epoch': 1, 'step': 642, 'train_loss': 0.07558500581069899}
+ 71%|███████   | 643/910 [29:04<11:28,  2.58s/it]07/20/2023 18:13:23 - INFO - __main__ - {'epoch': 1, 'step': 643, 'train_loss': 0.07613570953416601}
+ 71%|███████   | 644/910 [29:07<11:40,  2.63s/it]07/20/2023 18:13:26 - INFO - __main__ - {'epoch': 1, 'step': 644, 'train_loss': 0.07639810313349185}
+ 71%|███████   | 645/910 [29:09<11:11,  2.54s/it]07/20/2023 18:13:28 - INFO - __main__ - {'epoch': 1, 'step': 645, 'train_loss': 0.07642197719840116}
+ 71%|███████   | 646/910 [29:12<11:26,  2.60s/it]07/20/2023 18:13:31 - INFO - __main__ - {'epoch': 1, 'step': 646, 'train_loss': 0.0772046540912829}
+ 71%|███████   | 647/910 [29:14<11:21,  2.59s/it]07/20/2023 18:13:33 - INFO - __main__ - {'epoch': 1, 'step': 647, 'train_loss': 0.07727475291610317}
+ 71%|███████   | 648/910 [29:17<11:17,  2.59s/it]07/20/2023 18:13:36 - INFO - __main__ - {'epoch': 1, 'step': 648, 'train_loss': 0.0775141774872203}
+ 71%|███████▏  | 649/910 [29:20<11:33,  2.66s/it]07/20/2023 18:13:39 - INFO - __main__ - {'epoch': 1, 'step': 649, 'train_loss': 0.07784013792252503}
+ 71%|███████▏  | 650/910 [29:23<11:43,  2.71s/it]07/20/2023 18:13:42 - INFO - __main__ - {'epoch': 1, 'step': 650, 'train_loss': 0.07842050405649038}
+ 72%|███████▏  | 651/910 [29:25<11:24,  2.64s/it]07/20/2023 18:13:44 - INFO - __main__ - {'epoch': 1, 'step': 651, 'train_loss': 0.07864656463013633}
+ 72%|███████▏  | 652/910 [29:27<10:55,  2.54s/it]07/20/2023 18:13:46 - INFO - __main__ - {'epoch': 1, 'step': 652, 'train_loss': 0.07921193128714532}
+ 72%|███████▏  | 653/910 [29:30<10:44,  2.51s/it]07/20/2023 18:13:49 - INFO - __main__ - {'epoch': 1, 'step': 653, 'train_loss': 0.07947646604015123}
+ 72%|███████▏  | 654/910 [29:32<10:38,  2.49s/it]07/20/2023 18:13:51 - INFO - __main__ - {'epoch': 1, 'step': 654, 'train_loss': 0.07943146965190176}
+ 72%|███████▏  | 655/910 [29:35<11:01,  2.59s/it]07/20/2023 18:13:54 - INFO - __main__ - {'epoch': 1, 'step': 655, 'train_loss': 0.07999901225548664}
+ 72%|███████▏  | 656/910 [29:38<10:52,  2.57s/it]07/20/2023 18:13:57 - INFO - __main__ - {'epoch': 1, 'step': 656, 'train_loss': 0.0802641147520484}
+ 72%|███████▏  | 657/910 [29:41<11:12,  2.66s/it]07/20/2023 18:14:00 - INFO - __main__ - {'epoch': 1, 'step': 657, 'train_loss': 0.08037382500356735}
+ 72%|███████▏  | 658/910 [29:43<10:58,  2.61s/it]07/20/2023 18:14:02 - INFO - __main__ - {'epoch': 1, 'step': 658, 'train_loss': 0.08043422525052242}
+ 72%|███████▏  | 659/910 [29:45<10:44,  2.57s/it]07/20/2023 18:14:05 - INFO - __main__ - {'epoch': 1, 'step': 659, 'train_loss': 0.08065152204452769}
+ 73%|███████▎  | 660/910 [29:48<11:11,  2.69s/it]07/20/2023 18:14:07 - INFO - __main__ - {'epoch': 1, 'step': 660, 'train_loss': 0.08167160496567234}
+ 73%|███████▎  | 661/910 [29:51<11:35,  2.79s/it]07/20/2023 18:14:11 - INFO - __main__ - {'epoch': 1, 'step': 661, 'train_loss': 0.0816802747671615}
+ 73%|███████▎  | 662/910 [29:54<11:13,  2.71s/it]07/20/2023 18:14:13 - INFO - __main__ - {'epoch': 1, 'step': 662, 'train_loss': 0.08175456343820808}
+ 73%|███████▎  | 663/910 [29:56<10:50,  2.63s/it]07/20/2023 18:14:16 - INFO - __main__ - {'epoch': 1, 'step': 663, 'train_loss': 0.0818021150016497}
+ 73%|███████▎  | 664/910 [30:00<11:37,  2.84s/it]07/20/2023 18:14:19 - INFO - __main__ - {'epoch': 1, 'step': 664, 'train_loss': 0.08171752562005836}
+ 73%|███████▎  | 665/910 [30:02<11:10,  2.74s/it]07/20/2023 18:14:21 - INFO - __main__ - {'epoch': 1, 'step': 665, 'train_loss': 0.08217323704769737}
+ 73%|███████▎  | 666/910 [30:05<11:41,  2.88s/it]07/20/2023 18:14:25 - INFO - __main__ - {'epoch': 1, 'step': 666, 'train_loss': 0.08211657091661974}
+ 73%|███████▎  | 667/910 [30:08<11:28,  2.83s/it]07/20/2023 18:14:27 - INFO - __main__ - {'epoch': 1, 'step': 667, 'train_loss': 0.082350700870268}
+ 73%|███████▎  | 668/910 [30:11<11:27,  2.84s/it]07/20/2023 18:14:30 - INFO - __main__ - {'epoch': 1, 'step': 668, 'train_loss': 0.082502262321061}
+ 74%|███████▎  | 669/910 [30:14<11:19,  2.82s/it]07/20/2023 18:14:33 - INFO - __main__ - {'epoch': 1, 'step': 669, 'train_loss': 0.08338323801265882}
+ 74%|███████▎  | 670/910 [30:16<10:51,  2.71s/it]07/20/2023 18:14:35 - INFO - __main__ - {'epoch': 1, 'step': 670, 'train_loss': 0.08352697571711754}
+ 74%|███████▎  | 671/910 [30:19<11:14,  2.82s/it]07/20/2023 18:14:38 - INFO - __main__ - {'epoch': 1, 'step': 671, 'train_loss': 0.0836717403770026}
+ 74%|███████▍  | 672/910 [30:22<10:48,  2.73s/it]07/20/2023 18:14:41 - INFO - __main__ - {'epoch': 1, 'step': 672, 'train_loss': 0.08372088841029576}
+ 74%|███████▍  | 673/910 [30:24<10:34,  2.68s/it]07/20/2023 18:14:43 - INFO - __main__ - {'epoch': 1, 'step': 673, 'train_loss': 0.08475733582721955}
+ 74%|███████▍  | 674/910 [30:27<10:16,  2.61s/it]07/20/2023 18:14:46 - INFO - __main__ - {'epoch': 1, 'step': 674, 'train_loss': 0.0858660508334106}
+ 74%|███████▍  | 675/910 [30:30<10:22,  2.65s/it]07/20/2023 18:14:49 - INFO - __main__ - {'epoch': 1, 'step': 675, 'train_loss': 0.08645354094328704}
+ 74%|███████▍  | 676/910 [30:32<10:33,  2.71s/it]07/20/2023 18:14:52 - INFO - __main__ - {'epoch': 1, 'step': 676, 'train_loss': 0.08724442882650703}
+ 74%|███████▍  | 677/910 [30:35<10:17,  2.65s/it]07/20/2023 18:14:54 - INFO - __main__ - {'epoch': 1, 'step': 677, 'train_loss': 0.08738818936369092}
+ 75%|███████▍  | 678/910 [30:38<10:21,  2.68s/it]07/20/2023 18:14:57 - INFO - __main__ - {'epoch': 1, 'step': 678, 'train_loss': 0.08811198996934919}
+ 75%|███████▍  | 679/910 [30:40<10:13,  2.66s/it]07/20/2023 18:14:59 - INFO - __main__ - {'epoch': 1, 'step': 679, 'train_loss': 0.0884482112654179}
+ 75%|███████▍  | 680/910 [30:43<10:05,  2.63s/it]07/20/2023 18:15:02 - INFO - __main__ - {'epoch': 1, 'step': 680, 'train_loss': 0.08863983154296876}
+ 75%|███████▍  | 681/910 [30:45<09:44,  2.55s/it]07/20/2023 18:15:04 - INFO - __main__ - {'epoch': 1, 'step': 681, 'train_loss': 0.08992073854510829}
+ 75%|███████▍  | 682/910 [30:48<09:47,  2.58s/it]07/20/2023 18:15:07 - INFO - __main__ - {'epoch': 1, 'step': 682, 'train_loss': 0.09013111640281342}
+ 75%|███████▌  | 683/910 [30:51<09:50,  2.60s/it]07/20/2023 18:15:10 - INFO - __main__ - {'epoch': 1, 'step': 683, 'train_loss': 0.09025508942052525}
+ 75%|███████▌  | 684/910 [30:54<11:04,  2.94s/it]07/20/2023 18:15:13 - INFO - __main__ - {'epoch': 1, 'step': 684, 'train_loss': 0.09020380388226426}
+ 75%|███████▌  | 685/910 [30:57<11:12,  2.99s/it]07/20/2023 18:15:16 - INFO - __main__ - {'epoch': 1, 'step': 685, 'train_loss': 0.09067944157732664}
+ 75%|███████▌  | 686/910 [31:00<10:53,  2.92s/it]07/20/2023 18:15:19 - INFO - __main__ - {'epoch': 1, 'step': 686, 'train_loss': 0.09113091560563957}
+ 75%|███████▌  | 687/910 [31:03<10:36,  2.86s/it]07/20/2023 18:15:22 - INFO - __main__ - {'epoch': 1, 'step': 687, 'train_loss': 0.0910600998169123}
+ 76%|███████▌  | 688/910 [31:06<10:20,  2.79s/it]07/20/2023 18:15:25 - INFO - __main__ - {'epoch': 1, 'step': 688, 'train_loss': 0.09120879062386446}
+ 76%|███████▌  | 689/910 [31:09<10:37,  2.88s/it]07/20/2023 18:15:28 - INFO - __main__ - {'epoch': 1, 'step': 689, 'train_loss': 0.09189281269843069}
+ 76%|███████▌  | 690/910 [31:12<10:55,  2.98s/it]07/20/2023 18:15:31 - INFO - __main__ - {'epoch': 1, 'step': 690, 'train_loss': 0.09188913538836051}
+ 76%|███████▌  | 691/910 [31:15<11:00,  3.02s/it]07/20/2023 18:15:34 - INFO - __main__ - {'epoch': 1, 'step': 691, 'train_loss': 0.09220839857882597}
+ 76%|███████▌  | 692/910 [31:18<10:40,  2.94s/it]07/20/2023 18:15:37 - INFO - __main__ - {'epoch': 1, 'step': 692, 'train_loss': 0.09220921510905888}
+ 76%|███████▌  | 693/910 [31:21<10:41,  2.96s/it]07/20/2023 18:15:40 - INFO - __main__ - {'epoch': 1, 'step': 693, 'train_loss': 0.0924030870930285}
+ 76%|███████▋  | 694/910 [31:23<10:24,  2.89s/it]07/20/2023 18:15:42 - INFO - __main__ - {'epoch': 1, 'step': 694, 'train_loss': 0.09302417414332673}
+ 76%|███████▋  | 695/910 [31:26<10:05,  2.82s/it]07/20/2023 18:15:45 - INFO - __main__ - {'epoch': 1, 'step': 695, 'train_loss': 0.09403690914455935}
+ 76%|███████▋  | 696/910 [31:28<09:21,  2.62s/it]07/20/2023 18:15:47 - INFO - __main__ - {'epoch': 1, 'step': 696, 'train_loss': 0.09457248380814476}
+ 77%|███████▋  | 697/910 [31:31<09:08,  2.57s/it]07/20/2023 18:15:50 - INFO - __main__ - {'epoch': 1, 'step': 697, 'train_loss': 0.09450265016925215}
+ 77%|███████▋  | 698/910 [31:33<09:12,  2.61s/it]07/20/2023 18:15:52 - INFO - __main__ - {'epoch': 1, 'step': 698, 'train_loss': 0.09467505862173173}
+ 77%|███████▋  | 699/910 [31:37<10:22,  2.95s/it]07/20/2023 18:15:56 - INFO - __main__ - {'epoch': 1, 'step': 699, 'train_loss': 0.09548963292985516}
+ 77%|███████▋  | 700/910 [31:40<09:54,  2.83s/it]07/20/2023 18:15:59 - INFO - __main__ - {'epoch': 1, 'step': 700, 'train_loss': 0.09590288434709822}
+ 77%|███████▋  | 701/910 [31:42<09:38,  2.77s/it]07/20/2023 18:16:01 - INFO - __main__ - {'epoch': 1, 'step': 701, 'train_loss': 0.09596250264688837}
+ 77%|███████▋  | 702/910 [31:45<09:50,  2.84s/it]07/20/2023 18:16:04 - INFO - __main__ - {'epoch': 1, 'step': 702, 'train_loss': 0.09590579301883013}
+ 77%|███████▋  | 703/910 [31:48<09:31,  2.76s/it]07/20/2023 18:16:07 - INFO - __main__ - {'epoch': 1, 'step': 703, 'train_loss': 0.09605275312833393}
+ 77%|███████▋  | 704/910 [31:51<10:07,  2.95s/it]07/20/2023 18:16:10 - INFO - __main__ - {'epoch': 1, 'step': 704, 'train_loss': 0.09645730798894708}
+ 77%|███████▋  | 705/910 [31:54<09:40,  2.83s/it]07/20/2023 18:16:13 - INFO - __main__ - {'epoch': 1, 'step': 705, 'train_loss': 0.09639736743683511}
+ 78%|███████▊  | 706/910 [31:56<09:15,  2.72s/it]07/20/2023 18:16:15 - INFO - __main__ - {'epoch': 1, 'step': 706, 'train_loss': 0.09642750683317103}
+ 78%|███████▊  | 707/910 [31:59<09:00,  2.66s/it]07/20/2023 18:16:18 - INFO - __main__ - {'epoch': 1, 'step': 707, 'train_loss': 0.09855641064245933}
+ 78%|███████▊  | 708/910 [32:02<09:06,  2.70s/it]07/20/2023 18:16:21 - INFO - __main__ - {'epoch': 1, 'step': 708, 'train_loss': 0.09859651899607168}
+ 78%|███████▊  | 709/910 [32:04<08:42,  2.60s/it]07/20/2023 18:16:23 - INFO - __main__ - {'epoch': 1, 'step': 709, 'train_loss': 0.09903044492132405}
+ 78%|███████▊  | 710/910 [32:07<08:41,  2.61s/it]07/20/2023 18:16:26 - INFO - __main__ - {'epoch': 1, 'step': 710, 'train_loss': 0.09911378672425177}
+ 78%|███████▊  | 711/910 [32:09<08:42,  2.62s/it]07/20/2023 18:16:28 - INFO - __main__ - {'epoch': 1, 'step': 711, 'train_loss': 0.09930952155305028}
+ 78%|███████▊  | 712/910 [32:12<08:42,  2.64s/it]07/20/2023 18:16:31 - INFO - __main__ - {'epoch': 1, 'step': 712, 'train_loss': 0.0994772750340151}
+ 78%|███████▊  | 713/910 [32:15<09:06,  2.77s/it]07/20/2023 18:16:34 - INFO - __main__ - {'epoch': 1, 'step': 713, 'train_loss': 0.09956100913284537}
+ 78%|███████▊  | 714/910 [32:18<09:10,  2.81s/it]07/20/2023 18:16:37 - INFO - __main__ - {'epoch': 1, 'step': 714, 'train_loss': 0.09998781006543242}
+ 79%|███████▊  | 715/910 [32:20<08:42,  2.68s/it]07/20/2023 18:16:39 - INFO - __main__ - {'epoch': 1, 'step': 715, 'train_loss': 0.10027410333806819}
+ 79%|███████▊  | 716/910 [32:23<08:43,  2.70s/it]07/20/2023 18:16:42 - INFO - __main__ - {'epoch': 1, 'step': 716, 'train_loss': 0.10064961523983065}
+ 79%|███████▉  | 717/910 [32:26<08:44,  2.72s/it]07/20/2023 18:16:45 - INFO - __main__ - {'epoch': 1, 'step': 717, 'train_loss': 0.10183311473043061}
+ 79%|███████▉  | 718/910 [32:28<08:40,  2.71s/it]07/20/2023 18:16:48 - INFO - __main__ - {'epoch': 1, 'step': 718, 'train_loss': 0.10227341505810411}
+ 79%|███████▉  | 719/910 [32:31<08:36,  2.71s/it]07/20/2023 18:16:50 - INFO - __main__ - {'epoch': 1, 'step': 719, 'train_loss': 0.10242047263451842}
+ 79%|███████▉  | 720/910 [32:34<08:23,  2.65s/it]07/20/2023 18:16:53 - INFO - __main__ - {'epoch': 1, 'step': 720, 'train_loss': 0.1031083001030816}
+ 79%|███████▉  | 721/910 [32:37<08:29,  2.70s/it]07/20/2023 18:16:56 - INFO - __main__ - {'epoch': 1, 'step': 721, 'train_loss': 0.10338788290460298}
+ 79%|███████▉  | 722/910 [32:39<08:29,  2.71s/it]07/20/2023 18:16:58 - INFO - __main__ - {'epoch': 1, 'step': 722, 'train_loss': 0.10345839397398719}
+ 79%|███████▉  | 723/910 [32:42<08:12,  2.64s/it]07/20/2023 18:17:01 - INFO - __main__ - {'epoch': 1, 'step': 723, 'train_loss': 0.10400686092561376}
+ 80%|███████▉  | 724/910 [32:44<08:03,  2.60s/it]07/20/2023 18:17:03 - INFO - __main__ - {'epoch': 1, 'step': 724, 'train_loss': 0.10436497472267783}
+ 80%|███████▉  | 725/910 [32:47<07:55,  2.57s/it]07/20/2023 18:17:06 - INFO - __main__ - {'epoch': 1, 'step': 725, 'train_loss': 0.10432339372306035}
+ 80%|███████▉  | 726/910 [32:49<08:02,  2.62s/it]07/20/2023 18:17:09 - INFO - __main__ - {'epoch': 1, 'step': 726, 'train_loss': 0.10468008498514979}
+ 80%|███████▉  | 727/910 [32:52<08:06,  2.66s/it]07/20/2023 18:17:11 - INFO - __main__ - {'epoch': 1, 'step': 727, 'train_loss': 0.10513788404294189}
+ 80%|████████  | 728/910 [32:55<08:00,  2.64s/it]07/20/2023 18:17:14 - INFO - __main__ - {'epoch': 1, 'step': 728, 'train_loss': 0.10543077070634443}
+ 80%|████████  | 729/910 [32:59<09:00,  2.98s/it]07/20/2023 18:17:18 - INFO - __main__ - {'epoch': 1, 'step': 729, 'train_loss': 0.10590771752293382}
+ 80%|████████  | 730/910 [33:01<08:48,  2.94s/it]07/20/2023 18:17:20 - INFO - __main__ - {'epoch': 1, 'step': 730, 'train_loss': 0.1059833683379709}
+ 80%|████████  | 731/910 [33:04<08:19,  2.79s/it]07/20/2023 18:17:23 - INFO - __main__ - {'epoch': 1, 'step': 731, 'train_loss': 0.10602007029646889}
+ 80%|████████  | 732/910 [33:06<07:59,  2.69s/it]07/20/2023 18:17:25 - INFO - __main__ - {'epoch': 1, 'step': 732, 'train_loss': 0.10604733326396004}
+ 81%|████████  | 733/910 [33:09<07:49,  2.65s/it]07/20/2023 18:17:28 - INFO - __main__ - {'epoch': 1, 'step': 733, 'train_loss': 0.10695249549688779}
+ 81%|████████  | 734/910 [33:12<07:48,  2.66s/it]07/20/2023 18:17:31 - INFO - __main__ - {'epoch': 1, 'step': 734, 'train_loss': 0.10715802683817269}
+ 81%|████████  | 735/910 [33:14<07:29,  2.57s/it]07/20/2023 18:17:33 - INFO - __main__ - {'epoch': 1, 'step': 735, 'train_loss': 0.10726202101934523}
+ 81%|████████  | 736/910 [33:16<07:21,  2.54s/it]07/20/2023 18:17:35 - INFO - __main__ - {'epoch': 1, 'step': 736, 'train_loss': 0.10720584703528363}
+ 81%|████████  | 737/910 [33:20<08:22,  2.91s/it]07/20/2023 18:17:39 - INFO - __main__ - {'epoch': 1, 'step': 737, 'train_loss': 0.10737044646264417}
+ 81%|████████  | 738/910 [33:24<08:46,  3.06s/it]07/20/2023 18:17:43 - INFO - __main__ - {'epoch': 1, 'step': 738, 'train_loss': 0.10762458118965955}
+ 81%|████████  | 739/910 [33:26<08:19,  2.92s/it]07/20/2023 18:17:45 - INFO - __main__ - {'epoch': 1, 'step': 739, 'train_loss': 0.10839868527465325}
+ 81%|████████▏ | 740/910 [33:29<08:13,  2.90s/it]07/20/2023 18:17:48 - INFO - __main__ - {'epoch': 1, 'step': 740, 'train_loss': 0.10898066340266048}
+ 81%|████████▏ | 741/910 [33:32<08:18,  2.95s/it]07/20/2023 18:17:51 - INFO - __main__ - {'epoch': 1, 'step': 741, 'train_loss': 0.1092816763400388}
+ 82%|████████▏ | 742/910 [33:35<07:58,  2.85s/it]07/20/2023 18:17:54 - INFO - __main__ - {'epoch': 1, 'step': 742, 'train_loss': 0.10920809928297676}
+ 82%|████████▏ | 743/910 [33:38<08:27,  3.04s/it]07/20/2023 18:17:57 - INFO - __main__ - {'epoch': 1, 'step': 743, 'train_loss': 0.10909890422590007}
+ 82%|████████▏ | 744/910 [33:42<08:47,  3.18s/it]07/20/2023 18:18:01 - INFO - __main__ - {'epoch': 1, 'step': 744, 'train_loss': 0.10900050337596606}
+ 82%|████████▏ | 745/910 [33:44<08:05,  2.94s/it]07/20/2023 18:18:03 - INFO - __main__ - {'epoch': 1, 'step': 745, 'train_loss': 0.10904819565331376}
+ 82%|████████▏ | 746/910 [33:47<07:41,  2.81s/it]07/20/2023 18:18:06 - INFO - __main__ - {'epoch': 1, 'step': 746, 'train_loss': 0.10895798097666723}
+ 82%|████████▏ | 747/910 [33:49<07:24,  2.73s/it]07/20/2023 18:18:08 - INFO - __main__ - {'epoch': 1, 'step': 747, 'train_loss': 0.10891212963834505}
+ 82%|████████▏ | 748/910 [33:52<07:14,  2.68s/it]07/20/2023 18:18:11 - INFO - __main__ - {'epoch': 1, 'step': 748, 'train_loss': 0.10880144904641544}
+ 82%|████████▏ | 749/910 [33:54<07:03,  2.63s/it]07/20/2023 18:18:13 - INFO - __main__ - {'epoch': 1, 'step': 749, 'train_loss': 0.10870736176881676}
+ 82%|████████▏ | 750/910 [33:57<07:26,  2.79s/it]07/20/2023 18:18:16 - INFO - __main__ - {'epoch': 1, 'step': 750, 'train_loss': 0.109989501953125}
+ 83%|████████▎ | 751/910 [34:00<07:10,  2.71s/it]07/20/2023 18:18:19 - INFO - __main__ - {'epoch': 1, 'step': 751, 'train_loss': 0.11042300045252164}
+ 83%|████████▎ | 752/910 [34:03<07:10,  2.73s/it]07/20/2023 18:18:22 - INFO - __main__ - {'epoch': 1, 'step': 752, 'train_loss': 0.11054627438809009}
+ 83%|████████▎ | 753/910 [34:06<07:22,  2.82s/it]07/20/2023 18:18:25 - INFO - __main__ - {'epoch': 1, 'step': 753, 'train_loss': 0.11141623285503818}
+ 83%|████████▎ | 754/910 [34:09<07:32,  2.90s/it]07/20/2023 18:18:28 - INFO - __main__ - {'epoch': 1, 'step': 754, 'train_loss': 0.1113157398820872}
+ 83%|████████▎ | 755/910 [34:12<07:31,  2.91s/it]07/20/2023 18:18:31 - INFO - __main__ - {'epoch': 1, 'step': 755, 'train_loss': 0.1113364516504553}
+ 83%|████████▎ | 756/910 [34:14<07:19,  2.85s/it]07/20/2023 18:18:33 - INFO - __main__ - {'epoch': 1, 'step': 756, 'train_loss': 0.11135000400442295}
+ 83%|████████▎ | 757/910 [34:17<06:58,  2.74s/it]07/20/2023 18:18:36 - INFO - __main__ - {'epoch': 1, 'step': 757, 'train_loss': 0.11128418291260733}
+ 83%|████████▎ | 758/910 [34:19<06:48,  2.69s/it]07/20/2023 18:18:39 - INFO - __main__ - {'epoch': 1, 'step': 758, 'train_loss': 0.1111876153065221}
+ 83%|████████▎ | 759/910 [34:22<06:45,  2.69s/it]07/20/2023 18:18:41 - INFO - __main__ - {'epoch': 1, 'step': 759, 'train_loss': 0.11206014479887187}
+ 84%|████████▎ | 760/910 [34:25<06:49,  2.73s/it]07/20/2023 18:18:44 - INFO - __main__ - {'epoch': 1, 'step': 760, 'train_loss': 0.11199750398334704}
+ 84%|████████▎ | 761/910 [34:28<07:08,  2.87s/it]07/20/2023 18:18:47 - INFO - __main__ - {'epoch': 1, 'step': 761, 'train_loss': 0.1119247616982178}
+ 84%|████████▎ | 762/910 [34:31<06:56,  2.82s/it]07/20/2023 18:18:50 - INFO - __main__ - {'epoch': 1, 'step': 762, 'train_loss': 0.11234177316580544}
+ 84%|████████▍ | 763/910 [34:33<06:41,  2.73s/it]07/20/2023 18:18:52 - INFO - __main__ - {'epoch': 1, 'step': 763, 'train_loss': 0.1127192945967808}
+ 84%|████████▍ | 764/910 [34:36<06:28,  2.66s/it]07/20/2023 18:18:55 - INFO - __main__ - {'epoch': 1, 'step': 764, 'train_loss': 0.11274559460385307}
+ 84%|████████▍ | 765/910 [34:38<06:16,  2.60s/it]07/20/2023 18:18:57 - INFO - __main__ - {'epoch': 1, 'step': 765, 'train_loss': 0.11273289100796569}
+ 84%|████████▍ | 766/910 [34:41<06:13,  2.59s/it]07/20/2023 18:19:00 - INFO - __main__ - {'epoch': 1, 'step': 766, 'train_loss': 0.11295543700534433}
+ 84%|████████▍ | 767/910 [34:43<06:03,  2.54s/it]07/20/2023 18:19:02 - INFO - __main__ - {'epoch': 1, 'step': 767, 'train_loss': 0.11309973606074804}
+ 84%|████████▍ | 768/910 [34:46<05:58,  2.52s/it]07/20/2023 18:19:05 - INFO - __main__ - {'epoch': 1, 'step': 768, 'train_loss': 0.11319152514139812}
+ 85%|████████▍ | 769/910 [34:48<05:53,  2.51s/it]07/20/2023 18:19:07 - INFO - __main__ - {'epoch': 1, 'step': 769, 'train_loss': 0.11327545602547952}
+ 85%|████████▍ | 770/910 [34:51<06:07,  2.63s/it]07/20/2023 18:19:10 - INFO - __main__ - {'epoch': 1, 'step': 770, 'train_loss': 0.11356970056310876}
+ 85%|████████▍ | 771/910 [34:54<06:21,  2.75s/it]07/20/2023 18:19:13 - INFO - __main__ - {'epoch': 1, 'step': 771, 'train_loss': 0.1134743300857247}
+ 85%|████████▍ | 772/910 [34:57<06:07,  2.66s/it]07/20/2023 18:19:16 - INFO - __main__ - {'epoch': 1, 'step': 772, 'train_loss': 0.11409138891981056}
+ 85%|████████▍ | 773/910 [34:59<06:02,  2.64s/it]07/20/2023 18:19:18 - INFO - __main__ - {'epoch': 1, 'step': 773, 'train_loss': 0.1140555990004447}
+ 85%|████████▌ | 774/910 [35:02<06:19,  2.79s/it]07/20/2023 18:19:21 - INFO - __main__ - {'epoch': 1, 'step': 774, 'train_loss': 0.11407478588804103}
+ 85%|████████▌ | 775/910 [35:05<06:15,  2.78s/it]07/20/2023 18:19:24 - INFO - __main__ - {'epoch': 1, 'step': 775, 'train_loss': 0.11435349987399193}
+ 85%|████████▌ | 776/910 [35:08<06:03,  2.71s/it]07/20/2023 18:19:27 - INFO - __main__ - {'epoch': 1, 'step': 776, 'train_loss': 0.11428132991200869}
+ 85%|████████▌ | 777/910 [35:10<05:53,  2.66s/it]07/20/2023 18:19:29 - INFO - __main__ - {'epoch': 1, 'step': 777, 'train_loss': 0.11428318490086069}
+ 85%|████████▌ | 778/910 [35:13<05:44,  2.61s/it]07/20/2023 18:19:32 - INFO - __main__ - {'epoch': 1, 'step': 778, 'train_loss': 0.11455051451538399}
+ 86%|████████▌ | 779/910 [35:16<06:03,  2.77s/it]07/20/2023 18:19:35 - INFO - __main__ - {'epoch': 1, 'step': 779, 'train_loss': 0.11597800101793164}
+ 86%|████████▌ | 780/910 [35:19<05:54,  2.73s/it]07/20/2023 18:19:38 - INFO - __main__ - {'epoch': 1, 'step': 780, 'train_loss': 0.11588471241486378}
+ 86%|████████▌ | 781/910 [35:21<05:39,  2.63s/it]07/20/2023 18:19:40 - INFO - __main__ - {'epoch': 1, 'step': 781, 'train_loss': 0.11607644133622759}
+ 86%|████████▌ | 782/910 [35:24<05:43,  2.69s/it]07/20/2023 18:19:43 - INFO - __main__ - {'epoch': 1, 'step': 782, 'train_loss': 0.11627017750459559}
+ 86%|████████▌ | 783/910 [35:26<05:39,  2.67s/it]07/20/2023 18:19:45 - INFO - __main__ - {'epoch': 1, 'step': 783, 'train_loss': 0.11620711793083494}
+ 86%|████████▌ | 784/910 [35:29<05:32,  2.64s/it]07/20/2023 18:19:48 - INFO - __main__ - {'epoch': 1, 'step': 784, 'train_loss': 0.11680128136459662}
+ 86%|████████▋ | 785/910 [35:32<05:40,  2.73s/it]07/20/2023 18:19:51 - INFO - __main__ - {'epoch': 1, 'step': 785, 'train_loss': 0.11718742224820859}
+ 86%|████████▋ | 786/910 [35:35<05:37,  2.72s/it]07/20/2023 18:19:54 - INFO - __main__ - {'epoch': 1, 'step': 786, 'train_loss': 0.1172632115487834}
+ 86%|████████▋ | 787/910 [35:37<05:21,  2.62s/it]07/20/2023 18:19:56 - INFO - __main__ - {'epoch': 1, 'step': 787, 'train_loss': 0.11739961073995393}
+ 87%|████████▋ | 788/910 [35:39<05:13,  2.57s/it]07/20/2023 18:19:59 - INFO - __main__ - {'epoch': 1, 'step': 788, 'train_loss': 0.11765215723647685}
+ 87%|████████▋ | 789/910 [35:42<05:21,  2.66s/it]07/20/2023 18:20:01 - INFO - __main__ - {'epoch': 1, 'step': 789, 'train_loss': 0.1180303111880149}
+ 87%|████████▋ | 790/910 [35:45<05:25,  2.71s/it]07/20/2023 18:20:04 - INFO - __main__ - {'epoch': 1, 'step': 790, 'train_loss': 0.11862259876878956}
+ 87%|████████▋ | 791/910 [35:49<05:47,  2.92s/it]07/20/2023 18:20:08 - INFO - __main__ - {'epoch': 1, 'step': 791, 'train_loss': 0.11866646439929678}
+ 87%|████████▋ | 792/910 [35:51<05:27,  2.78s/it]07/20/2023 18:20:10 - INFO - __main__ - {'epoch': 1, 'step': 792, 'train_loss': 0.11902957492404515}
+ 87%|████████▋ | 793/910 [35:54<05:23,  2.76s/it]07/20/2023 18:20:13 - INFO - __main__ - {'epoch': 1, 'step': 793, 'train_loss': 0.11907281671165669}
+ 87%|████████▋ | 794/910 [35:57<05:30,  2.85s/it]07/20/2023 18:20:16 - INFO - __main__ - {'epoch': 1, 'step': 794, 'train_loss': 0.11916514668116342}
+ 87%|████████▋ | 795/910 [35:59<05:10,  2.70s/it]07/20/2023 18:20:18 - INFO - __main__ - {'epoch': 1, 'step': 795, 'train_loss': 0.1190573254471305}
+ 87%|████████▋ | 796/910 [36:02<05:16,  2.78s/it]07/20/2023 18:20:21 - INFO - __main__ - {'epoch': 1, 'step': 796, 'train_loss': 0.119004676090413}
+ 88%|████████▊ | 797/910 [36:05<05:17,  2.81s/it]07/20/2023 18:20:24 - INFO - __main__ - {'epoch': 1, 'step': 797, 'train_loss': 0.11895583474651035}
+ 88%|████████▊ | 798/910 [36:07<05:02,  2.70s/it]07/20/2023 18:20:26 - INFO - __main__ - {'epoch': 1, 'step': 798, 'train_loss': 0.11893893363780546}
+ 88%|████████▊ | 799/910 [36:10<04:51,  2.63s/it]07/20/2023 18:20:29 - INFO - __main__ - {'epoch': 1, 'step': 799, 'train_loss': 0.1197971921689221}
+ 88%|████████▊ | 800/910 [36:13<04:58,  2.71s/it]07/20/2023 18:20:32 - INFO - __main__ - {'epoch': 1, 'step': 800, 'train_loss': 0.12005760192871094}
+ 88%|████████▊ | 801/910 [36:15<04:47,  2.64s/it]07/20/2023 18:20:34 - INFO - __main__ - {'epoch': 1, 'step': 801, 'train_loss': 0.1201308270667525}
+ 88%|████████▊ | 802/910 [36:18<04:35,  2.55s/it]07/20/2023 18:20:37 - INFO - __main__ - {'epoch': 1, 'step': 802, 'train_loss': 0.12013933367265431}
+ 88%|████████▊ | 803/910 [36:20<04:41,  2.63s/it]07/20/2023 18:20:39 - INFO - __main__ - {'epoch': 1, 'step': 803, 'train_loss': 0.12013930609336083}
+ 88%|████████▊ | 804/910 [36:24<04:54,  2.78s/it]07/20/2023 18:20:43 - INFO - __main__ - {'epoch': 1, 'step': 804, 'train_loss': 0.12037613142782183}
+ 88%|████████▊ | 805/910 [36:26<04:39,  2.66s/it]07/20/2023 18:20:45 - INFO - __main__ - {'epoch': 1, 'step': 805, 'train_loss': 0.12051895805027174}
+ 89%|████████▊ | 806/910 [36:29<04:33,  2.63s/it]07/20/2023 18:20:48 - INFO - __main__ - {'epoch': 1, 'step': 806, 'train_loss': 0.1204633310474178}
+ 89%|████████▊ | 807/910 [36:31<04:25,  2.58s/it]07/20/2023 18:20:50 - INFO - __main__ - {'epoch': 1, 'step': 807, 'train_loss': 0.12041691776545074}
+ 89%|████████▉ | 808/910 [36:34<04:31,  2.66s/it]07/20/2023 18:20:53 - INFO - __main__ - {'epoch': 1, 'step': 808, 'train_loss': 0.12033043285407642}
+ 89%|████████▉ | 809/910 [36:36<04:28,  2.66s/it]07/20/2023 18:20:56 - INFO - __main__ - {'epoch': 1, 'step': 809, 'train_loss': 0.1216495546923285}
+ 89%|████████▉ | 810/910 [36:39<04:27,  2.68s/it]07/20/2023 18:20:58 - INFO - __main__ - {'epoch': 1, 'step': 810, 'train_loss': 0.12157713336709106}
+ 89%|████████▉ | 811/910 [36:42<04:24,  2.67s/it]07/20/2023 18:21:01 - INFO - __main__ - {'epoch': 1, 'step': 811, 'train_loss': 0.1218703489856273}
+ 89%|████████▉ | 812/910 [36:44<04:17,  2.63s/it]07/20/2023 18:21:03 - INFO - __main__ - {'epoch': 1, 'step': 812, 'train_loss': 0.12180685409771398}
+ 89%|████████▉ | 813/910 [36:47<04:15,  2.63s/it]07/20/2023 18:21:06 - INFO - __main__ - {'epoch': 1, 'step': 813, 'train_loss': 0.12192369299181273}
+ 89%|████████▉ | 814/910 [36:50<04:08,  2.59s/it]07/20/2023 18:21:09 - INFO - __main__ - {'epoch': 1, 'step': 814, 'train_loss': 0.12206663839354269}
+ 90%|████████▉ | 815/910 [36:52<04:01,  2.54s/it]07/20/2023 18:21:11 - INFO - __main__ - {'epoch': 1, 'step': 815, 'train_loss': 0.12229790248753834}
+ 90%|████████▉ | 816/910 [36:54<03:49,  2.45s/it]07/20/2023 18:21:13 - INFO - __main__ - {'epoch': 1, 'step': 816, 'train_loss': 0.12279906927370558}
+ 90%|████████▉ | 817/910 [36:57<03:46,  2.44s/it]07/20/2023 18:21:16 - INFO - __main__ - {'epoch': 1, 'step': 817, 'train_loss': 0.12284120818830324}
+ 90%|████████▉ | 818/910 [36:59<03:49,  2.50s/it]07/20/2023 18:21:18 - INFO - __main__ - {'epoch': 1, 'step': 818, 'train_loss': 0.12339301447413661}
+ 90%|█████████ | 819/910 [37:02<03:48,  2.51s/it]07/20/2023 18:21:21 - INFO - __main__ - {'epoch': 1, 'step': 819, 'train_loss': 0.12340332329346002}
+ 90%|█████████ | 820/910 [37:04<03:49,  2.55s/it]07/20/2023 18:21:23 - INFO - __main__ - {'epoch': 1, 'step': 820, 'train_loss': 0.123421943478468}
+ 90%|█████████ | 821/910 [37:07<03:47,  2.55s/it]07/20/2023 18:21:26 - INFO - __main__ - {'epoch': 1, 'step': 821, 'train_loss': 0.12335784949280602}
+ 90%|█████████ | 822/910 [37:10<03:47,  2.58s/it]07/20/2023 18:21:29 - INFO - __main__ - {'epoch': 1, 'step': 822, 'train_loss': 0.12398712826471259}
+ 90%|█████████ | 823/910 [37:12<03:46,  2.60s/it]07/20/2023 18:21:31 - INFO - __main__ - {'epoch': 1, 'step': 823, 'train_loss': 0.12394742166141404}
+ 91%|█████████ | 824/910 [37:15<03:44,  2.61s/it]07/20/2023 18:21:34 - INFO - __main__ - {'epoch': 1, 'step': 824, 'train_loss': 0.12391610747402154}
+ 91%|█████████ | 825/910 [37:17<03:38,  2.57s/it]07/20/2023 18:21:36 - INFO - __main__ - {'epoch': 1, 'step': 825, 'train_loss': 0.12404171105587121}
+ 91%|█████████ | 826/910 [37:20<03:37,  2.59s/it]07/20/2023 18:21:39 - INFO - __main__ - {'epoch': 1, 'step': 826, 'train_loss': 0.12412090162965345}
+ 91%|█████████ | 827/910 [37:22<03:32,  2.56s/it]07/20/2023 18:21:42 - INFO - __main__ - {'epoch': 1, 'step': 827, 'train_loss': 0.12415620926069378}
+ 91%|█████████ | 828/910 [37:25<03:37,  2.65s/it]07/20/2023 18:21:44 - INFO - __main__ - {'epoch': 1, 'step': 828, 'train_loss': 0.12440018953332578}
+ 91%|█████████ | 829/910 [37:28<03:32,  2.62s/it]07/20/2023 18:21:47 - INFO - __main__ - {'epoch': 1, 'step': 829, 'train_loss': 0.12466949720578258}
+ 91%|█████████ | 830/910 [37:30<03:26,  2.58s/it]07/20/2023 18:21:49 - INFO - __main__ - {'epoch': 1, 'step': 830, 'train_loss': 0.12477461113987198}
+ 91%|█████████▏| 831/910 [37:33<03:18,  2.52s/it]07/20/2023 18:21:52 - INFO - __main__ - {'epoch': 1, 'step': 831, 'train_loss': 0.12526845186052196}
+ 91%|█████████▏| 832/910 [37:36<03:26,  2.64s/it]07/20/2023 18:21:55 - INFO - __main__ - {'epoch': 1, 'step': 832, 'train_loss': 0.12601933112511268}
+ 92%|█████████▏| 833/910 [37:38<03:23,  2.65s/it]07/20/2023 18:21:57 - INFO - __main__ - {'epoch': 1, 'step': 833, 'train_loss': 0.12619395902892408}
+ 92%|█████████▏| 834/910 [37:41<03:18,  2.61s/it]07/20/2023 18:22:00 - INFO - __main__ - {'epoch': 1, 'step': 834, 'train_loss': 0.12623468120035222}
+ 92%|█████████▏| 835/910 [37:44<03:16,  2.62s/it]07/20/2023 18:22:03 - INFO - __main__ - {'epoch': 1, 'step': 835, 'train_loss': 0.12673376391747754}
+ 92%|█████████▏| 836/910 [37:46<03:11,  2.58s/it]07/20/2023 18:22:05 - INFO - __main__ - {'epoch': 1, 'step': 836, 'train_loss': 0.12688121156829396}
+ 92%|█████████▏| 837/910 [37:49<03:10,  2.61s/it]07/20/2023 18:22:08 - INFO - __main__ - {'epoch': 1, 'step': 837, 'train_loss': 0.12711464575399492}
+ 92%|█████████▏| 838/910 [37:52<03:12,  2.68s/it]07/20/2023 18:22:11 - INFO - __main__ - {'epoch': 1, 'step': 838, 'train_loss': 0.12719602744163933}
+ 92%|█████████▏| 839/910 [37:54<03:07,  2.64s/it]07/20/2023 18:22:13 - INFO - __main__ - {'epoch': 1, 'step': 839, 'train_loss': 0.12713463002365166}
+ 92%|█████████▏| 840/910 [37:57<03:01,  2.59s/it]07/20/2023 18:22:16 - INFO - __main__ - {'epoch': 1, 'step': 840, 'train_loss': 0.12716231573195685}
+ 92%|█████████▏| 841/910 [37:59<03:00,  2.62s/it]07/20/2023 18:22:18 - INFO - __main__ - {'epoch': 1, 'step': 841, 'train_loss': 0.12711271633007581}
+ 93%|█████████▎| 842/910 [38:02<03:03,  2.70s/it]07/20/2023 18:22:21 - INFO - __main__ - {'epoch': 1, 'step': 842, 'train_loss': 0.12700176465539637}
+ 93%|█████████▎| 843/910 [38:05<02:58,  2.66s/it]07/20/2023 18:22:24 - INFO - __main__ - {'epoch': 1, 'step': 843, 'train_loss': 0.12688441519776839}
+ 93%|█████████▎| 844/910 [38:07<02:52,  2.61s/it]07/20/2023 18:22:26 - INFO - __main__ - {'epoch': 1, 'step': 844, 'train_loss': 0.12760881903047244}
+ 93%|█████████▎| 845/910 [38:10<02:47,  2.58s/it]07/20/2023 18:22:29 - INFO - __main__ - {'epoch': 1, 'step': 845, 'train_loss': 0.12749218461076184}
+ 93%|█████████▎| 846/910 [38:13<02:49,  2.65s/it]07/20/2023 18:22:32 - INFO - __main__ - {'epoch': 1, 'step': 846, 'train_loss': 0.1273779902897828}
+ 93%|█████████▎| 847/910 [38:15<02:47,  2.67s/it]07/20/2023 18:22:34 - INFO - __main__ - {'epoch': 1, 'step': 847, 'train_loss': 0.12764497687149498}
+ 93%|█████████▎| 848/910 [38:18<02:44,  2.65s/it]07/20/2023 18:22:37 - INFO - __main__ - {'epoch': 1, 'step': 848, 'train_loss': 0.12757736781858048}
+ 93%|█████████▎| 849/910 [38:20<02:38,  2.60s/it]07/20/2023 18:22:39 - INFO - __main__ - {'epoch': 1, 'step': 849, 'train_loss': 0.12751624440978357}
+ 93%|█████████▎| 850/910 [38:24<02:58,  2.98s/it]07/20/2023 18:22:43 - INFO - __main__ - {'epoch': 1, 'step': 850, 'train_loss': 0.1280371811810662}
+ 94%|█████████▎| 851/910 [38:27<02:53,  2.94s/it]07/20/2023 18:22:46 - INFO - __main__ - {'epoch': 1, 'step': 851, 'train_loss': 0.12795844789677585}
+ 94%|█████████▎| 852/910 [38:30<02:43,  2.81s/it]07/20/2023 18:22:49 - INFO - __main__ - {'epoch': 1, 'step': 852, 'train_loss': 0.12795956034055897}
+ 94%|█████████▎| 853/910 [38:32<02:33,  2.70s/it]07/20/2023 18:22:51 - INFO - __main__ - {'epoch': 1, 'step': 853, 'train_loss': 0.12803165127216443}
+ 94%|█████████▍| 854/910 [38:35<02:28,  2.66s/it]07/20/2023 18:22:54 - INFO - __main__ - {'epoch': 1, 'step': 854, 'train_loss': 0.12806812438250145}
+ 94%|█████████▍| 855/910 [38:37<02:26,  2.66s/it]07/20/2023 18:22:56 - INFO - __main__ - {'epoch': 1, 'step': 855, 'train_loss': 0.12797401829769736}
+ 94%|█████████▍| 856/910 [38:40<02:19,  2.59s/it]07/20/2023 18:22:59 - INFO - __main__ - {'epoch': 1, 'step': 856, 'train_loss': 0.12792034683940567}
+ 94%|█████████▍| 857/910 [38:43<02:22,  2.69s/it]07/20/2023 18:23:02 - INFO - __main__ - {'epoch': 1, 'step': 857, 'train_loss': 0.1279568221493947}
+ 94%|█████████▍| 858/910 [38:45<02:16,  2.62s/it]07/20/2023 18:23:04 - INFO - __main__ - {'epoch': 1, 'step': 858, 'train_loss': 0.12818556565504807}
+ 94%|█████████▍| 859/910 [38:48<02:19,  2.73s/it]07/20/2023 18:23:07 - INFO - __main__ - {'epoch': 1, 'step': 859, 'train_loss': 0.12864569596278377}
+ 95%|█████████▍| 860/910 [38:51<02:13,  2.67s/it]07/20/2023 18:23:10 - INFO - __main__ - {'epoch': 1, 'step': 860, 'train_loss': 0.12856537574945495}
+ 95%|█████████▍| 861/910 [38:53<02:08,  2.63s/it]07/20/2023 18:23:12 - INFO - __main__ - {'epoch': 1, 'step': 861, 'train_loss': 0.1285986640035206}
+ 95%|█████████▍| 862/910 [38:56<02:05,  2.62s/it]07/20/2023 18:23:15 - INFO - __main__ - {'epoch': 1, 'step': 862, 'train_loss': 0.1285814608332729}
+ 95%|█████████▍| 863/910 [38:59<02:06,  2.69s/it]07/20/2023 18:23:18 - INFO - __main__ - {'epoch': 1, 'step': 863, 'train_loss': 0.12912500056579518}
+ 95%|█████████▍| 864/910 [39:01<02:02,  2.66s/it]07/20/2023 18:23:20 - INFO - __main__ - {'epoch': 1, 'step': 864, 'train_loss': 0.12901934870967158}
+ 95%|█████████▌| 865/910 [39:04<02:02,  2.72s/it]07/20/2023 18:23:23 - INFO - __main__ - {'epoch': 1, 'step': 865, 'train_loss': 0.12910163306087427}
+ 95%|█████████▌| 866/910 [39:06<01:56,  2.65s/it]07/20/2023 18:23:25 - INFO - __main__ - {'epoch': 1, 'step': 866, 'train_loss': 0.12908336472015733}
+ 95%|█████████▌| 867/910 [39:09<01:53,  2.63s/it]07/20/2023 18:23:28 - INFO - __main__ - {'epoch': 1, 'step': 867, 'train_loss': 0.12930392889003028}
+ 95%|█████████▌| 868/910 [39:12<01:50,  2.63s/it]07/20/2023 18:23:31 - INFO - __main__ - {'epoch': 1, 'step': 868, 'train_loss': 0.12924552952638968}
+ 95%|█████████▌| 869/910 [39:14<01:48,  2.64s/it]07/20/2023 18:23:33 - INFO - __main__ - {'epoch': 1, 'step': 869, 'train_loss': 0.12918501701398877}
+ 96%|█████████▌| 870/910 [39:17<01:44,  2.62s/it]07/20/2023 18:23:36 - INFO - __main__ - {'epoch': 1, 'step': 870, 'train_loss': 0.12921163624730603}
+ 96%|█████████▌| 871/910 [39:20<01:47,  2.75s/it]07/20/2023 18:23:39 - INFO - __main__ - {'epoch': 1, 'step': 871, 'train_loss': 0.1292348307665399}
+ 96%|█████████▌| 872/910 [39:23<01:45,  2.78s/it]07/20/2023 18:23:42 - INFO - __main__ - {'epoch': 1, 'step': 872, 'train_loss': 0.1291745387086081}
+ 96%|█████████▌| 873/910 [39:25<01:41,  2.74s/it]07/20/2023 18:23:44 - INFO - __main__ - {'epoch': 1, 'step': 873, 'train_loss': 0.12922680692028207}
+ 96%|█████████▌| 874/910 [39:28<01:38,  2.73s/it]07/20/2023 18:23:47 - INFO - __main__ - {'epoch': 1, 'step': 874, 'train_loss': 0.12914934311087672}
+ 96%|█████████▌| 875/910 [39:31<01:32,  2.63s/it]07/20/2023 18:23:50 - INFO - __main__ - {'epoch': 1, 'step': 875, 'train_loss': 0.12922607421875}
+ 96%|█████████▋| 876/910 [39:33<01:27,  2.59s/it]07/20/2023 18:23:52 - INFO - __main__ - {'epoch': 1, 'step': 876, 'train_loss': 0.1292959413571989}
+ 96%|█████████▋| 877/910 [39:36<01:29,  2.71s/it]07/20/2023 18:23:55 - INFO - __main__ - {'epoch': 1, 'step': 877, 'train_loss': 0.130110598208559}
+ 96%|█████████▋| 878/910 [39:39<01:24,  2.66s/it]07/20/2023 18:23:58 - INFO - __main__ - {'epoch': 1, 'step': 878, 'train_loss': 0.13027606520946042}
+ 97%|█████████▋| 879/910 [39:41<01:21,  2.62s/it]07/20/2023 18:24:00 - INFO - __main__ - {'epoch': 1, 'step': 879, 'train_loss': 0.13054114505563852}
+ 97%|█████████▋| 880/910 [39:44<01:17,  2.59s/it]07/20/2023 18:24:03 - INFO - __main__ - {'epoch': 1, 'step': 880, 'train_loss': 0.13058589588512073}
+ 97%|█████████▋| 881/910 [39:46<01:13,  2.53s/it]07/20/2023 18:24:05 - INFO - __main__ - {'epoch': 1, 'step': 881, 'train_loss': 0.13095643544711266}
+ 97%|█████████▋| 882/910 [39:48<01:09,  2.48s/it]07/20/2023 18:24:07 - INFO - __main__ - {'epoch': 1, 'step': 882, 'train_loss': 0.13140142531622023}
+ 97%|█████████▋| 883/910 [39:51<01:06,  2.48s/it]07/20/2023 18:24:10 - INFO - __main__ - {'epoch': 1, 'step': 883, 'train_loss': 0.13155564581416337}
+ 97%|█████████▋| 884/910 [39:53<01:05,  2.52s/it]07/20/2023 18:24:12 - INFO - __main__ - {'epoch': 1, 'step': 884, 'train_loss': 0.13180010351120616}
+ 97%|█████████▋| 885/910 [39:56<01:02,  2.50s/it]07/20/2023 18:24:15 - INFO - __main__ - {'epoch': 1, 'step': 885, 'train_loss': 0.1317846955552613}
+ 97%|█████████▋| 886/910 [39:58<00:59,  2.50s/it]07/20/2023 18:24:17 - INFO - __main__ - {'epoch': 1, 'step': 886, 'train_loss': 0.13183765971095512}
+ 97%|█████████▋| 887/910 [40:01<00:59,  2.59s/it]07/20/2023 18:24:20 - INFO - __main__ - {'epoch': 1, 'step': 887, 'train_loss': 0.13194004820057073}
+ 98%|█████████▊| 888/910 [40:04<00:58,  2.68s/it]07/20/2023 18:24:23 - INFO - __main__ - {'epoch': 1, 'step': 888, 'train_loss': 0.13309355039854306}
+ 98%|█████████▊| 889/910 [40:07<00:58,  2.78s/it]07/20/2023 18:24:26 - INFO - __main__ - {'epoch': 1, 'step': 889, 'train_loss': 0.1331393710673861}
+ 98%|█████████▊| 890/910 [40:10<00:54,  2.75s/it]07/20/2023 18:24:29 - INFO - __main__ - {'epoch': 1, 'step': 890, 'train_loss': 0.13315985176000703}
+ 98%|█████████▊| 891/910 [40:13<00:52,  2.78s/it]07/20/2023 18:24:32 - INFO - __main__ - {'epoch': 1, 'step': 891, 'train_loss': 0.13308027376630893}
+ 98%|█████████▊| 892/910 [40:15<00:48,  2.70s/it]07/20/2023 18:24:34 - INFO - __main__ - {'epoch': 1, 'step': 892, 'train_loss': 0.13355292760737808}
+ 98%|█████████▊| 893/910 [40:18<00:46,  2.71s/it]07/20/2023 18:24:37 - INFO - __main__ - {'epoch': 1, 'step': 893, 'train_loss': 0.13384080226851203}
+ 98%|█████████▊| 894/910 [40:20<00:42,  2.65s/it]07/20/2023 18:24:39 - INFO - __main__ - {'epoch': 1, 'step': 894, 'train_loss': 0.133944517814073}
+ 98%|█████████▊| 895/910 [40:23<00:39,  2.60s/it]07/20/2023 18:24:42 - INFO - __main__ - {'epoch': 1, 'step': 895, 'train_loss': 0.13392415819221368}
+ 98%|█████████▊| 896/910 [40:26<00:36,  2.63s/it]07/20/2023 18:24:45 - INFO - __main__ - {'epoch': 1, 'step': 896, 'train_loss': 0.13415397916521346}
+ 99%|█████████▊| 897/910 [40:28<00:34,  2.64s/it]07/20/2023 18:24:47 - INFO - __main__ - {'epoch': 1, 'step': 897, 'train_loss': 0.13421889425254319}
+ 99%|█████████▊| 898/910 [40:31<00:31,  2.64s/it]07/20/2023 18:24:50 - INFO - __main__ - {'epoch': 1, 'step': 898, 'train_loss': 0.13486981976005707}
+ 99%|█████████▉| 899/910 [40:33<00:28,  2.59s/it]07/20/2023 18:24:52 - INFO - __main__ - {'epoch': 1, 'step': 899, 'train_loss': 0.13494357065576335}
+ 99%|█████████▉| 900/910 [40:36<00:25,  2.51s/it]07/20/2023 18:24:55 - INFO - __main__ - {'epoch': 1, 'step': 900, 'train_loss': 0.13535352918836804}
+ 99%|█████████▉| 901/910 [40:38<00:22,  2.52s/it]07/20/2023 18:24:57 - INFO - __main__ - {'epoch': 1, 'step': 901, 'train_loss': 0.13651261239681603}
+ 99%|█████████▉| 902/910 [40:41<00:19,  2.48s/it]07/20/2023 18:25:00 - INFO - __main__ - {'epoch': 1, 'step': 902, 'train_loss': 0.13672287765469096}
+ 99%|█████████▉| 903/910 [40:44<00:18,  2.61s/it]07/20/2023 18:25:03 - INFO - __main__ - {'epoch': 1, 'step': 903, 'train_loss': 0.1380682149994809}
+ 99%|█████████▉| 904/910 [40:46<00:15,  2.58s/it]07/20/2023 18:25:05 - INFO - __main__ - {'epoch': 1, 'step': 904, 'train_loss': 0.13813369886010093}
+ 99%|█████████▉| 905/910 [40:49<00:13,  2.63s/it]07/20/2023 18:25:08 - INFO - __main__ - {'epoch': 1, 'step': 905, 'train_loss': 0.13815695409616713}
+100%|█████████▉| 906/910 [40:52<00:10,  2.70s/it]07/20/2023 18:25:11 - INFO - __main__ - {'epoch': 1, 'step': 906, 'train_loss': 0.1385455605210058}
+100%|█████████▉| 907/910 [40:54<00:07,  2.60s/it]07/20/2023 18:25:13 - INFO - __main__ - {'epoch': 1, 'step': 907, 'train_loss': 0.13864260235064085}
+100%|█████████▉| 908/910 [40:56<00:05,  2.55s/it]07/20/2023 18:25:15 - INFO - __main__ - {'epoch': 1, 'step': 908, 'train_loss': 0.13872329779133397}
+100%|█████████▉| 909/910 [40:59<00:02,  2.58s/it]07/20/2023 18:25:18 - INFO - __main__ - {'epoch': 1, 'step': 909, 'train_loss': 0.1387393561133457}
+100%|██████████| 910/910 [41:02<00:00,  2.63s/it]07/20/2023 18:25:21 - INFO - __main__ - {'epoch': 1, 'step': 910, 'train_loss': 0.13891957041981456}
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "decoder_start_token_id": 0,
+  "eos_token_id": 1,
+  "pad_token_id": 0,
+  "transformers_version": "4.31.0"
+}
+
+07/20/2023 18:25:22 - INFO - absl - Using default tokenizer.
+07/20/2023 18:25:22 - INFO - absl - Using default tokenizer.
+07/20/2023 18:25:22 - INFO - absl - Using default tokenizer.
+07/20/2023 18:25:23 - INFO - absl - Using default tokenizer.
+07/20/2023 18:25:23 - INFO - __main__ - {'rouge1': 10.5263, 'rouge2': 10.5263, 'rougeL': 10.5263, 'rougeLsum': 10.5263}
+Configuration saved in ./output_dir/config.json
+Configuration saved in ./output_dir/generation_config.json
+Model weights saved in ./output_dir/pytorch_model.bin
+tokenizer config file saved in ./output_dir/tokenizer_config.json
+Special tokens file saved in ./output_dir/special_tokens_map.json
+Copy vocab file to ./output_dir/spiece.model
+100%|██████████| 910/910 [41:14<00:00,  2.72s/it]
